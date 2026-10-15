@@ -1,0 +1,28 @@
+code,label,category_group,date_start,date_end,volunteer_identification_guide
+brick_handmade_sandstock,Handmade / Sandstock Brick,Brick Manufacture,1830,1880,"Moulded by hand in wet wooden moulds; distinctive irregular surfaces, fold creases along sides, thumb drag marks, hack marks from drying, no frog or shallow frog, slightly thinner (c. 60-65mm)."
+brick_machine_pressed,Machine-pressed / Wire-cut Brick,Brick Manufacture,1855,Present,"Extruded through dies and cut with wire or dry-pressed in hydraulic steam presses; sharp crisp edges, uniform standard dimensions (c. 225x110x75mm), deep indent frog."
+bond_stretcher,Stretcher Bond,Brick Bond,1880,Present,All bricks laid showing long side (stretcher) only; universally used in cavity walls and modern brick veneer; cannot form solid single-leaf structural wall without ties.
+bond_english,English Bond,Brick Bond,1830,1910,"Alternating courses of all-headers (short ends) and all-stretchers (long sides); exceptionally strong bond common in civil engineering, warehouses, and early substantial buildings."
+bond_flemish,Flemish Bond,Brick Bond,1830,1920,"Each course consists of alternating headers and stretchers; highly decorative, favoured for primary facades of Georgian and Victorian homesteads."
+bond_colonial_garden_wall,Colonial / Garden Wall Bond,Brick Bond,1840,1920,"Three, four, or five courses of stretchers to every single course of headers; economical colonial method conserving expensive header brickwork."
+stone_ashlar,Ashlar Masonry,Stone Coursing,1830,1910,"Finely dressed, squared stone blocks laid with hair-thin joints in level regular courses; high status craftsmanship."
+stone_coursed_rubble,Coursed Rubble,Stone Coursing,1840,1930,Roughly squared rubble stones laid in identifiable horizontal courses of uniform or variable bed heights.
+stone_uncoursed_rubble,Random / Uncoursed Rubble,Stone Coursing,1830,1920,"Unshaped, irregular stones laid without horizontal continuous bed lines, gaps wedged with small spalls and mortar."
+mortar_soft_lime_sand,Soft Lime-Sand Mortar,Mortar Type,1830,1910,"Creamy white or buff coloured, soft enough to scratch easily with a copper coin or fingernail; consists of slaked lime and coarse local sand."
+mortar_mud_clay,Mud / Clay Mortar,Mortar Type,1830,1900,"Brown, earthy mortar mixed with local loam, straw, or manure; common in vernacular stone outbuildings, chimneys, and pise cores."
+mortar_portland_cement,Hard Grey Portland Cement Mortar,Mortar Type,1880,Present,"Dark grey, very hard, cannot be scratched by thumbnail; imported from 1860s, locally manufactured from 1890s; post-1890 repair or late masonry."
+quoin_stone_dressed,Dressed Stone Quoins,Quoins,1830,1920,"Larger squared dressed stones at external corners of rubble masonry or brickwork, often alternating in size (long-and-short work)."
+quoin_brick_contrasting,Contrasting Brick Quoins,Quoins,1850,1910,Face brick corner dressings contrasting with rubble stone walling or polychrome brick bodies.
+quoin_rendered_rusticated,Rendered / Rusticated Quoins,Quoins,1860,1920,Stucco plaster moulded and scored at building corners to imitate dressed stone ashlar blocks.
+quoin_none,No Distinct Quoins,Quoins,1830,Present,Corners finished flush with the standard walling material without decorative or structural corner blocks.
+cladding_wb_beaded,Weatherboard - Beaded / Quirked Edge,External Cladding,1830,1860,Horizontal overlapping weatherboards featuring a moulded bead along lower outer edge; diagnostic indicator of pre-1860 craftsmanship.
+cladding_wb_plain_splayed,Weatherboard - Plain Splayed,External Cladding,1860,Present,Standard wedge-shaped weatherboard with plain bevelled or square bottom edge; superseded beaded boards from 1860 onwards.
+cladding_roughsawn_board,Rough-sawn Boarding / Clapboard,External Cladding,1830,1920,Ungrooved flat sawn boards nailed horizontally or vertically with visible circular or pit saw marks.
+cladding_cgi_5inch,Corrugated Iron - 5-inch (130mm) Early Pitch,External Cladding,1850,1865,"Heavy gauge corrugated galvanised sheet with broad 5-inch (130mm) crest-to-crest pitch; imported 1850-1860s, rare survivor of early gold era."
+cladding_cgi_3inch,Corrugated Iron - 3-inch (80mm) Standard Pitch,External Cladding,1860,Present,Standard 3-inch (c. 76-80mm) pitch corrugated iron; introduced in 1860s and universal cladding across rural Australia for over a century.
+cladding_ripple_iron,Ripple Iron (25mm Miniature Flutes),External Cladding,1890,1940,"Fine corrugated iron with mini-pitch (c. 20-25mm); introduced c. 1890 for verandah ceilings, valances, internal dados, and meathouses."
+cladding_tin_cans,Flattened Tin Plate (Kerosene / Petrol Tins),External Cladding,1880,1950,"Square flattened sheet metal from recycled 4-gallon kerosene or motor spirit tins; soldered or nailed with diamond pattern, classic bush improvisation."
+cladding_fibro_asbestos,Fibro / Asbestos-Cement Sheet & Battens,External Cladding,1903,1985,Flat grey rigid sheets (Wunderlich Durabestos / Hardies Fibrolite) with timber cover battens over joints; asbestos hazard; post-1903.
+finish_limewash,Limewash / Whitewash,Surface Finish,1830,1950,"Thin breathable white or tinted slaked lime wash applied over slabs, masonry, pise, or brick; chalks off on hands."
+finish_stucco_render,Stucco / Cement Render (Scored),Surface Finish,1850,Present,Smooth or ashlar-scored exterior mortar plaster coating brick or rubble stone to simulate fine masonry.
+finish_roughcast_pebbledash,Roughcast / Pebbledash Render,Surface Finish,1890,1930,"Coarse mortar plaster containing pebbles, gravel, or coarse aggregate thrown onto wall; characteristic of Edwardian / Arts and Crafts periods."

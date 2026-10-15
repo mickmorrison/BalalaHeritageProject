@@ -1,0 +1,34 @@
+code,label,category_group,date_start,date_end,volunteer_identification_guide
+room_kitchen,Kitchen / Hearth Room,Inferred Room Function,1830,Present,"Cooking space identified by large chimney breast, hearth, colonial oven, flue hole, water supply, or meathooks."
+room_parlor_sitting,Parlor / Sitting Room,Inferred Room Function,1830,Present,"Formal living room facing primary facade; finer joinery, moulded timber skirting, ornamental mantelpiece, decorative plaster ceiling rose."
+room_bedroom,Bedroom,Inferred Room Function,1830,Present,"Private sleeping quarters; smaller dimensions, wardrobe recesses, fireplace in master bedroom, plainer skirtings."
+room_pantry_larder,Pantry / Larder / Store,Inferred Room Function,1830,Present,"Cool food storage room often on south or shaded side; fitted with timber shelving, meat safes, and mesh ventilation."
+room_hall_corridor,Central Hallway / Passage,Inferred Room Function,1840,Present,"Circulation corridor dividing formal front rooms; fanlight above front door, timber wainscot or plaster archway."
+room_verandah_infill,Enclosed Verandah Room / Sleepout,Inferred Room Function,1890,Present,"Space created by enclosing former open verandah with louvres, weatherboards, or fibro; sloped ceiling following verandah pitch, step in floor level."
+room_shearing_board,Shearing Board (Woolshed),Inferred Room Function,1840,Present,"Working line where sheep are shorn; slatted or hardwood plank floor, friction drive wheels, bracket mounts on rafters, counting-out chutes."
+room_wool_room,Wool Classing / Baling Room,Inferred Room Function,1840,Present,"Expansive clear-span room with large classing table, wool bins, screw/lever/hydraulic wool press, scale markings, and load-out doorway."
+room_sweat_pen_space,Sweat Pen (Holding Area),Inferred Room Function,1840,Present,Internal slatted timber grates (battens) allowing waste to drop into underfloor pit while keeping fleece clean before shearing.
+room_tack_harness,Tack & Harness Room,Inferred Room Function,1840,1960,"Service room in stables fitted with wooden peg racks for bridles, saddle trees, collar pegs, and grease pots."
+floor_earth_clay,Compacted Earth / Packed Clay,Floor Material,1830,1920,"Beaten dirt or clay floor mixed with ox blood, fat, or salt for binding; common in pioneer huts, blacksmiths, and early sheds."
+floor_stone_flag,Stone Flags / Sandstone Paving,Floor Material,1830,1910,"Large flat sandstone or slate flags laid directly on sand bed; cold, durable floor for kitchens, pantries, and dairies."
+floor_brick_paving,Brick Paving (Sand Bed),Floor Material,1830,1920,"Handmade or pressed bricks laid flat or on edge on sand; typical of detached kitchens, cellars, and stables."
+floor_timber_grates,Timber Slats / Grates (Woolshed),Floor Material,1840,Present,Narrow hardwood battens spaced 15-20mm apart to allow dung and urine to fall through to ground void underneath.
+floor_butt_boarded,Butt-jointed Timber Boards (No T&G),Floor Material,1830,1870,Rectangular hardwood boards planed on 3 sides only; boards abut squarely without interlocking tongue; thin steel ruler slides straight through gap into sub-floor void.
+floor_tongue_groove,Tongue & Groove (T&G) Milled Boards,Floor Material,1865,Present,Milled boards with tongue on one edge and groove on opposite; steel ruler stops ~5mm into gap; 150mm wide c. 1865-1890s; 146mm/100mm c. 1890-1920s.
+floor_concrete_slab,Concrete Slab Floor,Floor Material,1890,Present,Mass or steel-reinforced concrete pad; modern replacement or industrial floor in dairies and workshops.
+floor_linoleum_oilcloth,Linoleum / Floorcloth Remnant,Floor Material,1864,1960,Linseed-oil based floorcloth (post-1864) tacked to boards with brass tacks; pattern layers preserved in cupboard bases.
+lining_unlined_exposed,Unlined (Exposed Framing / Masonry),Internal Wall Lining,1830,Present,"Internal frame studs, split slabs, pise, or brickwork left completely exposed without cosmetic covering."
+lining_horizontal_board,Horizontal Timber Lining Boards,Internal Wall Lining,1840,1930,Wide rough-sawn or dressed boards nailed horizontally to internal studs; may be beaded or plain splayed.
+lining_vertical_vjoint,Vertical V-Joint (VJ) Boards,Internal Wall Lining,1880,Present,Milled tongue-and-groove boards with bevelled edge forming V-shaped shadow groove; standard late Victorian/Federation interior lining.
+lining_hessian_wallpaper,Hessian / Calico Sacking & Wallpaper,Internal Wall Lining,1840,1940,"Hessian or flour sacking tacked across timber studs with blued tacks, pasted with newspaper and patterned wallpaper layers."
+lining_lath_plaster,Lath & Plaster,Internal Wall Lining,1840,1920,"Horizontal split or sawn timber laths nailed to studs, coated with 2-3 coats of lime/sand plaster mixed with animal horsehair."
+lining_pressed_metal,Pressed Metal (Wunderlich),Internal Wall Lining,1890,1950,"Decorative stamped zinc/steel panels manufactured by Wunderlich or Rocke; ornate floral, diaper, or classical patterns."
+lining_ripple_iron,Ripple Iron Lining,Internal Wall Lining,1890,1940,Miniature corrugated iron panels fixed horizontally or vertically as durable rodent-proof lining in kitchens and meathouses.
+lining_fibro_masonite,Fibro / Masonite / Cane-ite / Gyprock,Internal Wall Lining,1930,Present,"Manufactured sheet wallboards: Masonite (compressed hardboard, post-1930), Cane-ite (soft sugarcane board, post-1939), Gyprock plasterboard (post-1940)."
+lining_limewash_internal,Limewash on Masonry / Earth,Internal Wall Lining,1830,1950,"Sanitary slaked lime coating applied directly to internal brick, pise, or stone walls; repeated coats create rounded corners."
+hearth_open_fire,Open Brick / Stone Fireplace Hearth,Heating & Services,1830,Present,Wide masonry opening with iron chimney crane or pot hook bar for suspension of iron kettles and camp ovens.
+hearth_colonial_oven,Colonial Oven (Open Grate + Side Oven),Heating & Services,1860,1910,"Cast-iron or sheet-iron oven box built directly into side of open fireplace, heated by flue gases from open fire."
+hearth_cast_iron_stove,Cast-iron Range / Kitchener,Heating & Services,1850,1940,"Freestanding or recessed cast-iron cooking range (Metters Dover, Bega, Galliers & Klaerr, Albion) with enclosed firebox, hob plates, and oven."
+service_kerosene_lamp,Kerosene / Acetylene Gas Fittings,Heating & Services,1860,1930,Hanging brass ceiling pullies for kerosene lamps or copper piping from external calcium carbide acetylene generator.
+service_early_electric,Early Surface Electric (Twisted Pair / Cleats),Heating & Services,1910,1950,Twisted cotton-braided electrical wiring mounted on ceramic barrel insulators and timber mounting blocks; brass tumbler switches.
+service_lead_galv_pipe,Lead / Galvanised Iron Water Pipe & Sink,Heating & Services,1860,1950,Early gravity water reticulation with soldered lead or threaded galvanised iron piping and brass bibcock taps over enamel/iron sink.

@@ -1,0 +1,2275 @@
+<?xml version="1.0" encoding="utf-8"?>
+<qgis projectname="Balala Historical &amp; Pastoral Structure Recording System" version="3.28.0">
+  <homePath path=""/>
+  <projectCrs>
+    <spatialrefsys>
+      <wkt>PROJCRS["GDA2020 / MGA zone 56",BASEGEOGCRS["GDA2020",DATUM["Geocentric Datum of Australia 2020",ELLIPSOID["GRS 1980",6378137,298.257222101,LENGTHUNIT["metre",1]]],PRIMEM["Greenwich",0,ANGLEUNIT["degree",0.0174532925199433]],ID["EPSG",7844]],CONVERSION["Map Grid of Australia zone 56",METHOD["Transverse Mercator",ID["EPSG",9807]],PARAMETER["Latitude of natural origin",0,ANGLEUNIT["degree",0.0174532925199433]],PARAMETER["Longitude of natural origin",153,ANGLEUNIT["degree",0.0174532925199433]],PARAMETER["Scale factor at natural origin",0.9996,SCALEUNIT["unity",1]],PARAMETER["False easting",500000,LENGTHUNIT["metre",1]],PARAMETER["False northing",10000000,LENGTHUNIT["metre",1]],ID["EPSG",17356]],CS[Cartesian,2],AXIS["(E)",east,ORDER[1],LENGTHUNIT["metre",1]],AXIS["(N)",north,ORDER[2],LENGTHUNIT["metre",1]],USAGE[SCOPE["Engineering survey, topographic mapping."],AREA["Australia onshore and offshore east of 150°E."],BBOX[-46.7,150,-9.86,159.21]],ID["EPSG",7856]]</wkt>
+      <proj4>+proj=utm +zone=56 +south +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs</proj4>
+      <srsid>29037</srsid>
+      <srid>7856</srid>
+      <authid>EPSG:7856</authid>
+      <description>GDA2020 / MGA zone 56</description>
+    </spatialrefsys>
+  </projectCrs>
+  <layer-tree-group>
+    <customproperties/>
+    <layer-tree-group name="1. Spatial Standing Structures" expanded="1" checked="Qt::Checked">
+      <layer-tree-layer id="structures_layer" name="structures (Form 1)" expanded="1" checked="Qt::Checked"/>
+      <layer-tree-layer id="structures_points_layer" name="structures_points (GNSS Waypoints)" expanded="1" checked="Qt::Checked"/>
+    </layer-tree-group>
+    <layer-tree-group name="2. Relational Survey Records" expanded="1" checked="Qt::Checked">
+      <layer-tree-layer id="rooms_spaces_layer" name="rooms_spaces (Form 2)" expanded="1" checked="Qt::Checked"/>
+      <layer-tree-layer id="room_objects_inventory_layer" name="room_objects_inventory (Form 3)" expanded="1" checked="Qt::Checked"/>
+      <layer-tree-layer id="construction_stages_layer" name="construction_stages (Phasing)" expanded="0" checked="Qt::Checked"/>
+      <layer-tree-layer id="diagnostic_marks_layer" name="diagnostic_marks (Brands &amp; Marks)" expanded="0" checked="Qt::Checked"/>
+      <layer-tree-layer id="media_attachments_layer" name="media_attachments (Photos &amp; Plans)" expanded="0" checked="Qt::Checked"/>
+      <layer-tree-layer id="photographic_log_layer" name="photographic_log (Form 4)" expanded="0" checked="Qt::Checked"/>
+    </layer-tree-group>
+    <layer-tree-group name="3. Controlled Vocabularies (Lookups)" expanded="0" checked="Qt::Unchecked">
+      <layer-tree-layer id="lut_structure_purpose_layer" name="lut_structure_purpose" expanded="0" checked="Qt::Unchecked"/>
+      <layer-tree-layer id="lut_foundations_and_subfloor_layer" name="lut_foundations_and_subfloor" expanded="0" checked="Qt::Unchecked"/>
+      <layer-tree-layer id="lut_wall_systems_and_framing_layer" name="lut_wall_systems_and_framing" expanded="0" checked="Qt::Unchecked"/>
+      <layer-tree-layer id="lut_masonry_and_cladding_layer" name="lut_masonry_and_cladding" expanded="0" checked="Qt::Unchecked"/>
+      <layer-tree-layer id="lut_roof_verandah_chimney_layer" name="lut_roof_verandah_chimney" expanded="0" checked="Qt::Unchecked"/>
+      <layer-tree-layer id="lut_openings_and_hardware_layer" name="lut_openings_and_hardware" expanded="0" checked="Qt::Unchecked"/>
+      <layer-tree-layer id="lut_internal_rooms_and_services_layer" name="lut_internal_rooms_and_services" expanded="0" checked="Qt::Unchecked"/>
+      <layer-tree-layer id="lut_phasing_whs_and_condition_layer" name="lut_phasing_whs_and_condition" expanded="0" checked="Qt::Unchecked"/>
+      <layer-tree-layer id="lut_object_category_layer" name="lut_object_category" expanded="0" checked="Qt::Unchecked"/>
+      <layer-tree-layer id="lut_photo_orientation_layer" name="lut_photo_orientation" expanded="0" checked="Qt::Unchecked"/>
+    </layer-tree-group>
+  </layer-tree-group>
+  <mapcanvas name="theMapCanvas">
+    <destinationsrs>
+      <spatialrefsys>
+        <authid>EPSG:7856</authid>
+      </spatialrefsys>
+    </destinationsrs>
+    <extent>
+      <xmin>338700</xmin>
+      <ymin>6622300</ymin>
+      <xmax>339000</xmax>
+      <ymax>6622550</ymax>
+    </extent>
+  </mapcanvas>
+  <projectlayers>
+    <maplayer type="vector" autoRefreshTime="0" geometry="Polygon" refreshOnNotifyMessage="" refreshOnNotifyEnabled="0">
+      <id>structures_layer</id>
+      <datasource>./balala_pastoral_survey.gpkg|layername=structures</datasource>
+      <layername>structures</layername>
+      <provider encoding="UTF-8">ogr</provider>
+      <srs>
+        <spatialrefsys>
+          <authid>EPSG:7856</authid>
+        </spatialrefsys>
+      </srs>
+      <renderer-v2 type="singleSymbol" symbollevels="0" enableorderby="0">
+        <symbols>
+          <symbol type="fill" name="0" alpha="0.85" clip_to_extent="1">
+            <layer pass_="0" locked="0" class_="SimpleFill">
+              <prop k="border_width_map_unit_scale" v="3x:0,0,0,0,0,0"/>
+              <prop k="color" v="217,155,102,216"/>
+              <prop k="joinstyle" v="bevel"/>
+              <prop k="offset" v="0,0"/>
+              <prop k="outline_color" v="27,54,93,255"/>
+              <prop k="outline_style" v="solid"/>
+              <prop k="outline_width" v="0.8"/>
+              <prop k="outline_width_unit" v="MM"/>
+              <prop k="style" v="solid"/>
+            </layer>
+          </symbol>
+        </symbols>
+      </renderer-v2>
+      <labeling type="simple">
+        <settings calloutType="simple">
+          <text-style fontLetterSpacing="0" fontFamily="Helvetica" fontWordSpacing="0" textColor="27,54,93,255" fontSize="9" isExpression="1" fieldName="concat(&quot;structure_id&quot;, '&#10;', &quot;structure_name&quot;)">
+            <text-buffer bufferSize="1.2" bufferColor="255,255,255,255" bufferDraw="1"/>
+          </text-style>
+        </settings>
+      </labeling>
+      <aliases>
+        <alias field="structure_id" name="Structure ID" index="0"/>
+        <alias field="structure_name" name="Structure Common Name" index="0"/>
+        <alias field="property_name" name="Property / Site Name" index="0"/>
+        <alias field="recording_date" name="Recording Date" index="0"/>
+        <alias field="recorders" name="Recorder Name(s)" index="0"/>
+        <alias field="gnss_point_id" name="GNSS Point ID / Range" index="0"/>
+        <alias field="gnss_poly_id" name="GNSS Polygon / Feature ID" index="0"/>
+        <alias field="site_plan_sheet_no" name="Site Plan Sheet No." index="0"/>
+        <alias field="floor_plan_sheet_no" name="Floor/Roof Plan Sheet No." index="0"/>
+        <alias field="camera_make_number" name="Camera Make &amp; No." index="0"/>
+        <alias field="photo_frame_range" name="Photo Frame Nos. Range" index="0"/>
+        <alias field="overall_condition" name="Overall Condition" index="0"/>
+        <alias field="sec1_comments" name="Section 1 Notes" index="0"/>
+        <alias field="whs_asbestos" name="WHS: Asbestos / Fibro" index="0"/>
+        <alias field="whs_lead_paint" name="WHS: Flaking Lead Paint" index="0"/>
+        <alias field="whs_unstable_struc" name="WHS: Unstable Structure" index="0"/>
+        <alias field="whs_chemical_haz" name="WHS: Chemical / Arsenic" index="0"/>
+        <alias field="whs_biological_haz" name="WHS: Fauna / Guano Hazard" index="0"/>
+        <alias field="whs_entry_status" name="WHS: Safe for Internal Entry" index="0"/>
+        <alias field="sec2_whs_comments" name="Section 2 WHS Notes" index="0"/>
+        <alias field="orig_purpose" name="Original Purpose / Category" index="0"/>
+        <alias field="later_use" name="Later / Current Use" index="0"/>
+        <alias field="storeys_count" name="Storeys / Vertical Levels" index="0"/>
+        <alias field="plan_shape" name="Plan Shape" index="0"/>
+        <alias field="facade_symmetry" name="Façade Symmetry" index="0"/>
+        <alias field="facade_orient" name="Orientation of Main Façade" index="0"/>
+        <alias field="length_m" name="External Length (m)" index="0"/>
+        <alias field="width_m" name="External Width (m)" index="0"/>
+        <alias field="sec3_layout_comments" name="Section 3 Layout Notes" index="0"/>
+        <alias field="footing_type" name="Footings / Stumps Type" index="0"/>
+        <alias field="subfloor_timber" name="Bearer / Joist Tool Marks" index="0"/>
+        <alias field="subfloor_deposit" name="Sub-floor Deposit Potential" index="0"/>
+        <alias field="sec4_found_comments" name="Section 4 Foundation Notes" index="0"/>
+        <alias field="wall_system_prim" name="Primary Wall Framing System" index="0"/>
+        <alias field="wall_system_sec" name="Secondary Wall System" index="0"/>
+        <alias field="timber_joints" name="Timber Joints Observed" index="0"/>
+        <alias field="fasteners_nails" name="Fasteners &amp; Nails Observed" index="0"/>
+        <alias field="brick_mfg_type" name="Brick Manufacture" index="0"/>
+        <alias field="brick_bond" name="Brick Bond" index="0"/>
+        <alias field="stone_coursing" name="Stone Coursing" index="0"/>
+        <alias field="mortar_type" name="Mortar Type" index="0"/>
+        <alias field="quoins_type" name="Corner Quoins Type" index="0"/>
+        <alias field="ext_cladding_prim" name="Primary External Cladding" index="0"/>
+        <alias field="ext_cladding_sec" name="Secondary External Cladding" index="0"/>
+        <alias field="ext_wall_finish" name="External Wall Finish" index="0"/>
+        <alias field="sec5_wall_comments" name="Section 5 Wall Notes" index="0"/>
+        <alias field="roof_form" name="Roof Form" index="0"/>
+        <alias field="roof_cladding_cur" name="Current Roof Cladding" index="0"/>
+        <alias field="roof_early_clues" name="Earlier Roof Clues Underneath" index="0"/>
+        <alias field="verandah_loc" name="Verandah Location" index="0"/>
+        <alias field="verandah_profile" name="Verandah Roof Profile" index="0"/>
+        <alias field="verandah_posts" name="Verandah Post Type" index="0"/>
+        <alias field="verandah_status" name="Verandah Status &amp; Enclosure" index="0"/>
+        <alias field="chimney_count" name="Chimney Count" index="0"/>
+        <alias field="chimney_material" name="Chimney Material" index="0"/>
+        <alias field="chimney_location" name="Chimney Location(s)" index="0"/>
+        <alias field="sec6_roof_comments" name="Section 6 Roof Notes" index="0"/>
+        <alias field="window_type_prim" name="Primary Window Type" index="0"/>
+        <alias field="window_pane_cfg" name="Window Pane Configuration" index="0"/>
+        <alias field="door_type_prim" name="Primary Door Type" index="0"/>
+        <alias field="door_hardware" name="Door Hardware &amp; Latches" index="0"/>
+        <alias field="sec7_openings_comments" name="Section 7 Openings Notes" index="0"/>
+        <alias field="sec8_phasing_comments" name="Section 8 Phasing Notes" index="0"/>
+        <alias field="fabric_intactness" name="Original Fabric Remaining" index="0"/>
+        <alias field="assoc_refuse_dump" name="Nearby: Refuse / Bottle Dump" index="0"/>
+        <alias field="assoc_privy_cess" name="Nearby: Privy / Cesspit" index="0"/>
+        <alias field="assoc_well_cistern" name="Nearby: Well / Cistern" index="0"/>
+        <alias field="assoc_garden_lines" name="Nearby: Garden Edging / Paths" index="0"/>
+        <alias field="assoc_fence_lines" name="Nearby: Old Fences / Races" index="0"/>
+        <alias field="recorder_summary" name="Recorders Synthesis Summary" index="0"/>
+        <alias field="sec9_synthesis_comments" name="Section 9 Synthesis Notes" index="0"/>
+        <alias field="primary_facade_photo_path" name="Primary Façade Photo" index="0"/>
+        <alias field="site_plan_scan_path" name="Site Plan Drawing / Scan" index="0"/>
+        <alias field="floor_plan_scan_path" name="Floor/Roof Plan Drawing" index="0"/>
+        <alias field="paper_form1_scan_path" name="Scanned Form 1 Paper Record" index="0"/>
+      </aliases>
+      <fieldConfiguration>
+        <field name="structure_id">
+          <editWidget type="TextEdit">
+            <config>
+              <Option type="Map">
+                <Option type="bool" name="IsMultiline" value="false"/>
+              </Option>
+            </config>
+          </editWidget>
+        </field>
+        <field name="structure_name">
+          <editWidget type="TextEdit">
+            <config>
+              <Option type="Map">
+                <Option type="bool" name="IsMultiline" value="false"/>
+              </Option>
+            </config>
+          </editWidget>
+        </field>
+        <field name="property_name">
+          <editWidget type="TextEdit">
+            <config>
+              <Option type="Map">
+                <Option type="bool" name="IsMultiline" value="false"/>
+              </Option>
+            </config>
+          </editWidget>
+        </field>
+        <field name="recording_date">
+          <editWidget type="DateTime">
+            <config>
+              <Option type="Map">
+                <Option type="bool" name="calendar_popup" value="true"/>
+                <Option type="QString" name="display_format" value="yyyy-MM-dd"/>
+                <Option type="QString" name="field_format" value="yyyy-MM-dd"/>
+              </Option>
+            </config>
+          </editWidget>
+        </field>
+        <field name="recorders">
+          <editWidget type="TextEdit">
+            <config>
+              <Option type="Map">
+                <Option type="bool" name="IsMultiline" value="false"/>
+              </Option>
+            </config>
+          </editWidget>
+        </field>
+        <field name="gnss_point_id">
+          <editWidget type="TextEdit">
+            <config>
+              <Option type="Map">
+                <Option type="bool" name="IsMultiline" value="false"/>
+              </Option>
+            </config>
+          </editWidget>
+        </field>
+        <field name="gnss_poly_id">
+          <editWidget type="TextEdit">
+            <config>
+              <Option type="Map">
+                <Option type="bool" name="IsMultiline" value="false"/>
+              </Option>
+            </config>
+          </editWidget>
+        </field>
+        <field name="site_plan_sheet_no">
+          <editWidget type="TextEdit">
+            <config>
+              <Option type="Map">
+                <Option type="bool" name="IsMultiline" value="false"/>
+              </Option>
+            </config>
+          </editWidget>
+        </field>
+        <field name="floor_plan_sheet_no">
+          <editWidget type="TextEdit">
+            <config>
+              <Option type="Map">
+                <Option type="bool" name="IsMultiline" value="false"/>
+              </Option>
+            </config>
+          </editWidget>
+        </field>
+        <field name="camera_make_number">
+          <editWidget type="TextEdit">
+            <config>
+              <Option type="Map">
+                <Option type="bool" name="IsMultiline" value="false"/>
+              </Option>
+            </config>
+          </editWidget>
+        </field>
+        <field name="photo_frame_range">
+          <editWidget type="TextEdit">
+            <config>
+              <Option type="Map">
+                <Option type="bool" name="IsMultiline" value="false"/>
+              </Option>
+            </config>
+          </editWidget>
+        </field>
+        <field name="overall_condition">
+          <editWidget type="ValueRelation">
+            <config>
+              <Option type="Map">
+                <Option type="bool" name="AllowMulti" value="false"/>
+                <Option type="bool" name="AllowNull" value="true"/>
+                <Option type="QString" name="Description" value="&quot;volunteer_identification_guide&quot;"/>
+                <Option type="QString" name="Key" value="code"/>
+                <Option type="QString" name="Layer" value="lut_phasing_whs_and_condition"/>
+                <Option type="QString" name="LayerName" value="lut_phasing_whs_and_condition"/>
+                <Option type="QString" name="LayerSource" value="./balala_pastoral_survey.gpkg|layername=lut_phasing_whs_and_condition"/>
+                <Option type="QString" name="LayerProviderName" value="ogr"/>
+                <Option type="bool" name="OrderByValue" value="true"/>
+                <Option type="QString" name="Value" value="label"/>
+              </Option>
+            </config>
+          </editWidget>
+        </field>
+        <field name="sec1_comments">
+          <editWidget type="TextEdit">
+            <config>
+              <Option type="Map">
+                <Option type="bool" name="IsMultiline" value="true"/>
+              </Option>
+            </config>
+          </editWidget>
+        </field>
+        <field name="whs_asbestos">
+          <editWidget type="CheckBox">
+            <config>
+              <Option type="Map">
+                <Option type="QString" name="CheckedState" value="1"/>
+                <Option type="QString" name="UncheckedState" value="0"/>
+              </Option>
+            </config>
+          </editWidget>
+        </field>
+        <field name="whs_lead_paint">
+          <editWidget type="CheckBox">
+            <config>
+              <Option type="Map">
+                <Option type="QString" name="CheckedState" value="1"/>
+                <Option type="QString" name="UncheckedState" value="0"/>
+              </Option>
+            </config>
+          </editWidget>
+        </field>
+        <field name="whs_unstable_struc">
+          <editWidget type="CheckBox">
+            <config>
+              <Option type="Map">
+                <Option type="QString" name="CheckedState" value="1"/>
+                <Option type="QString" name="UncheckedState" value="0"/>
+              </Option>
+            </config>
+          </editWidget>
+        </field>
+        <field name="whs_chemical_haz">
+          <editWidget type="CheckBox">
+            <config>
+              <Option type="Map">
+                <Option type="QString" name="CheckedState" value="1"/>
+                <Option type="QString" name="UncheckedState" value="0"/>
+              </Option>
+            </config>
+          </editWidget>
+        </field>
+        <field name="whs_biological_haz">
+          <editWidget type="CheckBox">
+            <config>
+              <Option type="Map">
+                <Option type="QString" name="CheckedState" value="1"/>
+                <Option type="QString" name="UncheckedState" value="0"/>
+              </Option>
+            </config>
+          </editWidget>
+        </field>
+        <field name="whs_entry_status">
+          <editWidget type="ValueRelation">
+            <config>
+              <Option type="Map">
+                <Option type="bool" name="AllowMulti" value="false"/>
+                <Option type="bool" name="AllowNull" value="true"/>
+                <Option type="QString" name="Description" value="&quot;volunteer_identification_guide&quot;"/>
+                <Option type="QString" name="Key" value="code"/>
+                <Option type="QString" name="Layer" value="lut_phasing_whs_and_condition"/>
+                <Option type="QString" name="LayerName" value="lut_phasing_whs_and_condition"/>
+                <Option type="QString" name="LayerSource" value="./balala_pastoral_survey.gpkg|layername=lut_phasing_whs_and_condition"/>
+                <Option type="QString" name="LayerProviderName" value="ogr"/>
+                <Option type="bool" name="OrderByValue" value="true"/>
+                <Option type="QString" name="Value" value="label"/>
+              </Option>
+            </config>
+          </editWidget>
+        </field>
+        <field name="sec2_whs_comments">
+          <editWidget type="TextEdit">
+            <config>
+              <Option type="Map">
+                <Option type="bool" name="IsMultiline" value="true"/>
+              </Option>
+            </config>
+          </editWidget>
+        </field>
+        <field name="orig_purpose">
+          <editWidget type="ValueRelation">
+            <config>
+              <Option type="Map">
+                <Option type="bool" name="AllowMulti" value="false"/>
+                <Option type="bool" name="AllowNull" value="true"/>
+                <Option type="QString" name="Description" value="&quot;volunteer_identification_guide&quot;"/>
+                <Option type="QString" name="Key" value="code"/>
+                <Option type="QString" name="Layer" value="lut_structure_purpose"/>
+                <Option type="QString" name="LayerName" value="lut_structure_purpose"/>
+                <Option type="QString" name="LayerSource" value="./balala_pastoral_survey.gpkg|layername=lut_structure_purpose"/>
+                <Option type="QString" name="LayerProviderName" value="ogr"/>
+                <Option type="bool" name="OrderByValue" value="true"/>
+                <Option type="QString" name="Value" value="label"/>
+              </Option>
+            </config>
+          </editWidget>
+        </field>
+        <field name="later_use">
+          <editWidget type="ValueRelation">
+            <config>
+              <Option type="Map">
+                <Option type="bool" name="AllowMulti" value="false"/>
+                <Option type="bool" name="AllowNull" value="true"/>
+                <Option type="QString" name="Description" value="&quot;volunteer_identification_guide&quot;"/>
+                <Option type="QString" name="Key" value="code"/>
+                <Option type="QString" name="Layer" value="lut_structure_purpose"/>
+                <Option type="QString" name="LayerName" value="lut_structure_purpose"/>
+                <Option type="QString" name="LayerSource" value="./balala_pastoral_survey.gpkg|layername=lut_structure_purpose"/>
+                <Option type="QString" name="LayerProviderName" value="ogr"/>
+                <Option type="bool" name="OrderByValue" value="true"/>
+                <Option type="QString" name="Value" value="label"/>
+              </Option>
+            </config>
+          </editWidget>
+        </field>
+        <field name="storeys_count">
+          <editWidget type="TextEdit">
+            <config>
+              <Option type="Map">
+                <Option type="bool" name="IsMultiline" value="false"/>
+              </Option>
+            </config>
+          </editWidget>
+        </field>
+        <field name="plan_shape">
+          <editWidget type="TextEdit">
+            <config>
+              <Option type="Map">
+                <Option type="bool" name="IsMultiline" value="false"/>
+              </Option>
+            </config>
+          </editWidget>
+        </field>
+        <field name="facade_symmetry">
+          <editWidget type="TextEdit">
+            <config>
+              <Option type="Map">
+                <Option type="bool" name="IsMultiline" value="false"/>
+              </Option>
+            </config>
+          </editWidget>
+        </field>
+        <field name="facade_orient">
+          <editWidget type="TextEdit">
+            <config>
+              <Option type="Map">
+                <Option type="bool" name="IsMultiline" value="false"/>
+              </Option>
+            </config>
+          </editWidget>
+        </field>
+        <field name="length_m">
+          <editWidget type="TextEdit">
+            <config>
+              <Option type="Map">
+                <Option type="bool" name="IsMultiline" value="false"/>
+              </Option>
+            </config>
+          </editWidget>
+        </field>
+        <field name="width_m">
+          <editWidget type="TextEdit">
+            <config>
+              <Option type="Map">
+                <Option type="bool" name="IsMultiline" value="false"/>
+              </Option>
+            </config>
+          </editWidget>
+        </field>
+        <field name="sec3_layout_comments">
+          <editWidget type="TextEdit">
+            <config>
+              <Option type="Map">
+                <Option type="bool" name="IsMultiline" value="true"/>
+              </Option>
+            </config>
+          </editWidget>
+        </field>
+        <field name="footing_type">
+          <editWidget type="ValueRelation">
+            <config>
+              <Option type="Map">
+                <Option type="bool" name="AllowMulti" value="false"/>
+                <Option type="bool" name="AllowNull" value="true"/>
+                <Option type="QString" name="Description" value="&quot;volunteer_identification_guide&quot;"/>
+                <Option type="QString" name="Key" value="code"/>
+                <Option type="QString" name="Layer" value="lut_foundations_and_subfloor"/>
+                <Option type="QString" name="LayerName" value="lut_foundations_and_subfloor"/>
+                <Option type="QString" name="LayerSource" value="./balala_pastoral_survey.gpkg|layername=lut_foundations_and_subfloor"/>
+                <Option type="QString" name="LayerProviderName" value="ogr"/>
+                <Option type="bool" name="OrderByValue" value="true"/>
+                <Option type="QString" name="Value" value="label"/>
+              </Option>
+            </config>
+          </editWidget>
+        </field>
+        <field name="subfloor_timber">
+          <editWidget type="ValueRelation">
+            <config>
+              <Option type="Map">
+                <Option type="bool" name="AllowMulti" value="false"/>
+                <Option type="bool" name="AllowNull" value="true"/>
+                <Option type="QString" name="Description" value="&quot;volunteer_identification_guide&quot;"/>
+                <Option type="QString" name="Key" value="code"/>
+                <Option type="QString" name="Layer" value="lut_foundations_and_subfloor"/>
+                <Option type="QString" name="LayerName" value="lut_foundations_and_subfloor"/>
+                <Option type="QString" name="LayerSource" value="./balala_pastoral_survey.gpkg|layername=lut_foundations_and_subfloor"/>
+                <Option type="QString" name="LayerProviderName" value="ogr"/>
+                <Option type="bool" name="OrderByValue" value="true"/>
+                <Option type="QString" name="Value" value="label"/>
+              </Option>
+            </config>
+          </editWidget>
+        </field>
+        <field name="subfloor_deposit">
+          <editWidget type="ValueRelation">
+            <config>
+              <Option type="Map">
+                <Option type="bool" name="AllowMulti" value="false"/>
+                <Option type="bool" name="AllowNull" value="true"/>
+                <Option type="QString" name="Description" value="&quot;volunteer_identification_guide&quot;"/>
+                <Option type="QString" name="Key" value="code"/>
+                <Option type="QString" name="Layer" value="lut_foundations_and_subfloor"/>
+                <Option type="QString" name="LayerName" value="lut_foundations_and_subfloor"/>
+                <Option type="QString" name="LayerSource" value="./balala_pastoral_survey.gpkg|layername=lut_foundations_and_subfloor"/>
+                <Option type="QString" name="LayerProviderName" value="ogr"/>
+                <Option type="bool" name="OrderByValue" value="true"/>
+                <Option type="QString" name="Value" value="label"/>
+              </Option>
+            </config>
+          </editWidget>
+        </field>
+        <field name="sec4_found_comments">
+          <editWidget type="TextEdit">
+            <config>
+              <Option type="Map">
+                <Option type="bool" name="IsMultiline" value="true"/>
+              </Option>
+            </config>
+          </editWidget>
+        </field>
+        <field name="wall_system_prim">
+          <editWidget type="ValueRelation">
+            <config>
+              <Option type="Map">
+                <Option type="bool" name="AllowMulti" value="false"/>
+                <Option type="bool" name="AllowNull" value="true"/>
+                <Option type="QString" name="Description" value="&quot;volunteer_identification_guide&quot;"/>
+                <Option type="QString" name="Key" value="code"/>
+                <Option type="QString" name="Layer" value="lut_wall_systems_and_framing"/>
+                <Option type="QString" name="LayerName" value="lut_wall_systems_and_framing"/>
+                <Option type="QString" name="LayerSource" value="./balala_pastoral_survey.gpkg|layername=lut_wall_systems_and_framing"/>
+                <Option type="QString" name="LayerProviderName" value="ogr"/>
+                <Option type="bool" name="OrderByValue" value="true"/>
+                <Option type="QString" name="Value" value="label"/>
+              </Option>
+            </config>
+          </editWidget>
+        </field>
+        <field name="wall_system_sec">
+          <editWidget type="ValueRelation">
+            <config>
+              <Option type="Map">
+                <Option type="bool" name="AllowMulti" value="false"/>
+                <Option type="bool" name="AllowNull" value="true"/>
+                <Option type="QString" name="Description" value="&quot;volunteer_identification_guide&quot;"/>
+                <Option type="QString" name="Key" value="code"/>
+                <Option type="QString" name="Layer" value="lut_wall_systems_and_framing"/>
+                <Option type="QString" name="LayerName" value="lut_wall_systems_and_framing"/>
+                <Option type="QString" name="LayerSource" value="./balala_pastoral_survey.gpkg|layername=lut_wall_systems_and_framing"/>
+                <Option type="QString" name="LayerProviderName" value="ogr"/>
+                <Option type="bool" name="OrderByValue" value="true"/>
+                <Option type="QString" name="Value" value="label"/>
+              </Option>
+            </config>
+          </editWidget>
+        </field>
+        <field name="timber_joints">
+          <editWidget type="ValueRelation">
+            <config>
+              <Option type="Map">
+                <Option type="bool" name="AllowMulti" value="false"/>
+                <Option type="bool" name="AllowNull" value="true"/>
+                <Option type="QString" name="Description" value="&quot;volunteer_identification_guide&quot;"/>
+                <Option type="QString" name="Key" value="code"/>
+                <Option type="QString" name="Layer" value="lut_wall_systems_and_framing"/>
+                <Option type="QString" name="LayerName" value="lut_wall_systems_and_framing"/>
+                <Option type="QString" name="LayerSource" value="./balala_pastoral_survey.gpkg|layername=lut_wall_systems_and_framing"/>
+                <Option type="QString" name="LayerProviderName" value="ogr"/>
+                <Option type="bool" name="OrderByValue" value="true"/>
+                <Option type="QString" name="Value" value="label"/>
+              </Option>
+            </config>
+          </editWidget>
+        </field>
+        <field name="fasteners_nails">
+          <editWidget type="ValueRelation">
+            <config>
+              <Option type="Map">
+                <Option type="bool" name="AllowMulti" value="false"/>
+                <Option type="bool" name="AllowNull" value="true"/>
+                <Option type="QString" name="Description" value="&quot;volunteer_identification_guide&quot;"/>
+                <Option type="QString" name="Key" value="code"/>
+                <Option type="QString" name="Layer" value="lut_wall_systems_and_framing"/>
+                <Option type="QString" name="LayerName" value="lut_wall_systems_and_framing"/>
+                <Option type="QString" name="LayerSource" value="./balala_pastoral_survey.gpkg|layername=lut_wall_systems_and_framing"/>
+                <Option type="QString" name="LayerProviderName" value="ogr"/>
+                <Option type="bool" name="OrderByValue" value="true"/>
+                <Option type="QString" name="Value" value="label"/>
+              </Option>
+            </config>
+          </editWidget>
+        </field>
+        <field name="brick_mfg_type">
+          <editWidget type="ValueRelation">
+            <config>
+              <Option type="Map">
+                <Option type="bool" name="AllowMulti" value="false"/>
+                <Option type="bool" name="AllowNull" value="true"/>
+                <Option type="QString" name="Description" value="&quot;volunteer_identification_guide&quot;"/>
+                <Option type="QString" name="Key" value="code"/>
+                <Option type="QString" name="Layer" value="lut_masonry_and_cladding"/>
+                <Option type="QString" name="LayerName" value="lut_masonry_and_cladding"/>
+                <Option type="QString" name="LayerSource" value="./balala_pastoral_survey.gpkg|layername=lut_masonry_and_cladding"/>
+                <Option type="QString" name="LayerProviderName" value="ogr"/>
+                <Option type="bool" name="OrderByValue" value="true"/>
+                <Option type="QString" name="Value" value="label"/>
+              </Option>
+            </config>
+          </editWidget>
+        </field>
+        <field name="brick_bond">
+          <editWidget type="ValueRelation">
+            <config>
+              <Option type="Map">
+                <Option type="bool" name="AllowMulti" value="false"/>
+                <Option type="bool" name="AllowNull" value="true"/>
+                <Option type="QString" name="Description" value="&quot;volunteer_identification_guide&quot;"/>
+                <Option type="QString" name="Key" value="code"/>
+                <Option type="QString" name="Layer" value="lut_masonry_and_cladding"/>
+                <Option type="QString" name="LayerName" value="lut_masonry_and_cladding"/>
+                <Option type="QString" name="LayerSource" value="./balala_pastoral_survey.gpkg|layername=lut_masonry_and_cladding"/>
+                <Option type="QString" name="LayerProviderName" value="ogr"/>
+                <Option type="bool" name="OrderByValue" value="true"/>
+                <Option type="QString" name="Value" value="label"/>
+              </Option>
+            </config>
+          </editWidget>
+        </field>
+        <field name="stone_coursing">
+          <editWidget type="ValueRelation">
+            <config>
+              <Option type="Map">
+                <Option type="bool" name="AllowMulti" value="false"/>
+                <Option type="bool" name="AllowNull" value="true"/>
+                <Option type="QString" name="Description" value="&quot;volunteer_identification_guide&quot;"/>
+                <Option type="QString" name="Key" value="code"/>
+                <Option type="QString" name="Layer" value="lut_masonry_and_cladding"/>
+                <Option type="QString" name="LayerName" value="lut_masonry_and_cladding"/>
+                <Option type="QString" name="LayerSource" value="./balala_pastoral_survey.gpkg|layername=lut_masonry_and_cladding"/>
+                <Option type="QString" name="LayerProviderName" value="ogr"/>
+                <Option type="bool" name="OrderByValue" value="true"/>
+                <Option type="QString" name="Value" value="label"/>
+              </Option>
+            </config>
+          </editWidget>
+        </field>
+        <field name="mortar_type">
+          <editWidget type="ValueRelation">
+            <config>
+              <Option type="Map">
+                <Option type="bool" name="AllowMulti" value="false"/>
+                <Option type="bool" name="AllowNull" value="true"/>
+                <Option type="QString" name="Description" value="&quot;volunteer_identification_guide&quot;"/>
+                <Option type="QString" name="Key" value="code"/>
+                <Option type="QString" name="Layer" value="lut_masonry_and_cladding"/>
+                <Option type="QString" name="LayerName" value="lut_masonry_and_cladding"/>
+                <Option type="QString" name="LayerSource" value="./balala_pastoral_survey.gpkg|layername=lut_masonry_and_cladding"/>
+                <Option type="QString" name="LayerProviderName" value="ogr"/>
+                <Option type="bool" name="OrderByValue" value="true"/>
+                <Option type="QString" name="Value" value="label"/>
+              </Option>
+            </config>
+          </editWidget>
+        </field>
+        <field name="quoins_type">
+          <editWidget type="ValueRelation">
+            <config>
+              <Option type="Map">
+                <Option type="bool" name="AllowMulti" value="false"/>
+                <Option type="bool" name="AllowNull" value="true"/>
+                <Option type="QString" name="Description" value="&quot;volunteer_identification_guide&quot;"/>
+                <Option type="QString" name="Key" value="code"/>
+                <Option type="QString" name="Layer" value="lut_masonry_and_cladding"/>
+                <Option type="QString" name="LayerName" value="lut_masonry_and_cladding"/>
+                <Option type="QString" name="LayerSource" value="./balala_pastoral_survey.gpkg|layername=lut_masonry_and_cladding"/>
+                <Option type="QString" name="LayerProviderName" value="ogr"/>
+                <Option type="bool" name="OrderByValue" value="true"/>
+                <Option type="QString" name="Value" value="label"/>
+              </Option>
+            </config>
+          </editWidget>
+        </field>
+        <field name="ext_cladding_prim">
+          <editWidget type="ValueRelation">
+            <config>
+              <Option type="Map">
+                <Option type="bool" name="AllowMulti" value="false"/>
+                <Option type="bool" name="AllowNull" value="true"/>
+                <Option type="QString" name="Description" value="&quot;volunteer_identification_guide&quot;"/>
+                <Option type="QString" name="Key" value="code"/>
+                <Option type="QString" name="Layer" value="lut_masonry_and_cladding"/>
+                <Option type="QString" name="LayerName" value="lut_masonry_and_cladding"/>
+                <Option type="QString" name="LayerSource" value="./balala_pastoral_survey.gpkg|layername=lut_masonry_and_cladding"/>
+                <Option type="QString" name="LayerProviderName" value="ogr"/>
+                <Option type="bool" name="OrderByValue" value="true"/>
+                <Option type="QString" name="Value" value="label"/>
+              </Option>
+            </config>
+          </editWidget>
+        </field>
+        <field name="ext_cladding_sec">
+          <editWidget type="ValueRelation">
+            <config>
+              <Option type="Map">
+                <Option type="bool" name="AllowMulti" value="false"/>
+                <Option type="bool" name="AllowNull" value="true"/>
+                <Option type="QString" name="Description" value="&quot;volunteer_identification_guide&quot;"/>
+                <Option type="QString" name="Key" value="code"/>
+                <Option type="QString" name="Layer" value="lut_masonry_and_cladding"/>
+                <Option type="QString" name="LayerName" value="lut_masonry_and_cladding"/>
+                <Option type="QString" name="LayerSource" value="./balala_pastoral_survey.gpkg|layername=lut_masonry_and_cladding"/>
+                <Option type="QString" name="LayerProviderName" value="ogr"/>
+                <Option type="bool" name="OrderByValue" value="true"/>
+                <Option type="QString" name="Value" value="label"/>
+              </Option>
+            </config>
+          </editWidget>
+        </field>
+        <field name="ext_wall_finish">
+          <editWidget type="ValueRelation">
+            <config>
+              <Option type="Map">
+                <Option type="bool" name="AllowMulti" value="false"/>
+                <Option type="bool" name="AllowNull" value="true"/>
+                <Option type="QString" name="Description" value="&quot;volunteer_identification_guide&quot;"/>
+                <Option type="QString" name="Key" value="code"/>
+                <Option type="QString" name="Layer" value="lut_masonry_and_cladding"/>
+                <Option type="QString" name="LayerName" value="lut_masonry_and_cladding"/>
+                <Option type="QString" name="LayerSource" value="./balala_pastoral_survey.gpkg|layername=lut_masonry_and_cladding"/>
+                <Option type="QString" name="LayerProviderName" value="ogr"/>
+                <Option type="bool" name="OrderByValue" value="true"/>
+                <Option type="QString" name="Value" value="label"/>
+              </Option>
+            </config>
+          </editWidget>
+        </field>
+        <field name="sec5_wall_comments">
+          <editWidget type="TextEdit">
+            <config>
+              <Option type="Map">
+                <Option type="bool" name="IsMultiline" value="true"/>
+              </Option>
+            </config>
+          </editWidget>
+        </field>
+        <field name="roof_form">
+          <editWidget type="ValueRelation">
+            <config>
+              <Option type="Map">
+                <Option type="bool" name="AllowMulti" value="false"/>
+                <Option type="bool" name="AllowNull" value="true"/>
+                <Option type="QString" name="Description" value="&quot;volunteer_identification_guide&quot;"/>
+                <Option type="QString" name="Key" value="code"/>
+                <Option type="QString" name="Layer" value="lut_roof_verandah_chimney"/>
+                <Option type="QString" name="LayerName" value="lut_roof_verandah_chimney"/>
+                <Option type="QString" name="LayerSource" value="./balala_pastoral_survey.gpkg|layername=lut_roof_verandah_chimney"/>
+                <Option type="QString" name="LayerProviderName" value="ogr"/>
+                <Option type="bool" name="OrderByValue" value="true"/>
+                <Option type="QString" name="Value" value="label"/>
+              </Option>
+            </config>
+          </editWidget>
+        </field>
+        <field name="roof_cladding_cur">
+          <editWidget type="ValueRelation">
+            <config>
+              <Option type="Map">
+                <Option type="bool" name="AllowMulti" value="false"/>
+                <Option type="bool" name="AllowNull" value="true"/>
+                <Option type="QString" name="Description" value="&quot;volunteer_identification_guide&quot;"/>
+                <Option type="QString" name="Key" value="code"/>
+                <Option type="QString" name="Layer" value="lut_roof_verandah_chimney"/>
+                <Option type="QString" name="LayerName" value="lut_roof_verandah_chimney"/>
+                <Option type="QString" name="LayerSource" value="./balala_pastoral_survey.gpkg|layername=lut_roof_verandah_chimney"/>
+                <Option type="QString" name="LayerProviderName" value="ogr"/>
+                <Option type="bool" name="OrderByValue" value="true"/>
+                <Option type="QString" name="Value" value="label"/>
+              </Option>
+            </config>
+          </editWidget>
+        </field>
+        <field name="roof_early_clues">
+          <editWidget type="ValueRelation">
+            <config>
+              <Option type="Map">
+                <Option type="bool" name="AllowMulti" value="false"/>
+                <Option type="bool" name="AllowNull" value="true"/>
+                <Option type="QString" name="Description" value="&quot;volunteer_identification_guide&quot;"/>
+                <Option type="QString" name="Key" value="code"/>
+                <Option type="QString" name="Layer" value="lut_roof_verandah_chimney"/>
+                <Option type="QString" name="LayerName" value="lut_roof_verandah_chimney"/>
+                <Option type="QString" name="LayerSource" value="./balala_pastoral_survey.gpkg|layername=lut_roof_verandah_chimney"/>
+                <Option type="QString" name="LayerProviderName" value="ogr"/>
+                <Option type="bool" name="OrderByValue" value="true"/>
+                <Option type="QString" name="Value" value="label"/>
+              </Option>
+            </config>
+          </editWidget>
+        </field>
+        <field name="verandah_loc">
+          <editWidget type="ValueRelation">
+            <config>
+              <Option type="Map">
+                <Option type="bool" name="AllowMulti" value="false"/>
+                <Option type="bool" name="AllowNull" value="true"/>
+                <Option type="QString" name="Description" value="&quot;volunteer_identification_guide&quot;"/>
+                <Option type="QString" name="Key" value="code"/>
+                <Option type="QString" name="Layer" value="lut_roof_verandah_chimney"/>
+                <Option type="QString" name="LayerName" value="lut_roof_verandah_chimney"/>
+                <Option type="QString" name="LayerSource" value="./balala_pastoral_survey.gpkg|layername=lut_roof_verandah_chimney"/>
+                <Option type="QString" name="LayerProviderName" value="ogr"/>
+                <Option type="bool" name="OrderByValue" value="true"/>
+                <Option type="QString" name="Value" value="label"/>
+              </Option>
+            </config>
+          </editWidget>
+        </field>
+        <field name="verandah_profile">
+          <editWidget type="ValueRelation">
+            <config>
+              <Option type="Map">
+                <Option type="bool" name="AllowMulti" value="false"/>
+                <Option type="bool" name="AllowNull" value="true"/>
+                <Option type="QString" name="Description" value="&quot;volunteer_identification_guide&quot;"/>
+                <Option type="QString" name="Key" value="code"/>
+                <Option type="QString" name="Layer" value="lut_roof_verandah_chimney"/>
+                <Option type="QString" name="LayerName" value="lut_roof_verandah_chimney"/>
+                <Option type="QString" name="LayerSource" value="./balala_pastoral_survey.gpkg|layername=lut_roof_verandah_chimney"/>
+                <Option type="QString" name="LayerProviderName" value="ogr"/>
+                <Option type="bool" name="OrderByValue" value="true"/>
+                <Option type="QString" name="Value" value="label"/>
+              </Option>
+            </config>
+          </editWidget>
+        </field>
+        <field name="verandah_posts">
+          <editWidget type="ValueRelation">
+            <config>
+              <Option type="Map">
+                <Option type="bool" name="AllowMulti" value="false"/>
+                <Option type="bool" name="AllowNull" value="true"/>
+                <Option type="QString" name="Description" value="&quot;volunteer_identification_guide&quot;"/>
+                <Option type="QString" name="Key" value="code"/>
+                <Option type="QString" name="Layer" value="lut_roof_verandah_chimney"/>
+                <Option type="QString" name="LayerName" value="lut_roof_verandah_chimney"/>
+                <Option type="QString" name="LayerSource" value="./balala_pastoral_survey.gpkg|layername=lut_roof_verandah_chimney"/>
+                <Option type="QString" name="LayerProviderName" value="ogr"/>
+                <Option type="bool" name="OrderByValue" value="true"/>
+                <Option type="QString" name="Value" value="label"/>
+              </Option>
+            </config>
+          </editWidget>
+        </field>
+        <field name="verandah_status">
+          <editWidget type="ValueRelation">
+            <config>
+              <Option type="Map">
+                <Option type="bool" name="AllowMulti" value="false"/>
+                <Option type="bool" name="AllowNull" value="true"/>
+                <Option type="QString" name="Description" value="&quot;volunteer_identification_guide&quot;"/>
+                <Option type="QString" name="Key" value="code"/>
+                <Option type="QString" name="Layer" value="lut_roof_verandah_chimney"/>
+                <Option type="QString" name="LayerName" value="lut_roof_verandah_chimney"/>
+                <Option type="QString" name="LayerSource" value="./balala_pastoral_survey.gpkg|layername=lut_roof_verandah_chimney"/>
+                <Option type="QString" name="LayerProviderName" value="ogr"/>
+                <Option type="bool" name="OrderByValue" value="true"/>
+                <Option type="QString" name="Value" value="label"/>
+              </Option>
+            </config>
+          </editWidget>
+        </field>
+        <field name="chimney_count">
+          <editWidget type="TextEdit">
+            <config>
+              <Option type="Map">
+                <Option type="bool" name="IsMultiline" value="false"/>
+              </Option>
+            </config>
+          </editWidget>
+        </field>
+        <field name="chimney_material">
+          <editWidget type="ValueRelation">
+            <config>
+              <Option type="Map">
+                <Option type="bool" name="AllowMulti" value="false"/>
+                <Option type="bool" name="AllowNull" value="true"/>
+                <Option type="QString" name="Description" value="&quot;volunteer_identification_guide&quot;"/>
+                <Option type="QString" name="Key" value="code"/>
+                <Option type="QString" name="Layer" value="lut_roof_verandah_chimney"/>
+                <Option type="QString" name="LayerName" value="lut_roof_verandah_chimney"/>
+                <Option type="QString" name="LayerSource" value="./balala_pastoral_survey.gpkg|layername=lut_roof_verandah_chimney"/>
+                <Option type="QString" name="LayerProviderName" value="ogr"/>
+                <Option type="bool" name="OrderByValue" value="true"/>
+                <Option type="QString" name="Value" value="label"/>
+              </Option>
+            </config>
+          </editWidget>
+        </field>
+        <field name="chimney_location">
+          <editWidget type="TextEdit">
+            <config>
+              <Option type="Map">
+                <Option type="bool" name="IsMultiline" value="false"/>
+              </Option>
+            </config>
+          </editWidget>
+        </field>
+        <field name="sec6_roof_comments">
+          <editWidget type="TextEdit">
+            <config>
+              <Option type="Map">
+                <Option type="bool" name="IsMultiline" value="true"/>
+              </Option>
+            </config>
+          </editWidget>
+        </field>
+        <field name="window_type_prim">
+          <editWidget type="ValueRelation">
+            <config>
+              <Option type="Map">
+                <Option type="bool" name="AllowMulti" value="false"/>
+                <Option type="bool" name="AllowNull" value="true"/>
+                <Option type="QString" name="Description" value="&quot;volunteer_identification_guide&quot;"/>
+                <Option type="QString" name="Key" value="code"/>
+                <Option type="QString" name="Layer" value="lut_openings_and_hardware"/>
+                <Option type="QString" name="LayerName" value="lut_openings_and_hardware"/>
+                <Option type="QString" name="LayerSource" value="./balala_pastoral_survey.gpkg|layername=lut_openings_and_hardware"/>
+                <Option type="QString" name="LayerProviderName" value="ogr"/>
+                <Option type="bool" name="OrderByValue" value="true"/>
+                <Option type="QString" name="Value" value="label"/>
+              </Option>
+            </config>
+          </editWidget>
+        </field>
+        <field name="window_pane_cfg">
+          <editWidget type="ValueRelation">
+            <config>
+              <Option type="Map">
+                <Option type="bool" name="AllowMulti" value="false"/>
+                <Option type="bool" name="AllowNull" value="true"/>
+                <Option type="QString" name="Description" value="&quot;volunteer_identification_guide&quot;"/>
+                <Option type="QString" name="Key" value="code"/>
+                <Option type="QString" name="Layer" value="lut_openings_and_hardware"/>
+                <Option type="QString" name="LayerName" value="lut_openings_and_hardware"/>
+                <Option type="QString" name="LayerSource" value="./balala_pastoral_survey.gpkg|layername=lut_openings_and_hardware"/>
+                <Option type="QString" name="LayerProviderName" value="ogr"/>
+                <Option type="bool" name="OrderByValue" value="true"/>
+                <Option type="QString" name="Value" value="label"/>
+              </Option>
+            </config>
+          </editWidget>
+        </field>
+        <field name="door_type_prim">
+          <editWidget type="ValueRelation">
+            <config>
+              <Option type="Map">
+                <Option type="bool" name="AllowMulti" value="false"/>
+                <Option type="bool" name="AllowNull" value="true"/>
+                <Option type="QString" name="Description" value="&quot;volunteer_identification_guide&quot;"/>
+                <Option type="QString" name="Key" value="code"/>
+                <Option type="QString" name="Layer" value="lut_openings_and_hardware"/>
+                <Option type="QString" name="LayerName" value="lut_openings_and_hardware"/>
+                <Option type="QString" name="LayerSource" value="./balala_pastoral_survey.gpkg|layername=lut_openings_and_hardware"/>
+                <Option type="QString" name="LayerProviderName" value="ogr"/>
+                <Option type="bool" name="OrderByValue" value="true"/>
+                <Option type="QString" name="Value" value="label"/>
+              </Option>
+            </config>
+          </editWidget>
+        </field>
+        <field name="door_hardware">
+          <editWidget type="ValueRelation">
+            <config>
+              <Option type="Map">
+                <Option type="bool" name="AllowMulti" value="false"/>
+                <Option type="bool" name="AllowNull" value="true"/>
+                <Option type="QString" name="Description" value="&quot;volunteer_identification_guide&quot;"/>
+                <Option type="QString" name="Key" value="code"/>
+                <Option type="QString" name="Layer" value="lut_openings_and_hardware"/>
+                <Option type="QString" name="LayerName" value="lut_openings_and_hardware"/>
+                <Option type="QString" name="LayerSource" value="./balala_pastoral_survey.gpkg|layername=lut_openings_and_hardware"/>
+                <Option type="QString" name="LayerProviderName" value="ogr"/>
+                <Option type="bool" name="OrderByValue" value="true"/>
+                <Option type="QString" name="Value" value="label"/>
+              </Option>
+            </config>
+          </editWidget>
+        </field>
+        <field name="sec7_openings_comments">
+          <editWidget type="TextEdit">
+            <config>
+              <Option type="Map">
+                <Option type="bool" name="IsMultiline" value="true"/>
+              </Option>
+            </config>
+          </editWidget>
+        </field>
+        <field name="sec8_phasing_comments">
+          <editWidget type="TextEdit">
+            <config>
+              <Option type="Map">
+                <Option type="bool" name="IsMultiline" value="true"/>
+              </Option>
+            </config>
+          </editWidget>
+        </field>
+        <field name="fabric_intactness">
+          <editWidget type="ValueRelation">
+            <config>
+              <Option type="Map">
+                <Option type="bool" name="AllowMulti" value="false"/>
+                <Option type="bool" name="AllowNull" value="true"/>
+                <Option type="QString" name="Description" value="&quot;volunteer_identification_guide&quot;"/>
+                <Option type="QString" name="Key" value="code"/>
+                <Option type="QString" name="Layer" value="lut_phasing_whs_and_condition"/>
+                <Option type="QString" name="LayerName" value="lut_phasing_whs_and_condition"/>
+                <Option type="QString" name="LayerSource" value="./balala_pastoral_survey.gpkg|layername=lut_phasing_whs_and_condition"/>
+                <Option type="QString" name="LayerProviderName" value="ogr"/>
+                <Option type="bool" name="OrderByValue" value="true"/>
+                <Option type="QString" name="Value" value="label"/>
+              </Option>
+            </config>
+          </editWidget>
+        </field>
+        <field name="assoc_refuse_dump">
+          <editWidget type="CheckBox">
+            <config>
+              <Option type="Map">
+                <Option type="QString" name="CheckedState" value="1"/>
+                <Option type="QString" name="UncheckedState" value="0"/>
+              </Option>
+            </config>
+          </editWidget>
+        </field>
+        <field name="assoc_privy_cess">
+          <editWidget type="CheckBox">
+            <config>
+              <Option type="Map">
+                <Option type="QString" name="CheckedState" value="1"/>
+                <Option type="QString" name="UncheckedState" value="0"/>
+              </Option>
+            </config>
+          </editWidget>
+        </field>
+        <field name="assoc_well_cistern">
+          <editWidget type="CheckBox">
+            <config>
+              <Option type="Map">
+                <Option type="QString" name="CheckedState" value="1"/>
+                <Option type="QString" name="UncheckedState" value="0"/>
+              </Option>
+            </config>
+          </editWidget>
+        </field>
+        <field name="assoc_garden_lines">
+          <editWidget type="CheckBox">
+            <config>
+              <Option type="Map">
+                <Option type="QString" name="CheckedState" value="1"/>
+                <Option type="QString" name="UncheckedState" value="0"/>
+              </Option>
+            </config>
+          </editWidget>
+        </field>
+        <field name="assoc_fence_lines">
+          <editWidget type="CheckBox">
+            <config>
+              <Option type="Map">
+                <Option type="QString" name="CheckedState" value="1"/>
+                <Option type="QString" name="UncheckedState" value="0"/>
+              </Option>
+            </config>
+          </editWidget>
+        </field>
+        <field name="recorder_summary">
+          <editWidget type="TextEdit">
+            <config>
+              <Option type="Map">
+                <Option type="bool" name="IsMultiline" value="true"/>
+              </Option>
+            </config>
+          </editWidget>
+        </field>
+        <field name="sec9_synthesis_comments">
+          <editWidget type="TextEdit">
+            <config>
+              <Option type="Map">
+                <Option type="bool" name="IsMultiline" value="true"/>
+              </Option>
+            </config>
+          </editWidget>
+        </field>
+        <field name="primary_facade_photo_path">
+          <editWidget type="ExternalResource">
+            <config>
+              <Option type="Map">
+                <Option type="int" name="DocumentViewer" value="1"/>
+                <Option type="int" name="DocumentViewerHeight" value="240"/>
+                <Option type="int" name="DocumentViewerWidth" value="0"/>
+                <Option type="bool" name="FileWidget" value="true"/>
+                <Option type="bool" name="FileWidgetButton" value="true"/>
+                <Option type="int" name="RelativeStorage" value="1"/>
+                <Option type="QString" name="RootPath" value="./media/photos"/>
+                <Option type="int" name="StorageMode" value="0"/>
+              </Option>
+            </config>
+          </editWidget>
+        </field>
+        <field name="site_plan_scan_path">
+          <editWidget type="ExternalResource">
+            <config>
+              <Option type="Map">
+                <Option type="int" name="DocumentViewer" value="1"/>
+                <Option type="int" name="DocumentViewerHeight" value="240"/>
+                <Option type="int" name="DocumentViewerWidth" value="0"/>
+                <Option type="bool" name="FileWidget" value="true"/>
+                <Option type="bool" name="FileWidgetButton" value="true"/>
+                <Option type="int" name="RelativeStorage" value="1"/>
+                <Option type="QString" name="RootPath" value="./media/plans"/>
+                <Option type="int" name="StorageMode" value="0"/>
+              </Option>
+            </config>
+          </editWidget>
+        </field>
+        <field name="floor_plan_scan_path">
+          <editWidget type="ExternalResource">
+            <config>
+              <Option type="Map">
+                <Option type="int" name="DocumentViewer" value="1"/>
+                <Option type="int" name="DocumentViewerHeight" value="240"/>
+                <Option type="int" name="DocumentViewerWidth" value="0"/>
+                <Option type="bool" name="FileWidget" value="true"/>
+                <Option type="bool" name="FileWidgetButton" value="true"/>
+                <Option type="int" name="RelativeStorage" value="1"/>
+                <Option type="QString" name="RootPath" value="./media/plans"/>
+                <Option type="int" name="StorageMode" value="0"/>
+              </Option>
+            </config>
+          </editWidget>
+        </field>
+        <field name="paper_form1_scan_path">
+          <editWidget type="ExternalResource">
+            <config>
+              <Option type="Map">
+                <Option type="int" name="DocumentViewer" value="1"/>
+                <Option type="int" name="DocumentViewerHeight" value="240"/>
+                <Option type="int" name="DocumentViewerWidth" value="0"/>
+                <Option type="bool" name="FileWidget" value="true"/>
+                <Option type="bool" name="FileWidgetButton" value="true"/>
+                <Option type="int" name="RelativeStorage" value="1"/>
+                <Option type="QString" name="RootPath" value="./media/form_scans"/>
+                <Option type="int" name="StorageMode" value="0"/>
+              </Option>
+            </config>
+          </editWidget>
+        </field>
+      </fieldConfiguration>
+      <editFormConfig editorlayout="tablayout">
+        <attributeEditorForm>
+          <attributeEditorContainer name="Tab 1: 1. ID &amp; WHS Check" groupBox="0" columnCount="1">
+            <attributeEditorContainer name="Header Metadata &amp; Geographic Context" groupBox="1" columnCount="2">
+              <attributeEditorField name="structure_id"/>
+              <attributeEditorField name="structure_name"/>
+              <attributeEditorField name="property_name"/>
+              <attributeEditorField name="recording_date"/>
+              <attributeEditorField name="recorders"/>
+              <attributeEditorField name="gnss_point_id"/>
+              <attributeEditorField name="gnss_poly_id"/>
+              <attributeEditorField name="site_plan_sheet_no"/>
+              <attributeEditorField name="floor_plan_sheet_no"/>
+              <attributeEditorField name="camera_make_number"/>
+              <attributeEditorField name="photo_frame_range"/>
+              <attributeEditorField name="overall_condition"/>
+              <attributeEditorField name="sec1_comments"/>
+            </attributeEditorContainer>
+            <attributeEditorContainer name="Volunteer Safety &amp; WHS Pre-Entry Check (Check Before Entry)" groupBox="1" columnCount="2">
+              <attributeEditorField name="whs_asbestos"/>
+              <attributeEditorField name="whs_lead_paint"/>
+              <attributeEditorField name="whs_unstable_struc"/>
+              <attributeEditorField name="whs_chemical_haz"/>
+              <attributeEditorField name="whs_biological_haz"/>
+              <attributeEditorField name="whs_entry_status"/>
+              <attributeEditorField name="sec2_whs_comments"/>
+            </attributeEditorContainer>
+          </attributeEditorContainer>
+          <attributeEditorContainer name="Tab 2: 2–3. Layout &amp; Sub-Floor" groupBox="0" columnCount="1">
+            <attributeEditorContainer name="Function, Scale &amp; Footprint Layout" groupBox="1" columnCount="2">
+              <attributeEditorField name="orig_purpose"/>
+              <attributeEditorField name="later_use"/>
+              <attributeEditorField name="storeys_count"/>
+              <attributeEditorField name="plan_shape"/>
+              <attributeEditorField name="facade_symmetry"/>
+              <attributeEditorField name="facade_orient"/>
+              <attributeEditorField name="length_m"/>
+              <attributeEditorField name="width_m"/>
+              <attributeEditorField name="sec3_layout_comments"/>
+            </attributeEditorContainer>
+            <attributeEditorContainer name="Foundations &amp; Sub-Floor Space" groupBox="1" columnCount="2">
+              <attributeEditorField name="footing_type"/>
+              <attributeEditorField name="subfloor_timber"/>
+              <attributeEditorField name="subfloor_deposit"/>
+              <attributeEditorField name="sec4_found_comments"/>
+            </attributeEditorContainer>
+          </attributeEditorContainer>
+          <attributeEditorContainer name="Tab 3: 4. Walls &amp; Framing" groupBox="0" columnCount="1">
+            <attributeEditorContainer name="Wall Framing Systems, Joints &amp; Nails" groupBox="1" columnCount="2">
+              <attributeEditorField name="wall_system_prim"/>
+              <attributeEditorField name="wall_system_sec"/>
+              <attributeEditorField name="timber_joints"/>
+              <attributeEditorField name="fasteners_nails"/>
+            </attributeEditorContainer>
+            <attributeEditorContainer name="Masonry, Cladding &amp; External Finishes" groupBox="1" columnCount="2">
+              <attributeEditorField name="brick_mfg_type"/>
+              <attributeEditorField name="brick_bond"/>
+              <attributeEditorField name="stone_coursing"/>
+              <attributeEditorField name="mortar_type"/>
+              <attributeEditorField name="quoins_type"/>
+              <attributeEditorField name="ext_cladding_prim"/>
+              <attributeEditorField name="ext_cladding_sec"/>
+              <attributeEditorField name="ext_wall_finish"/>
+              <attributeEditorField name="sec5_wall_comments"/>
+            </attributeEditorContainer>
+          </attributeEditorContainer>
+          <attributeEditorContainer name="Tab 4: 5–6. Roof &amp; Openings" groupBox="0" columnCount="1">
+            <attributeEditorContainer name="Roof Form, Verandahs &amp; Chimneys" groupBox="1" columnCount="2">
+              <attributeEditorField name="roof_form"/>
+              <attributeEditorField name="roof_cladding_cur"/>
+              <attributeEditorField name="roof_early_clues"/>
+              <attributeEditorField name="verandah_loc"/>
+              <attributeEditorField name="verandah_profile"/>
+              <attributeEditorField name="verandah_posts"/>
+              <attributeEditorField name="verandah_status"/>
+              <attributeEditorField name="chimney_count"/>
+              <attributeEditorField name="chimney_material"/>
+              <attributeEditorField name="chimney_location"/>
+              <attributeEditorField name="sec6_roof_comments"/>
+            </attributeEditorContainer>
+            <attributeEditorContainer name="External Openings &amp; Hardware" groupBox="1" columnCount="2">
+              <attributeEditorField name="window_type_prim"/>
+              <attributeEditorField name="window_pane_cfg"/>
+              <attributeEditorField name="door_type_prim"/>
+              <attributeEditorField name="door_hardware"/>
+              <attributeEditorField name="sec7_openings_comments"/>
+            </attributeEditorContainer>
+          </attributeEditorContainer>
+          <attributeEditorContainer name="Tab 5: 7–9. Phasing, Marks &amp; Synthesis" groupBox="0" columnCount="1">
+            <attributeEditorContainer name="Phasing &amp; Relative Chronology (Miles Lewis Building Developments)" groupBox="1" columnCount="1">
+              <attributeEditorField name="sec8_phasing_comments"/>
+              <attributeEditorRelation name="rel_structure_stages" relation="rel_structure_stages" showLabel="1" forceSuppressFormPopup="0">
+                <editor_configuration type="Map">
+                  <Option type="QString" name="buttons" value="AllButtons"/>
+                </editor_configuration>
+              </attributeEditorRelation>
+            </attributeEditorContainer>
+            <attributeEditorContainer name="Diagnostic Brands, Stamps &amp; Inscriptions" groupBox="1" columnCount="1">
+              <attributeEditorRelation name="rel_structure_marks" relation="rel_structure_marks" showLabel="1" forceSuppressFormPopup="0">
+                <editor_configuration type="Map">
+                  <Option type="QString" name="buttons" value="AllButtons"/>
+                </editor_configuration>
+              </attributeEditorRelation>
+            </attributeEditorContainer>
+            <attributeEditorContainer name="General Synthesis &amp; Archaeological Integrity" groupBox="1" columnCount="2">
+              <attributeEditorField name="fabric_intactness"/>
+              <attributeEditorField name="assoc_refuse_dump"/>
+              <attributeEditorField name="assoc_privy_cess"/>
+              <attributeEditorField name="assoc_well_cistern"/>
+              <attributeEditorField name="assoc_garden_lines"/>
+              <attributeEditorField name="assoc_fence_lines"/>
+              <attributeEditorField name="recorder_summary"/>
+              <attributeEditorField name="sec9_synthesis_comments"/>
+            </attributeEditorContainer>
+          </attributeEditorContainer>
+          <attributeEditorContainer name="Tab 6: Internal Rooms (Form 2)" groupBox="0" columnCount="1">
+            <attributeEditorRelation name="rel_structure_rooms" relation="rel_structure_rooms" showLabel="1" forceSuppressFormPopup="0">
+              <editor_configuration type="Map">
+                <Option type="QString" name="buttons" value="AllButtons"/>
+              </editor_configuration>
+            </attributeEditorRelation>
+          </attributeEditorContainer>
+          <attributeEditorContainer name="Tab 7: Photos, Plans &amp; Scans" groupBox="0" columnCount="1">
+            <attributeEditorContainer name="Direct Attached Photographs, Plans &amp; Scans" groupBox="1" columnCount="2">
+              <attributeEditorField name="primary_facade_photo_path"/>
+              <attributeEditorField name="site_plan_scan_path"/>
+              <attributeEditorField name="floor_plan_scan_path"/>
+              <attributeEditorField name="paper_form1_scan_path"/>
+            </attributeEditorContainer>
+            <attributeEditorContainer name="All Attached Media Files (Photographs, Plans, Scans)" groupBox="1" columnCount="1">
+              <attributeEditorRelation name="rel_structure_media" relation="rel_structure_media" showLabel="1" forceSuppressFormPopup="0">
+                <editor_configuration type="Map">
+                  <Option type="QString" name="buttons" value="AllButtons"/>
+                </editor_configuration>
+              </attributeEditorRelation>
+            </attributeEditorContainer>
+          </attributeEditorContainer>
+        </attributeEditorForm>
+      </editFormConfig>
+    </maplayer>
+    <maplayer type="vector" autoRefreshTime="0" geometry="Point" refreshOnNotifyMessage="" refreshOnNotifyEnabled="0">
+      <id>structures_points_layer</id>
+      <datasource>./balala_pastoral_survey.gpkg|layername=structures_points</datasource>
+      <layername>structures_points</layername>
+      <provider encoding="UTF-8">ogr</provider>
+      <srs>
+        <spatialrefsys>
+          <authid>EPSG:7856</authid>
+        </spatialrefsys>
+      </srs>
+    </maplayer>
+    <maplayer type="vector" autoRefreshTime="0" geometry="No geometry" refreshOnNotifyMessage="" refreshOnNotifyEnabled="0">
+      <id>rooms_spaces_layer</id>
+      <datasource>./balala_pastoral_survey.gpkg|layername=rooms_spaces</datasource>
+      <layername>rooms_spaces</layername>
+      <provider encoding="UTF-8">ogr</provider>
+      <srs>
+        <spatialrefsys>
+          <authid/>
+        </spatialrefsys>
+      </srs>
+      <aliases>
+        <alias field="room_id" name="Room ID (PK)" index="0"/>
+        <alias field="structure_id" name="Structure ID (FK)" index="0"/>
+        <alias field="room_name_or_letter" name="Room Name / Letter" index="0"/>
+        <alias field="inferred_use" name="Inferred Original Room Function" index="0"/>
+        <alias field="later_current_use" name="Later / Current Use" index="0"/>
+        <alias field="recording_date" name="Recording Date" index="0"/>
+        <alias field="recorders" name="Recorder(s)" index="0"/>
+        <alias field="gnss_point_poly_id" name="GNSS Point / Poly ID" index="0"/>
+        <alias field="floor_plan_sheet_no" name="Floor Plan Sheet No." index="0"/>
+        <alias field="camera_make_number" name="Camera Make &amp; No." index="0"/>
+        <alias field="photo_frame_range" name="Photo Frame Nos." index="0"/>
+        <alias field="length_m" name="Internal Length (m)" index="0"/>
+        <alias field="width_m" name="Internal Width (m)" index="0"/>
+        <alias field="ceiling_height_m" name="Ceiling / Plate Height (m)" index="0"/>
+        <alias field="floor_area_sqm" name="Floor Area (sq m)" index="0"/>
+        <alias field="sec1_room_comments" name="Section 1 Room Context Notes" index="0"/>
+        <alias field="floor_material" name="Floor Material &amp; Substrate" index="0"/>
+        <alias field="board_width_mm" name="Floorboard Width (mm)" index="0"/>
+        <alias field="board_thickness_mm" name="Floorboard Thickness (mm)" index="0"/>
+        <alias field="floor_sawing_marks" name="Floorboard Sawing Marks" index="0"/>
+        <alias field="subfloor_access_status" name="Sub-floor Access &amp; Clearance" index="0"/>
+        <alias field="floor_condition" name="Floor Condition" index="0"/>
+        <alias field="floor_comments" name="Floor &amp; Probing Comments" index="0"/>
+        <alias field="wall_structure" name="Wall Structure / Substrate" index="0"/>
+        <alias field="wall_lining" name="Internal Wall Lining &amp; Finish" index="0"/>
+        <alias field="wall_condition" name="Wall Condition" index="0"/>
+        <alias field="wall_comments" name="Wall &amp; Wallpaper Comments" index="0"/>
+        <alias field="ceiling_form" name="Ceiling Form &amp; Material" index="0"/>
+        <alias field="ceiling_cornice" name="Cornice &amp; Ceiling Details" index="0"/>
+        <alias field="ceiling_condition" name="Ceiling Condition" index="0"/>
+        <alias field="ceiling_comments" name="Ceiling &amp; Roof Void Comments" index="0"/>
+        <alias field="internal_door_type" name="Internal Door Construction" index="0"/>
+        <alias field="door_hardware" name="Door Hardware &amp; Hinges" index="0"/>
+        <alias field="window_type" name="Window &amp; Reveal Details" index="0"/>
+        <alias field="skirting_profile" name="Skirting Board Profile" index="0"/>
+        <alias field="skirting_height_mm" name="Skirting Height (mm)" index="0"/>
+        <alias field="joinery_comments" name="Joinery Comments &amp; Tool Marks" index="0"/>
+        <alias field="fireplace_type" name="Fireplace / Chimney Breast" index="0"/>
+        <alias field="mantelpiece_type" name="Mantelpiece Profile" index="0"/>
+        <alias field="fixed_fittings" name="Fixed Built-in Fittings" index="0"/>
+        <alias field="services_utilities" name="Fixed Services &amp; Utilities" index="0"/>
+        <alias field="services_comments" name="Heating &amp; Services Notes" index="0"/>
+        <alias field="structural_scars" name="Structural Scars &amp; Blocked Openings" index="0"/>
+        <alias field="diagnostic_inscriptions" name="Inscriptions &amp; Graffiti" index="0"/>
+        <alias field="alterations_comments" name="Alterations Notes &amp; Transcripts" index="0"/>
+        <alias field="room_stratigraphic_summary" name="Room Phasing Synthesis" index="0"/>
+        <alias field="structure_name" name="Structure Name" index="0"/>
+        <alias field="room_unstructured_notes" name="Room Stratigraphic Notes" index="0"/>
+        <alias field="paper_form2_scan_path" name="Scanned Form 2 Record" index="0"/>
+      </aliases>
+      <fieldConfiguration>
+        <field name="room_id">
+          <editWidget type="TextEdit">
+            <config>
+              <Option type="Map">
+                <Option type="bool" name="IsMultiline" value="false"/>
+              </Option>
+            </config>
+          </editWidget>
+        </field>
+        <field name="structure_id">
+          <editWidget type="ValueRelation">
+            <config>
+              <Option type="Map">
+                <Option type="bool" name="AllowMulti" value="false"/>
+                <Option type="bool" name="AllowNull" value="true"/>
+                <Option type="QString" name="Description" value="&quot;volunteer_identification_guide&quot;"/>
+                <Option type="QString" name="Key" value="code"/>
+                <Option type="QString" name="Layer" value="structures"/>
+                <Option type="QString" name="LayerName" value="structures"/>
+                <Option type="QString" name="LayerSource" value="./balala_pastoral_survey.gpkg|layername=structures"/>
+                <Option type="QString" name="LayerProviderName" value="ogr"/>
+                <Option type="bool" name="OrderByValue" value="true"/>
+                <Option type="QString" name="Value" value="label"/>
+              </Option>
+            </config>
+          </editWidget>
+        </field>
+        <field name="room_name_or_letter">
+          <editWidget type="TextEdit">
+            <config>
+              <Option type="Map">
+                <Option type="bool" name="IsMultiline" value="false"/>
+              </Option>
+            </config>
+          </editWidget>
+        </field>
+        <field name="inferred_use">
+          <editWidget type="ValueRelation">
+            <config>
+              <Option type="Map">
+                <Option type="bool" name="AllowMulti" value="false"/>
+                <Option type="bool" name="AllowNull" value="true"/>
+                <Option type="QString" name="Description" value="&quot;volunteer_identification_guide&quot;"/>
+                <Option type="QString" name="Key" value="code"/>
+                <Option type="QString" name="Layer" value="lut_internal_rooms_and_services"/>
+                <Option type="QString" name="LayerName" value="lut_internal_rooms_and_services"/>
+                <Option type="QString" name="LayerSource" value="./balala_pastoral_survey.gpkg|layername=lut_internal_rooms_and_services"/>
+                <Option type="QString" name="LayerProviderName" value="ogr"/>
+                <Option type="bool" name="OrderByValue" value="true"/>
+                <Option type="QString" name="Value" value="label"/>
+              </Option>
+            </config>
+          </editWidget>
+        </field>
+        <field name="later_current_use">
+          <editWidget type="ValueRelation">
+            <config>
+              <Option type="Map">
+                <Option type="bool" name="AllowMulti" value="false"/>
+                <Option type="bool" name="AllowNull" value="true"/>
+                <Option type="QString" name="Description" value="&quot;volunteer_identification_guide&quot;"/>
+                <Option type="QString" name="Key" value="code"/>
+                <Option type="QString" name="Layer" value="lut_internal_rooms_and_services"/>
+                <Option type="QString" name="LayerName" value="lut_internal_rooms_and_services"/>
+                <Option type="QString" name="LayerSource" value="./balala_pastoral_survey.gpkg|layername=lut_internal_rooms_and_services"/>
+                <Option type="QString" name="LayerProviderName" value="ogr"/>
+                <Option type="bool" name="OrderByValue" value="true"/>
+                <Option type="QString" name="Value" value="label"/>
+              </Option>
+            </config>
+          </editWidget>
+        </field>
+        <field name="recording_date">
+          <editWidget type="DateTime">
+            <config>
+              <Option type="Map">
+                <Option type="bool" name="calendar_popup" value="true"/>
+                <Option type="QString" name="display_format" value="yyyy-MM-dd"/>
+              </Option>
+            </config>
+          </editWidget>
+        </field>
+        <field name="recorders">
+          <editWidget type="TextEdit">
+            <config>
+              <Option type="Map">
+                <Option type="bool" name="IsMultiline" value="false"/>
+              </Option>
+            </config>
+          </editWidget>
+        </field>
+        <field name="gnss_point_poly_id">
+          <editWidget type="TextEdit">
+            <config>
+              <Option type="Map">
+                <Option type="bool" name="IsMultiline" value="false"/>
+              </Option>
+            </config>
+          </editWidget>
+        </field>
+        <field name="floor_plan_sheet_no">
+          <editWidget type="TextEdit">
+            <config>
+              <Option type="Map">
+                <Option type="bool" name="IsMultiline" value="false"/>
+              </Option>
+            </config>
+          </editWidget>
+        </field>
+        <field name="camera_make_number">
+          <editWidget type="TextEdit">
+            <config>
+              <Option type="Map">
+                <Option type="bool" name="IsMultiline" value="false"/>
+              </Option>
+            </config>
+          </editWidget>
+        </field>
+        <field name="photo_frame_range">
+          <editWidget type="TextEdit">
+            <config>
+              <Option type="Map">
+                <Option type="bool" name="IsMultiline" value="false"/>
+              </Option>
+            </config>
+          </editWidget>
+        </field>
+        <field name="length_m">
+          <editWidget type="TextEdit">
+            <config>
+              <Option type="Map">
+                <Option type="bool" name="IsMultiline" value="false"/>
+              </Option>
+            </config>
+          </editWidget>
+        </field>
+        <field name="width_m">
+          <editWidget type="TextEdit">
+            <config>
+              <Option type="Map">
+                <Option type="bool" name="IsMultiline" value="false"/>
+              </Option>
+            </config>
+          </editWidget>
+        </field>
+        <field name="ceiling_height_m">
+          <editWidget type="TextEdit">
+            <config>
+              <Option type="Map">
+                <Option type="bool" name="IsMultiline" value="false"/>
+              </Option>
+            </config>
+          </editWidget>
+        </field>
+        <field name="floor_area_sqm">
+          <editWidget type="TextEdit">
+            <config>
+              <Option type="Map">
+                <Option type="bool" name="IsMultiline" value="false"/>
+              </Option>
+            </config>
+          </editWidget>
+        </field>
+        <field name="sec1_room_comments">
+          <editWidget type="TextEdit">
+            <config>
+              <Option type="Map">
+                <Option type="bool" name="IsMultiline" value="true"/>
+              </Option>
+            </config>
+          </editWidget>
+        </field>
+        <field name="floor_material">
+          <editWidget type="ValueRelation">
+            <config>
+              <Option type="Map">
+                <Option type="bool" name="AllowMulti" value="false"/>
+                <Option type="bool" name="AllowNull" value="true"/>
+                <Option type="QString" name="Description" value="&quot;volunteer_identification_guide&quot;"/>
+                <Option type="QString" name="Key" value="code"/>
+                <Option type="QString" name="Layer" value="lut_internal_rooms_and_services"/>
+                <Option type="QString" name="LayerName" value="lut_internal_rooms_and_services"/>
+                <Option type="QString" name="LayerSource" value="./balala_pastoral_survey.gpkg|layername=lut_internal_rooms_and_services"/>
+                <Option type="QString" name="LayerProviderName" value="ogr"/>
+                <Option type="bool" name="OrderByValue" value="true"/>
+                <Option type="QString" name="Value" value="label"/>
+              </Option>
+            </config>
+          </editWidget>
+        </field>
+        <field name="board_width_mm">
+          <editWidget type="TextEdit">
+            <config>
+              <Option type="Map">
+                <Option type="bool" name="IsMultiline" value="false"/>
+              </Option>
+            </config>
+          </editWidget>
+        </field>
+        <field name="board_thickness_mm">
+          <editWidget type="TextEdit">
+            <config>
+              <Option type="Map">
+                <Option type="bool" name="IsMultiline" value="false"/>
+              </Option>
+            </config>
+          </editWidget>
+        </field>
+        <field name="floor_sawing_marks">
+          <editWidget type="ValueRelation">
+            <config>
+              <Option type="Map">
+                <Option type="bool" name="AllowMulti" value="false"/>
+                <Option type="bool" name="AllowNull" value="true"/>
+                <Option type="QString" name="Description" value="&quot;volunteer_identification_guide&quot;"/>
+                <Option type="QString" name="Key" value="code"/>
+                <Option type="QString" name="Layer" value="lut_foundations_and_subfloor"/>
+                <Option type="QString" name="LayerName" value="lut_foundations_and_subfloor"/>
+                <Option type="QString" name="LayerSource" value="./balala_pastoral_survey.gpkg|layername=lut_foundations_and_subfloor"/>
+                <Option type="QString" name="LayerProviderName" value="ogr"/>
+                <Option type="bool" name="OrderByValue" value="true"/>
+                <Option type="QString" name="Value" value="label"/>
+              </Option>
+            </config>
+          </editWidget>
+        </field>
+        <field name="subfloor_access_status">
+          <editWidget type="TextEdit">
+            <config>
+              <Option type="Map">
+                <Option type="bool" name="IsMultiline" value="false"/>
+              </Option>
+            </config>
+          </editWidget>
+        </field>
+        <field name="floor_condition">
+          <editWidget type="ValueRelation">
+            <config>
+              <Option type="Map">
+                <Option type="bool" name="AllowMulti" value="false"/>
+                <Option type="bool" name="AllowNull" value="true"/>
+                <Option type="QString" name="Description" value="&quot;volunteer_identification_guide&quot;"/>
+                <Option type="QString" name="Key" value="code"/>
+                <Option type="QString" name="Layer" value="lut_phasing_whs_and_condition"/>
+                <Option type="QString" name="LayerName" value="lut_phasing_whs_and_condition"/>
+                <Option type="QString" name="LayerSource" value="./balala_pastoral_survey.gpkg|layername=lut_phasing_whs_and_condition"/>
+                <Option type="QString" name="LayerProviderName" value="ogr"/>
+                <Option type="bool" name="OrderByValue" value="true"/>
+                <Option type="QString" name="Value" value="label"/>
+              </Option>
+            </config>
+          </editWidget>
+        </field>
+        <field name="floor_comments">
+          <editWidget type="TextEdit">
+            <config>
+              <Option type="Map">
+                <Option type="bool" name="IsMultiline" value="true"/>
+              </Option>
+            </config>
+          </editWidget>
+        </field>
+        <field name="wall_structure">
+          <editWidget type="ValueRelation">
+            <config>
+              <Option type="Map">
+                <Option type="bool" name="AllowMulti" value="false"/>
+                <Option type="bool" name="AllowNull" value="true"/>
+                <Option type="QString" name="Description" value="&quot;volunteer_identification_guide&quot;"/>
+                <Option type="QString" name="Key" value="code"/>
+                <Option type="QString" name="Layer" value="lut_wall_systems_and_framing"/>
+                <Option type="QString" name="LayerName" value="lut_wall_systems_and_framing"/>
+                <Option type="QString" name="LayerSource" value="./balala_pastoral_survey.gpkg|layername=lut_wall_systems_and_framing"/>
+                <Option type="QString" name="LayerProviderName" value="ogr"/>
+                <Option type="bool" name="OrderByValue" value="true"/>
+                <Option type="QString" name="Value" value="label"/>
+              </Option>
+            </config>
+          </editWidget>
+        </field>
+        <field name="wall_lining">
+          <editWidget type="ValueRelation">
+            <config>
+              <Option type="Map">
+                <Option type="bool" name="AllowMulti" value="false"/>
+                <Option type="bool" name="AllowNull" value="true"/>
+                <Option type="QString" name="Description" value="&quot;volunteer_identification_guide&quot;"/>
+                <Option type="QString" name="Key" value="code"/>
+                <Option type="QString" name="Layer" value="lut_internal_rooms_and_services"/>
+                <Option type="QString" name="LayerName" value="lut_internal_rooms_and_services"/>
+                <Option type="QString" name="LayerSource" value="./balala_pastoral_survey.gpkg|layername=lut_internal_rooms_and_services"/>
+                <Option type="QString" name="LayerProviderName" value="ogr"/>
+                <Option type="bool" name="OrderByValue" value="true"/>
+                <Option type="QString" name="Value" value="label"/>
+              </Option>
+            </config>
+          </editWidget>
+        </field>
+        <field name="wall_condition">
+          <editWidget type="ValueRelation">
+            <config>
+              <Option type="Map">
+                <Option type="bool" name="AllowMulti" value="false"/>
+                <Option type="bool" name="AllowNull" value="true"/>
+                <Option type="QString" name="Description" value="&quot;volunteer_identification_guide&quot;"/>
+                <Option type="QString" name="Key" value="code"/>
+                <Option type="QString" name="Layer" value="lut_phasing_whs_and_condition"/>
+                <Option type="QString" name="LayerName" value="lut_phasing_whs_and_condition"/>
+                <Option type="QString" name="LayerSource" value="./balala_pastoral_survey.gpkg|layername=lut_phasing_whs_and_condition"/>
+                <Option type="QString" name="LayerProviderName" value="ogr"/>
+                <Option type="bool" name="OrderByValue" value="true"/>
+                <Option type="QString" name="Value" value="label"/>
+              </Option>
+            </config>
+          </editWidget>
+        </field>
+        <field name="wall_comments">
+          <editWidget type="TextEdit">
+            <config>
+              <Option type="Map">
+                <Option type="bool" name="IsMultiline" value="true"/>
+              </Option>
+            </config>
+          </editWidget>
+        </field>
+        <field name="ceiling_form">
+          <editWidget type="ValueRelation">
+            <config>
+              <Option type="Map">
+                <Option type="bool" name="AllowMulti" value="false"/>
+                <Option type="bool" name="AllowNull" value="true"/>
+                <Option type="QString" name="Description" value="&quot;volunteer_identification_guide&quot;"/>
+                <Option type="QString" name="Key" value="code"/>
+                <Option type="QString" name="Layer" value="lut_internal_rooms_and_services"/>
+                <Option type="QString" name="LayerName" value="lut_internal_rooms_and_services"/>
+                <Option type="QString" name="LayerSource" value="./balala_pastoral_survey.gpkg|layername=lut_internal_rooms_and_services"/>
+                <Option type="QString" name="LayerProviderName" value="ogr"/>
+                <Option type="bool" name="OrderByValue" value="true"/>
+                <Option type="QString" name="Value" value="label"/>
+              </Option>
+            </config>
+          </editWidget>
+        </field>
+        <field name="ceiling_cornice">
+          <editWidget type="ValueRelation">
+            <config>
+              <Option type="Map">
+                <Option type="bool" name="AllowMulti" value="false"/>
+                <Option type="bool" name="AllowNull" value="true"/>
+                <Option type="QString" name="Description" value="&quot;volunteer_identification_guide&quot;"/>
+                <Option type="QString" name="Key" value="code"/>
+                <Option type="QString" name="Layer" value="lut_internal_rooms_and_services"/>
+                <Option type="QString" name="LayerName" value="lut_internal_rooms_and_services"/>
+                <Option type="QString" name="LayerSource" value="./balala_pastoral_survey.gpkg|layername=lut_internal_rooms_and_services"/>
+                <Option type="QString" name="LayerProviderName" value="ogr"/>
+                <Option type="bool" name="OrderByValue" value="true"/>
+                <Option type="QString" name="Value" value="label"/>
+              </Option>
+            </config>
+          </editWidget>
+        </field>
+        <field name="ceiling_condition">
+          <editWidget type="ValueRelation">
+            <config>
+              <Option type="Map">
+                <Option type="bool" name="AllowMulti" value="false"/>
+                <Option type="bool" name="AllowNull" value="true"/>
+                <Option type="QString" name="Description" value="&quot;volunteer_identification_guide&quot;"/>
+                <Option type="QString" name="Key" value="code"/>
+                <Option type="QString" name="Layer" value="lut_phasing_whs_and_condition"/>
+                <Option type="QString" name="LayerName" value="lut_phasing_whs_and_condition"/>
+                <Option type="QString" name="LayerSource" value="./balala_pastoral_survey.gpkg|layername=lut_phasing_whs_and_condition"/>
+                <Option type="QString" name="LayerProviderName" value="ogr"/>
+                <Option type="bool" name="OrderByValue" value="true"/>
+                <Option type="QString" name="Value" value="label"/>
+              </Option>
+            </config>
+          </editWidget>
+        </field>
+        <field name="ceiling_comments">
+          <editWidget type="TextEdit">
+            <config>
+              <Option type="Map">
+                <Option type="bool" name="IsMultiline" value="true"/>
+              </Option>
+            </config>
+          </editWidget>
+        </field>
+        <field name="internal_door_type">
+          <editWidget type="ValueRelation">
+            <config>
+              <Option type="Map">
+                <Option type="bool" name="AllowMulti" value="false"/>
+                <Option type="bool" name="AllowNull" value="true"/>
+                <Option type="QString" name="Description" value="&quot;volunteer_identification_guide&quot;"/>
+                <Option type="QString" name="Key" value="code"/>
+                <Option type="QString" name="Layer" value="lut_openings_and_hardware"/>
+                <Option type="QString" name="LayerName" value="lut_openings_and_hardware"/>
+                <Option type="QString" name="LayerSource" value="./balala_pastoral_survey.gpkg|layername=lut_openings_and_hardware"/>
+                <Option type="QString" name="LayerProviderName" value="ogr"/>
+                <Option type="bool" name="OrderByValue" value="true"/>
+                <Option type="QString" name="Value" value="label"/>
+              </Option>
+            </config>
+          </editWidget>
+        </field>
+        <field name="door_hardware">
+          <editWidget type="ValueRelation">
+            <config>
+              <Option type="Map">
+                <Option type="bool" name="AllowMulti" value="false"/>
+                <Option type="bool" name="AllowNull" value="true"/>
+                <Option type="QString" name="Description" value="&quot;volunteer_identification_guide&quot;"/>
+                <Option type="QString" name="Key" value="code"/>
+                <Option type="QString" name="Layer" value="lut_openings_and_hardware"/>
+                <Option type="QString" name="LayerName" value="lut_openings_and_hardware"/>
+                <Option type="QString" name="LayerSource" value="./balala_pastoral_survey.gpkg|layername=lut_openings_and_hardware"/>
+                <Option type="QString" name="LayerProviderName" value="ogr"/>
+                <Option type="bool" name="OrderByValue" value="true"/>
+                <Option type="QString" name="Value" value="label"/>
+              </Option>
+            </config>
+          </editWidget>
+        </field>
+        <field name="window_type">
+          <editWidget type="ValueRelation">
+            <config>
+              <Option type="Map">
+                <Option type="bool" name="AllowMulti" value="false"/>
+                <Option type="bool" name="AllowNull" value="true"/>
+                <Option type="QString" name="Description" value="&quot;volunteer_identification_guide&quot;"/>
+                <Option type="QString" name="Key" value="code"/>
+                <Option type="QString" name="Layer" value="lut_openings_and_hardware"/>
+                <Option type="QString" name="LayerName" value="lut_openings_and_hardware"/>
+                <Option type="QString" name="LayerSource" value="./balala_pastoral_survey.gpkg|layername=lut_openings_and_hardware"/>
+                <Option type="QString" name="LayerProviderName" value="ogr"/>
+                <Option type="bool" name="OrderByValue" value="true"/>
+                <Option type="QString" name="Value" value="label"/>
+              </Option>
+            </config>
+          </editWidget>
+        </field>
+        <field name="skirting_profile">
+          <editWidget type="ValueRelation">
+            <config>
+              <Option type="Map">
+                <Option type="bool" name="AllowMulti" value="false"/>
+                <Option type="bool" name="AllowNull" value="true"/>
+                <Option type="QString" name="Description" value="&quot;volunteer_identification_guide&quot;"/>
+                <Option type="QString" name="Key" value="code"/>
+                <Option type="QString" name="Layer" value="lut_internal_rooms_and_services"/>
+                <Option type="QString" name="LayerName" value="lut_internal_rooms_and_services"/>
+                <Option type="QString" name="LayerSource" value="./balala_pastoral_survey.gpkg|layername=lut_internal_rooms_and_services"/>
+                <Option type="QString" name="LayerProviderName" value="ogr"/>
+                <Option type="bool" name="OrderByValue" value="true"/>
+                <Option type="QString" name="Value" value="label"/>
+              </Option>
+            </config>
+          </editWidget>
+        </field>
+        <field name="skirting_height_mm">
+          <editWidget type="TextEdit">
+            <config>
+              <Option type="Map">
+                <Option type="bool" name="IsMultiline" value="false"/>
+              </Option>
+            </config>
+          </editWidget>
+        </field>
+        <field name="joinery_comments">
+          <editWidget type="TextEdit">
+            <config>
+              <Option type="Map">
+                <Option type="bool" name="IsMultiline" value="true"/>
+              </Option>
+            </config>
+          </editWidget>
+        </field>
+        <field name="fireplace_type">
+          <editWidget type="ValueRelation">
+            <config>
+              <Option type="Map">
+                <Option type="bool" name="AllowMulti" value="false"/>
+                <Option type="bool" name="AllowNull" value="true"/>
+                <Option type="QString" name="Description" value="&quot;volunteer_identification_guide&quot;"/>
+                <Option type="QString" name="Key" value="code"/>
+                <Option type="QString" name="Layer" value="lut_internal_rooms_and_services"/>
+                <Option type="QString" name="LayerName" value="lut_internal_rooms_and_services"/>
+                <Option type="QString" name="LayerSource" value="./balala_pastoral_survey.gpkg|layername=lut_internal_rooms_and_services"/>
+                <Option type="QString" name="LayerProviderName" value="ogr"/>
+                <Option type="bool" name="OrderByValue" value="true"/>
+                <Option type="QString" name="Value" value="label"/>
+              </Option>
+            </config>
+          </editWidget>
+        </field>
+        <field name="mantelpiece_type">
+          <editWidget type="ValueRelation">
+            <config>
+              <Option type="Map">
+                <Option type="bool" name="AllowMulti" value="false"/>
+                <Option type="bool" name="AllowNull" value="true"/>
+                <Option type="QString" name="Description" value="&quot;volunteer_identification_guide&quot;"/>
+                <Option type="QString" name="Key" value="code"/>
+                <Option type="QString" name="Layer" value="lut_internal_rooms_and_services"/>
+                <Option type="QString" name="LayerName" value="lut_internal_rooms_and_services"/>
+                <Option type="QString" name="LayerSource" value="./balala_pastoral_survey.gpkg|layername=lut_internal_rooms_and_services"/>
+                <Option type="QString" name="LayerProviderName" value="ogr"/>
+                <Option type="bool" name="OrderByValue" value="true"/>
+                <Option type="QString" name="Value" value="label"/>
+              </Option>
+            </config>
+          </editWidget>
+        </field>
+        <field name="fixed_fittings">
+          <editWidget type="TextEdit">
+            <config>
+              <Option type="Map">
+                <Option type="bool" name="IsMultiline" value="false"/>
+              </Option>
+            </config>
+          </editWidget>
+        </field>
+        <field name="services_utilities">
+          <editWidget type="ValueRelation">
+            <config>
+              <Option type="Map">
+                <Option type="bool" name="AllowMulti" value="false"/>
+                <Option type="bool" name="AllowNull" value="true"/>
+                <Option type="QString" name="Description" value="&quot;volunteer_identification_guide&quot;"/>
+                <Option type="QString" name="Key" value="code"/>
+                <Option type="QString" name="Layer" value="lut_internal_rooms_and_services"/>
+                <Option type="QString" name="LayerName" value="lut_internal_rooms_and_services"/>
+                <Option type="QString" name="LayerSource" value="./balala_pastoral_survey.gpkg|layername=lut_internal_rooms_and_services"/>
+                <Option type="QString" name="LayerProviderName" value="ogr"/>
+                <Option type="bool" name="OrderByValue" value="true"/>
+                <Option type="QString" name="Value" value="label"/>
+              </Option>
+            </config>
+          </editWidget>
+        </field>
+        <field name="services_comments">
+          <editWidget type="TextEdit">
+            <config>
+              <Option type="Map">
+                <Option type="bool" name="IsMultiline" value="true"/>
+              </Option>
+            </config>
+          </editWidget>
+        </field>
+        <field name="structural_scars">
+          <editWidget type="TextEdit">
+            <config>
+              <Option type="Map">
+                <Option type="bool" name="IsMultiline" value="false"/>
+              </Option>
+            </config>
+          </editWidget>
+        </field>
+        <field name="diagnostic_inscriptions">
+          <editWidget type="TextEdit">
+            <config>
+              <Option type="Map">
+                <Option type="bool" name="IsMultiline" value="false"/>
+              </Option>
+            </config>
+          </editWidget>
+        </field>
+        <field name="alterations_comments">
+          <editWidget type="TextEdit">
+            <config>
+              <Option type="Map">
+                <Option type="bool" name="IsMultiline" value="true"/>
+              </Option>
+            </config>
+          </editWidget>
+        </field>
+        <field name="room_stratigraphic_summary">
+          <editWidget type="TextEdit">
+            <config>
+              <Option type="Map">
+                <Option type="bool" name="IsMultiline" value="true"/>
+              </Option>
+            </config>
+          </editWidget>
+        </field>
+        <field name="structure_name">
+          <editWidget type="TextEdit">
+            <config>
+              <Option type="Map">
+                <Option type="bool" name="IsMultiline" value="false"/>
+              </Option>
+            </config>
+          </editWidget>
+        </field>
+        <field name="room_unstructured_notes">
+          <editWidget type="TextEdit">
+            <config>
+              <Option type="Map">
+                <Option type="bool" name="IsMultiline" value="true"/>
+              </Option>
+            </config>
+          </editWidget>
+        </field>
+        <field name="paper_form2_scan_path">
+          <editWidget type="ExternalResource">
+            <config>
+              <Option type="Map">
+                <Option type="int" name="DocumentViewer" value="1"/>
+                <Option type="int" name="DocumentViewerHeight" value="240"/>
+                <Option type="int" name="DocumentViewerWidth" value="0"/>
+                <Option type="bool" name="FileWidget" value="true"/>
+                <Option type="int" name="RelativeStorage" value="1"/>
+                <Option type="QString" name="RootPath" value="./media/form_scans"/>
+                <Option type="int" name="StorageMode" value="0"/>
+              </Option>
+            </config>
+          </editWidget>
+        </field>
+      </fieldConfiguration>
+      <editFormConfig editorlayout="tablayout">
+        <attributeEditorForm>
+          <attributeEditorContainer name="Tab 1: Room ID &amp; Dimensions" groupBox="0" columnCount="1">
+            <attributeEditorContainer name="Room Identification &amp; Context" groupBox="1" columnCount="2">
+              <attributeEditorField name="structure_id"/>
+              <attributeEditorField name="structure_name"/>
+              <attributeEditorField name="room_id"/>
+              <attributeEditorField name="room_name_or_letter"/>
+              <attributeEditorField name="inferred_use"/>
+              <attributeEditorField name="later_current_use"/>
+              <attributeEditorField name="recording_date"/>
+              <attributeEditorField name="recorders"/>
+              <attributeEditorField name="gnss_point_poly_id"/>
+              <attributeEditorField name="floor_plan_sheet_no"/>
+              <attributeEditorField name="camera_make_number"/>
+              <attributeEditorField name="photo_frame_range"/>
+            </attributeEditorContainer>
+            <attributeEditorContainer name="Internal Dimensions &amp; Floor Area" groupBox="1" columnCount="2">
+              <attributeEditorField name="length_m"/>
+              <attributeEditorField name="width_m"/>
+              <attributeEditorField name="ceiling_height_m"/>
+              <attributeEditorField name="floor_area_sqm"/>
+              <attributeEditorField name="sec1_room_comments"/>
+            </attributeEditorContainer>
+          </attributeEditorContainer>
+          <attributeEditorContainer name="Tab 2: Floor, Walls &amp; Ceiling" groupBox="0" columnCount="1">
+            <attributeEditorContainer name="Floors &amp; Sub-Floor Access (Steel Rule Probe)" groupBox="1" columnCount="2">
+              <attributeEditorField name="floor_material"/>
+              <attributeEditorField name="board_width_mm"/>
+              <attributeEditorField name="board_thickness_mm"/>
+              <attributeEditorField name="floor_sawing_marks"/>
+              <attributeEditorField name="subfloor_access_status"/>
+              <attributeEditorField name="floor_condition"/>
+              <attributeEditorField name="floor_comments"/>
+            </attributeEditorContainer>
+            <attributeEditorContainer name="Walls &amp; Internal Partitions (Linings &amp; Wallpaper)" groupBox="1" columnCount="2">
+              <attributeEditorField name="wall_structure"/>
+              <attributeEditorField name="wall_lining"/>
+              <attributeEditorField name="wall_condition"/>
+              <attributeEditorField name="wall_comments"/>
+            </attributeEditorContainer>
+            <attributeEditorContainer name="Ceilings &amp; Overhead Framing" groupBox="1" columnCount="2">
+              <attributeEditorField name="ceiling_form"/>
+              <attributeEditorField name="ceiling_cornice"/>
+              <attributeEditorField name="ceiling_condition"/>
+              <attributeEditorField name="ceiling_comments"/>
+            </attributeEditorContainer>
+          </attributeEditorContainer>
+          <attributeEditorContainer name="Tab 3: Joinery, Services &amp; Scars" groupBox="0" columnCount="1">
+            <attributeEditorContainer name="Internal Openings &amp; Joinery" groupBox="1" columnCount="2">
+              <attributeEditorField name="internal_door_type"/>
+              <attributeEditorField name="door_hardware"/>
+              <attributeEditorField name="window_type"/>
+              <attributeEditorField name="skirting_profile"/>
+              <attributeEditorField name="skirting_height_mm"/>
+              <attributeEditorField name="joinery_comments"/>
+            </attributeEditorContainer>
+            <attributeEditorContainer name="Fireplace, Stoves &amp; Fixed Services" groupBox="1" columnCount="2">
+              <attributeEditorField name="fireplace_type"/>
+              <attributeEditorField name="mantelpiece_type"/>
+              <attributeEditorField name="fixed_fittings"/>
+              <attributeEditorField name="services_utilities"/>
+              <attributeEditorField name="services_comments"/>
+            </attributeEditorContainer>
+            <attributeEditorContainer name="Alterations, Scars &amp; Inscriptions" groupBox="1" columnCount="2">
+              <attributeEditorField name="structural_scars"/>
+              <attributeEditorField name="diagnostic_inscriptions"/>
+              <attributeEditorField name="alterations_comments"/>
+            </attributeEditorContainer>
+          </attributeEditorContainer>
+          <attributeEditorContainer name="Tab 4: Room Notes &amp; Scans" groupBox="0" columnCount="1">
+            <attributeEditorField name="room_stratigraphic_summary"/>
+            <attributeEditorField name="room_unstructured_notes"/>
+            <attributeEditorField name="paper_form2_scan_path"/>
+          </attributeEditorContainer>
+          <attributeEditorContainer name="Tab 5: Room Objects Inventory (Form 3)" groupBox="0" columnCount="1">
+            <attributeEditorRelation name="rel_room_objects" relation="rel_room_objects" showLabel="1" forceSuppressFormPopup="0">
+              <editor_configuration type="Map">
+                <Option type="QString" name="buttons" value="AllButtons"/>
+              </editor_configuration>
+            </attributeEditorRelation>
+          </attributeEditorContainer>
+        </attributeEditorForm>
+      </editFormConfig>
+    </maplayer>
+    <maplayer type="vector" autoRefreshTime="0" geometry="No geometry" refreshOnNotifyMessage="" refreshOnNotifyEnabled="0">
+      <id>room_objects_inventory_layer</id>
+      <datasource>./balala_pastoral_survey.gpkg|layername=room_objects_inventory</datasource>
+      <layername>room_objects_inventory</layername>
+      <provider encoding="UTF-8">ogr</provider>
+      <srs>
+        <spatialrefsys>
+          <authid/>
+        </spatialrefsys>
+      </srs>
+    </maplayer>
+    <maplayer type="vector" autoRefreshTime="0" geometry="No geometry" refreshOnNotifyMessage="" refreshOnNotifyEnabled="0">
+      <id>construction_stages_layer</id>
+      <datasource>./balala_pastoral_survey.gpkg|layername=construction_stages</datasource>
+      <layername>construction_stages</layername>
+      <provider encoding="UTF-8">ogr</provider>
+      <srs>
+        <spatialrefsys>
+          <authid/>
+        </spatialrefsys>
+      </srs>
+    </maplayer>
+    <maplayer type="vector" autoRefreshTime="0" geometry="No geometry" refreshOnNotifyMessage="" refreshOnNotifyEnabled="0">
+      <id>diagnostic_marks_layer</id>
+      <datasource>./balala_pastoral_survey.gpkg|layername=diagnostic_marks</datasource>
+      <layername>diagnostic_marks</layername>
+      <provider encoding="UTF-8">ogr</provider>
+      <srs>
+        <spatialrefsys>
+          <authid/>
+        </spatialrefsys>
+      </srs>
+    </maplayer>
+    <maplayer type="vector" autoRefreshTime="0" geometry="No geometry" refreshOnNotifyMessage="" refreshOnNotifyEnabled="0">
+      <id>media_attachments_layer</id>
+      <datasource>./balala_pastoral_survey.gpkg|layername=media_attachments</datasource>
+      <layername>media_attachments</layername>
+      <provider encoding="UTF-8">ogr</provider>
+      <srs>
+        <spatialrefsys>
+          <authid/>
+        </spatialrefsys>
+      </srs>
+    </maplayer>
+    <maplayer type="vector" autoRefreshTime="0" geometry="No geometry" refreshOnNotifyMessage="" refreshOnNotifyEnabled="0">
+      <id>photographic_log_layer</id>
+      <datasource>./balala_pastoral_survey.gpkg|layername=photographic_log</datasource>
+      <layername>photographic_log</layername>
+      <provider encoding="UTF-8">ogr</provider>
+      <srs>
+        <spatialrefsys>
+          <authid/>
+        </spatialrefsys>
+      </srs>
+    </maplayer>
+    <maplayer type="vector" autoRefreshTime="0" geometry="No geometry" refreshOnNotifyMessage="" refreshOnNotifyEnabled="0">
+      <id>lut_structure_purpose_layer</id>
+      <datasource>./balala_pastoral_survey.gpkg|layername=lut_structure_purpose</datasource>
+      <layername>lut_structure_purpose</layername>
+      <provider encoding="UTF-8">ogr</provider>
+      <srs>
+        <spatialrefsys>
+          <authid/>
+        </spatialrefsys>
+      </srs>
+    </maplayer>
+    <maplayer type="vector" autoRefreshTime="0" geometry="No geometry" refreshOnNotifyMessage="" refreshOnNotifyEnabled="0">
+      <id>lut_foundations_and_subfloor_layer</id>
+      <datasource>./balala_pastoral_survey.gpkg|layername=lut_foundations_and_subfloor</datasource>
+      <layername>lut_foundations_and_subfloor</layername>
+      <provider encoding="UTF-8">ogr</provider>
+      <srs>
+        <spatialrefsys>
+          <authid/>
+        </spatialrefsys>
+      </srs>
+    </maplayer>
+    <maplayer type="vector" autoRefreshTime="0" geometry="No geometry" refreshOnNotifyMessage="" refreshOnNotifyEnabled="0">
+      <id>lut_wall_systems_and_framing_layer</id>
+      <datasource>./balala_pastoral_survey.gpkg|layername=lut_wall_systems_and_framing</datasource>
+      <layername>lut_wall_systems_and_framing</layername>
+      <provider encoding="UTF-8">ogr</provider>
+      <srs>
+        <spatialrefsys>
+          <authid/>
+        </spatialrefsys>
+      </srs>
+    </maplayer>
+    <maplayer type="vector" autoRefreshTime="0" geometry="No geometry" refreshOnNotifyMessage="" refreshOnNotifyEnabled="0">
+      <id>lut_masonry_and_cladding_layer</id>
+      <datasource>./balala_pastoral_survey.gpkg|layername=lut_masonry_and_cladding</datasource>
+      <layername>lut_masonry_and_cladding</layername>
+      <provider encoding="UTF-8">ogr</provider>
+      <srs>
+        <spatialrefsys>
+          <authid/>
+        </spatialrefsys>
+      </srs>
+    </maplayer>
+    <maplayer type="vector" autoRefreshTime="0" geometry="No geometry" refreshOnNotifyMessage="" refreshOnNotifyEnabled="0">
+      <id>lut_roof_verandah_chimney_layer</id>
+      <datasource>./balala_pastoral_survey.gpkg|layername=lut_roof_verandah_chimney</datasource>
+      <layername>lut_roof_verandah_chimney</layername>
+      <provider encoding="UTF-8">ogr</provider>
+      <srs>
+        <spatialrefsys>
+          <authid/>
+        </spatialrefsys>
+      </srs>
+    </maplayer>
+    <maplayer type="vector" autoRefreshTime="0" geometry="No geometry" refreshOnNotifyMessage="" refreshOnNotifyEnabled="0">
+      <id>lut_openings_and_hardware_layer</id>
+      <datasource>./balala_pastoral_survey.gpkg|layername=lut_openings_and_hardware</datasource>
+      <layername>lut_openings_and_hardware</layername>
+      <provider encoding="UTF-8">ogr</provider>
+      <srs>
+        <spatialrefsys>
+          <authid/>
+        </spatialrefsys>
+      </srs>
+    </maplayer>
+    <maplayer type="vector" autoRefreshTime="0" geometry="No geometry" refreshOnNotifyMessage="" refreshOnNotifyEnabled="0">
+      <id>lut_internal_rooms_and_services_layer</id>
+      <datasource>./balala_pastoral_survey.gpkg|layername=lut_internal_rooms_and_services</datasource>
+      <layername>lut_internal_rooms_and_services</layername>
+      <provider encoding="UTF-8">ogr</provider>
+      <srs>
+        <spatialrefsys>
+          <authid/>
+        </spatialrefsys>
+      </srs>
+    </maplayer>
+    <maplayer type="vector" autoRefreshTime="0" geometry="No geometry" refreshOnNotifyMessage="" refreshOnNotifyEnabled="0">
+      <id>lut_phasing_whs_and_condition_layer</id>
+      <datasource>./balala_pastoral_survey.gpkg|layername=lut_phasing_whs_and_condition</datasource>
+      <layername>lut_phasing_whs_and_condition</layername>
+      <provider encoding="UTF-8">ogr</provider>
+      <srs>
+        <spatialrefsys>
+          <authid/>
+        </spatialrefsys>
+      </srs>
+    </maplayer>
+    <maplayer type="vector" autoRefreshTime="0" geometry="No geometry" refreshOnNotifyMessage="" refreshOnNotifyEnabled="0">
+      <id>lut_object_category_layer</id>
+      <datasource>./balala_pastoral_survey.gpkg|layername=lut_object_category</datasource>
+      <layername>lut_object_category</layername>
+      <provider encoding="UTF-8">ogr</provider>
+      <srs>
+        <spatialrefsys>
+          <authid/>
+        </spatialrefsys>
+      </srs>
+    </maplayer>
+    <maplayer type="vector" autoRefreshTime="0" geometry="No geometry" refreshOnNotifyMessage="" refreshOnNotifyEnabled="0">
+      <id>lut_photo_orientation_layer</id>
+      <datasource>./balala_pastoral_survey.gpkg|layername=lut_photo_orientation</datasource>
+      <layername>lut_photo_orientation</layername>
+      <provider encoding="UTF-8">ogr</provider>
+      <srs>
+        <spatialrefsys>
+          <authid/>
+        </spatialrefsys>
+      </srs>
+    </maplayer>
+  </projectlayers>
+  <relations>
+    <relation id="rel_structure_rooms" name="rel_structure_rooms" referencingLayer="rooms_spaces_layer" referencedLayer="structures_layer" generateId="0">
+      <fieldRef referencingField="structure_id" referencedField="structure_id"/>
+    </relation>
+    <relation id="rel_room_objects" name="rel_room_objects" referencingLayer="room_objects_inventory_layer" referencedLayer="rooms_spaces_layer" generateId="0">
+      <fieldRef referencingField="room_id" referencedField="room_id"/>
+    </relation>
+    <relation id="rel_structure_stages" name="rel_structure_stages" referencingLayer="construction_stages_layer" referencedLayer="structures_layer" generateId="0">
+      <fieldRef referencingField="structure_id" referencedField="structure_id"/>
+    </relation>
+    <relation id="rel_structure_marks" name="rel_structure_marks" referencingLayer="diagnostic_marks_layer" referencedLayer="structures_layer" generateId="0">
+      <fieldRef referencingField="structure_id" referencedField="structure_id"/>
+    </relation>
+    <relation id="rel_structure_media" name="rel_structure_media" referencingLayer="media_attachments_layer" referencedLayer="structures_layer" generateId="0">
+      <fieldRef referencingField="structure_id" referencedField="structure_id"/>
+    </relation>
+    <relation id="rel_structure_photolog" name="rel_structure_photolog" referencingLayer="photographic_log_layer" referencedLayer="structures_layer" generateId="0">
+      <fieldRef referencingField="structure_id" referencedField="structure_id"/>
+    </relation>
+  </relations>
+</qgis>

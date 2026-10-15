@@ -1,0 +1,12 @@
+code,label,category_group,date_start,date_end,volunteer_identification_guide
+facing_n,Facing North,Cardinal Direction,1830,Present,Camera pointed toward magnetic/true north recording south-facing building elevation or feature.
+facing_ne,Facing North-East,Intercardinal Direction,1830,Present,Camera pointed northeast recording oblique elevation or corner.
+facing_e,Facing East,Cardinal Direction,1830,Present,Camera pointed east recording west-facing elevation or interior wall.
+facing_se,Facing South-East,Intercardinal Direction,1830,Present,Camera pointed southeast recording oblique elevation or corner.
+facing_s,Facing South,Cardinal Direction,1830,Present,Camera pointed south recording north-facing elevation or interior wall.
+facing_sw,Facing South-West,Intercardinal Direction,1830,Present,Camera pointed southwest recording oblique elevation or corner.
+facing_w,Facing West,Cardinal Direction,1830,Present,Camera pointed west recording east-facing elevation or interior wall.
+facing_nw,Facing North-West,Intercardinal Direction,1830,Present,Camera pointed northwest recording oblique elevation or corner.
+view_down_plan,Plan View (Facing Down),Vertical View,1830,Present,"Camera pointed vertically downwards recording floor fabric, ground surface, footings, or floorboard shrinkage gaps."
+view_up_ceiling,Ceiling View (Facing Up),Vertical View,1830,Present,"Camera pointed vertically upwards recording roof framing, rafters, battens, ceiling roses, or shingles."
+oblique_perspective,Oblique Perspective,Perspective View,1830,Present,"Three-quarter angled shot showing relationship between two walls, verandah junction, or machinery layout."

@@ -1,0 +1,25 @@
+code,label,category_group,date_start,date_end,volunteer_identification_guide
+win_double_hung_sash,Double-hung Sash Window,Window Type,1830,1940,"Two counterbalanced vertically sliding glazed sashes within boxed timber frame; sashes held by cords, pulleys, and lead weights."
+win_casement_hinged,Casement Window (Hinged Side),Window Type,1830,Present,Glazed timber frame hinged at side swinging outwards or inwards; secured by casement stay and fastener.
+win_sliding_horizontal,Sliding Horizontal Window,Window Type,1860,Present,Glazed panels sliding horizontally along timber tracks; frequent in vernacular sheds and enclosed verandahs.
+win_fixed_pane,Fixed Pane Window,Window Type,1840,Present,Stationary glass pane glazed directly into timber frame without operating mechanism.
+win_shutter_only,Timber Shutter Only (Unglazed),Window Type,1830,1920,"Hinged solid timber or battened shutter closing an open aperture; typical of remote huts, meat houses, and shearing sheds."
+win_louvre,Timber or Glass Louvre,Window Type,1880,Present,Horizontal angled slats admitting airflow while blocking direct sunlight or rain; common in dairies and verandahs.
+pane_12_multipane,12-Pane Sash (6 over 6),Window Pane Layout,1830,1865,Six small glass panes per sash divided by fine timber glazing bars; standard Colonial and early Victorian configuration before large sheet cylinder glass became economical.
+pane_6_multipane,6-Pane Sash (3 over 3),Window Pane Layout,1840,1880,Three panes per sash; transitional format.
+pane_4_double,4-Pane Sash (2 over 2),Window Pane Layout,1865,1910,Two panes per sash separated by central vertical glazing bar; dominant mid-to-late Victorian style.
+pane_2_single,2-Pane Sash (1 over 1),Window Pane Layout,1875,1930,Single large sheet of plate/sheet glass per sash without intermediate glazing bars; horn mouldings on lower sash stiles.
+pane_single_fixed,Single Large Sheet Pane,Window Pane Layout,1880,Present,Uninterrupted sheet of plate or float glass.
+door_ledged_braced,Ledged & Braced Door,Door Type,1830,Present,Vertical tongue-and-groove or plain boards stiffened by horizontal ledges and diagonal timber braces on rear; standard vernacular and service door.
+door_4_panel_victorian,4-Panel Door (Low-Waisted Victorian),Door Type,1850,1910,"Four recessed timber panels (two tall upper, two short lower) separated by mid-rail positioned low; quintessential Victorian interior door."
+door_6_panel_colonial,6-Panel Door (Colonial / Georgian),Door Type,1830,1860,Six recessed moulded timber panels arranged in 3 vertical pairs; diagnostic Georgian and early Colonial domestic joinery.
+door_high_waisted,High-waisted Panelled Door,Door Type,1910,1940,"Mid-rail positioned high (above center) with long vertical lower panels; diagnostic Federation, Edwardian, and Interwar joinery."
+door_french_glazed,French Doors (Pair Glazed),Door Type,1840,Present,"Pair of narrow glazed casement doors opening out onto verandah, providing light, ventilation, and garden access."
+door_half_stable,Half-Door / Stable Door (Dutch Door),Door Type,1830,1950,Horizontally split door where top and bottom leaves open independently; traditional for stables and tack rooms.
+door_sliding_shed,Large Sliding Shed Door (Top Track),Door Type,1870,Present,Heavy timber or CGI clad door suspended on overhead iron rollers and track; standard for woolshed wool rooms and wagon entrances.
+hardware_rim_lock,Rim Lock (Surface-mounted Iron Box),Door Hardware,1830,1910,Cast or wrought iron box lock mounted directly onto interior surface of door leaf; brass drop handle and large iron keyhole.
+hardware_mortise_lock,Mortise Lock (Internal Recess),Door Hardware,1860,Present,Lock mechanism fitted into pocket mortised inside the thickness of the door stile; brass or ceramic doorknob.
+hardware_thumb_latch,Norfolk / Suffolk Thumb Latch,Door Hardware,1830,1920,Wrought or cast-iron lift latch operated by exterior thumb-lever passing through slot in door.
+hardware_drop_bar,Timber Drop-Bar / Slip Rail,Door Hardware,1830,Present,Heavy wooden bar resting in wrought-iron brackets across interior of door leaf for internal security in sheds and outbuildings.
+hardware_strap_hinge,T-Hinges / Strap Hinges (Surface),Door Hardware,1830,Present,Long wrought-iron strap fastened across door ledges pivoting on gudgeon pin or frame plate; supports heavy timber doors.
+hardware_butt_hinge,Butt Hinges (Cast Iron / Steel),Door Hardware,1840,Present,Flanged rectangular hinge mortised flush into door stile and jamb.

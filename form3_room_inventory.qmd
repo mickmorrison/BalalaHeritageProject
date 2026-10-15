@@ -1,0 +1,180 @@
+---
+format:
+  typst:
+    papersize: a4
+    margin:
+      top: 6mm
+      bottom: 6mm
+      left: 7.5mm
+      right: 7.5mm
+---
+
+```{=typst}
+#set document(title: "Form 3: Room Object & Machinery Inventory Form", author: "Balala Heritage Project")
+#set text(font: ("Helvetica", "Arial"), size: 7.2pt, spacing: 100%)
+#set par(leading: 0.28em, justify: false)
+
+// Reusable 7.5mm handwriting ergonomic primitives
+#let cb = box(width: 7.2pt, height: 7.2pt, stroke: 0.6pt + rgb("#222222"), radius: 1pt, baseline: 1pt)
+
+#let write-box(w: 100%) = box(
+  width: w,
+  height: 7.5mm,
+  stroke: (bottom: (paint: rgb("#555555"), thickness: 0.55pt, dash: "dotted"))
+)
+
+#let labeled-line(lbl, w: 100%) = box(width: w, height: 7.5mm)[
+  #align(bottom)[
+    #grid(
+      columns: (auto, 1fr),
+      gutter: 4pt,
+      align: bottom,
+      [#text(weight: "bold", fill: rgb("#222222"), size: 7.5pt)[#lbl]],
+      [#box(width: 100%, height: 7.5mm, stroke: (bottom: (paint: rgb("#555555"), thickness: 0.55pt, dash: "dotted")))]
+    )
+  ]
+]
+
+#let comment-line() = block(
+  width: 100%,
+  height: 7.5mm,
+  spacing: 0pt,
+  stroke: (bottom: (paint: rgb("#555555"), thickness: 0.55pt, dash: "dotted"))
+)
+
+#let comments-block(n: 3, label: "Additional Comments / Conservation & Provenance Notes:") = block(
+  width: 100%,
+  above: 3pt,
+  below: 1pt,
+  [
+    #text(weight: "bold", fill: rgb("#1b365d"), size: 7.2pt)[#label]
+    #for i in range(n) { comment-line() }
+  ]
+)
+
+#let sec-bar(num, title) = block(
+  width: 100%,
+  fill: rgb("#1b365d"),
+  inset: (x: 4.5pt, y: 1.6pt),
+  radius: 1.2pt,
+  spacing: 0pt,
+  [
+    #grid(
+      columns: (auto, 1fr),
+      gutter: 6pt,
+      text(fill: white, weight: "bold", size: 8.2pt)[#num],
+      text(fill: white, weight: "bold", size: 8.2pt)[#title]
+    )
+  ]
+)
+
+#let field-lbl(txt) = text(weight: "bold", fill: rgb("#222222"), size: 7.2pt)[#txt]
+#let note(txt) = text(fill: rgb("#444444"), size: 6.5pt, style: "italic")[#txt]
+
+// Form 3 Banner
+#block(
+  width: 100%,
+  stroke: 0.8pt + rgb("#1b365d"),
+  fill: rgb("#f4f6f9"),
+  inset: (x: 5pt, y: 2.2pt),
+  radius: 1.5pt,
+  [
+    #grid(
+      columns: (1fr, auto),
+      gutter: 8pt,
+      [
+        #text(weight: "bold", size: 9.8pt, fill: rgb("#1b365d"))[FORM 3: ROOM OBJECT / MACHINERY / ARTIFACT INVENTORY] \
+        #text(size: 6.7pt, fill: rgb("#333333"))[
+          Portable & Fixture Heritage Log | Adapted from Burke, Smith & Morrison (2020) & Miles Lewis (1992)
+        ]
+      ],
+      [
+        #align(right + top)[
+          #text(weight: "bold", size: 8.5pt, fill: rgb("#1b365d"))[BALALA HERITAGE PROJECT] \
+          #text(size: 6.8pt, fill: rgb("#555555"))[FORM 3 — SINGLE / REPEATABLE]
+        ]
+      ]
+    )
+  ]
+)
+#v(1.2pt)
+#block(
+  width: 100%,
+  fill: rgb("#e8eef5"),
+  stroke: 0.5pt + rgb("#1b365d"),
+  inset: (x: 5pt, y: 2.0pt),
+  radius: 1.2pt,
+  [
+    #text(weight: "bold", fill: rgb("#1b365d"), size: 6.8pt)[ID CODING GUIDE:] #text(size: 6.8pt, fill: rgb("#222222"))[Link all records to Master Site Map. #strong[Structure ID:] `STR-01`, `STR-02` | #strong[Room ID] (append letter A–Z sequentially): `STR-01-A`, `STR-01-B` | #strong[Object ID] (append 2-digit number per room): `STR-01-A-01`, `STR-01-A-02`.]
+  ]
+)
+
+#v(1.5pt)
+// SECTION 1: INVENTORY CONTEXT & HEADER
+#sec-bar("SECTION 1", "INVENTORY CONTEXT & ROOM PROVENANCE")
+#v(1.5pt)
+
+#grid(
+  columns: (1fr, 1.3fr, 1fr, 1fr),
+  row-gutter: 2pt, column-gutter: 6pt,
+  labeled-line("Structure ID:"),
+  labeled-line("Structure Name:"),
+  labeled-line("Room ID (e.g. STR-01-A):"),
+  labeled-line("Inferred Room Use:")
+)
+
+#grid(
+  columns: (1.2fr, 1fr, 1fr, 0.9fr),
+  row-gutter: 2pt, column-gutter: 6pt,
+  labeled-line("Recorder(s) (Full Names):"),
+  labeled-line("Date (DD/MM/YYYY):"),
+  labeled-line("Camera Make & No.:"),
+  labeled-line("Sheet No.:")
+)
+
+#v(2.0pt)
+// SECTION 2: OBJECT & MACHINERY INVENTORY TABLE
+#sec-bar("SECTION 2", "ROOM OBJECT & MACHINERY INVENTORY TABLE")
+#v(1.0pt)
+#note([*Inventory Protocol:* Assign unique Object ID (`<Room ID>-01`, `<Room ID>-02`). Describe material (cast iron, wrought iron, brass, hardwood, softwood, ceramic, glass, leather), dimensions (mm), maker brand/stamps, function, and condition (intact, rusted, broken, fragile). Mark exact location on Room Floor Plan.])
+#v(1.5pt)
+
+#table(
+  columns: (72pt, 85pt, 1fr, 68pt),
+  stroke: 0.45pt + rgb("#bbbbbb"),
+  fill: (col, row) => if row == 0 { rgb("#e8eef5") } else { none },
+  inset: (x: 3.5pt, y: 2.2pt),
+  align: (col, row) => if row == 0 { center + horizon } else { left + horizon },
+  // Header row
+  [#text(weight: "bold", fill: rgb("#1b365d"), size: 7.2pt)[Object ID \ (e.g. STR-01-A-01)]],
+  [#text(weight: "bold", fill: rgb("#1b365d"), size: 7.2pt)[Item Category \ (Vocabulary Below)]],
+  [#text(weight: "bold", fill: rgb("#1b365d"), size: 7.2pt)[Description, Material, Maker Marks, Dimensions (mm) & Condition]],
+  [#text(weight: "bold", fill: rgb("#1b365d"), size: 7.2pt)[Photo Frame \ Number(s)]],
+  // 15 Inventory rows at 7.5mm height
+  ..range(15).map(i => (
+    [#box(width: 100%, height: 7.5mm, stroke: (bottom: (paint: rgb("#666666"), thickness: 0.5pt, dash: "dotted")))],
+    [#box(width: 100%, height: 7.5mm, stroke: (bottom: (paint: rgb("#666666"), thickness: 0.5pt, dash: "dotted")))],
+    [#box(width: 100%, height: 7.5mm, stroke: (bottom: (paint: rgb("#666666"), thickness: 0.5pt, dash: "dotted")))],
+    [#box(width: 100%, height: 7.5mm, stroke: (bottom: (paint: rgb("#666666"), thickness: 0.5pt, dash: "dotted")))]
+  )).flatten()
+)
+
+#v(1.0pt)
+#block(
+  width: 100%,
+  fill: rgb("#f4f6f9"),
+  stroke: 0.4pt + rgb("#cccccc"),
+  inset: (x: 4.5pt, y: 2.0pt),
+  radius: 1.0pt,
+  [
+    #field-lbl("Controlled Item Categories:") #text(size: 6.7pt, fill: rgb("#333333"))[
+      #strong[Pastoral/Wool:] Shearing equipment, wool bale stencils, fleece scales, wool press | #strong[Machinery/Engine:] Stationary engine, pump, shafting, pulley, generator | #strong[Trades/Tools:] Blacksmith tools, forge tongs, anvil, carpentry tools | #strong[Domestic/Furniture:] Table, chair, bedstead, meat safe, washstand | #strong[Cooking/Heating:] Cast iron stove, kettle, camp oven, pots | #strong[Containers:] Historic bottles/glass, tins, wooden boxes, barrels, ceramic stoneware | #strong[Building Fabric:] Loose joinery, bricks, hardware, shingles | #strong[Personal/Apparel:] Footwear, clothing, tobacco tin | #strong[Other] (specify).
+    ]
+  ]
+)
+
+#v(2.0pt)
+// SECTION 3: ADDITIONAL COMMENTS & CONSERVATION NOTES
+#sec-bar("SECTION 3", "ADDITIONAL COMMENTS, CONSERVATION HAZARDS & CURATION NOTES")
+#comments-block(n: 3, label: "Additional Comments / Fragile Heritage & In-Situ Retention Notes:")
+```

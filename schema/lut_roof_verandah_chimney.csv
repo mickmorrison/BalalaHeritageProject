@@ -1,0 +1,29 @@
+code,label,category_group,date_start,date_end,volunteer_identification_guide
+roof_gable,Gable Roof,Roof Form,1830,Present,Triangular pitched roof with two sloping sides terminating in a vertical gable wall at each end.
+roof_hipped,Hipped Roof,Roof Form,1830,Present,"Slopes downwards to walls on all four sides, forming an inclined ridge and diagonal hip junctions; highly wind-resistant."
+roof_half_hipped_jerkin,Half-hipped / Jerkinhead Roof,Roof Form,1840,1920,Gable roof whose upper apex is truncated by a small sloping hip plane; vernacular compromise providing gable ventilation and hip stability.
+roof_skillion,Skillion / Shed Roof (Single Slope),Roof Form,1830,Present,"Single sloping roof plane leaning against higher wall or freestanding; standard for verandahs, lean-to kitchen extensions, and open sheds."
+roof_curved_bullnose,Curved / Bullnose Roof,Roof Form,1885,1930,Roof sheeting curved outwards at eaves or verandah margin; popularised late Victorian and Edwardian periods using curved corrugated iron.
+roof_sawtooth_monitor,Monitor / Sawtooth Roof,Roof Form,1870,Present,Roof with vertical glazed or louvred clerestory ridge windows providing natural daylighting and ventilation across large woolshed shearing floors.
+cladding_corrugated_iron,Corrugated Galvanised Iron (CGI),Roof Cladding,1852,Present,"Curved or fluted sheet iron; check under-lap for stamped brands (Lysaght Orb, Gospel Oak, Redcliffe Crown)."
+cladding_wood_shingles,Wood Shingles (Split or Sawn),Roof Cladding,1830,1910,Small rectangular timber tiles nailed to closely spaced roof battens; split hardwood pre-1865; machine-sawn post-1865; often concealed under later CGI.
+cladding_timber_palings,Split Timber Palings,Roof Cladding,1830,1900,Longer split timber slabs (0.9 to 1.5m long) overlapping on steep pitch roofs; typical pioneer bush roof covering.
+cladding_stringybark,Stringybark / Sheet Bark,Roof Cladding,1830,1900,"Large sheets of Eucalyptus bark stripped from trees in sap season, flattened under weights, held in place by sapling ridge poles and wire."
+cladding_slate,Roofing Slate,Roof Cladding,1840,1920,Thin split natural stone tiles (Welsh or local) secured with copper or iron nails; high status domestic and institutional roofs.
+cladding_marseilles_tile,Marseilles Terracotta Tiles,Roof Cladding,1889,Present,Interlocking terracotta tiles with stamped maker marks; imported from France 1889-1915; manufactured locally in Australia by Wunderlich after 1916.
+subroof_shingle_battens,Shingle Battens Visible in Roof Space,Roof Space Clues,1830,1910,Closely spaced light horizontal battens (c. 150-200mm apart) carrying nail holes or wood splinters; confirms roof was originally shingled before CGI re-roofing.
+subroof_bark_props,Bark Ridge Props / Sapling Purlins,Roof Space Clues,1830,1900,Rough pole rafters with remnant stringybark fibres or wire ties from early bark roof.
+verandah_straight_skillion,Straight Skillion Verandah,Verandah Roof Profile,1830,Present,Straight slope running downwards from main eaves or outer wall at continuous or slightly lower pitch.
+verandah_broken_back,Broken-back Verandah,Verandah Roof Profile,1840,Present,"Pitch breaks into a distinctly shallower angle at the main wall line, continuing over verandah as a shallower slope."
+verandah_bullnose,Bullnose Curved Verandah,Verandah Roof Profile,1885,1920,Curved convex profile at outer edge of roof; classic late Victorian and Federation rural aesthetic.
+verandah_concave_ogee,Concave / Ogee Verandah,Verandah Roof Profile,1840,1880,Graceful upward hollow sweeping concave curve or S-shaped ogee curve; distinctive Georgian and early/mid Victorian profile.
+post_bush_pole,Bush Pole Verandah Post,Verandah Post Type,1830,Present,"Round, peeled hardwood sapling or tree trunk; vernacular bush aesthetic."
+post_square_plain,Square Plain Timber Post,Verandah Post Type,1830,Present,Rough-sawn or dressed square hardwood timber (typically 100x100mm) without moulding.
+post_chamfered_timber,Chamfered Timber Post,Verandah Post Type,1850,1920,Dressed timber post with chamfered / bevelled edges terminating in stop-chamfers near head and base.
+post_turned_timber,Turned Timber Post,Verandah Post Type,1880,1920,Decorative post shaped on a wood-turning lathe with classical baluster rings; late Victorian/Federation.
+post_cast_iron,Cast Iron Fluted / Decorative Post,Verandah Post Type,1855,1910,"Hollow cast-iron column with integral classical base and capitals, often bolted to stone kerb; may feature foundry name."
+chimney_brick_external,Brick Chimney (External Breast),Chimney Type,1830,Present,Corbelled or plain brick stack projecting from external gable wall; note whether handmade or machine bricks.
+chimney_stone_rubble,Stone / Rubble Chimney Stack,Chimney Type,1830,1920,Massive masonry chimney built of fieldstone or coursed sandstone with wide open hearth.
+chimney_cgi_iron_stack,Corrugated Iron Cased Chimney,Chimney Type,1860,1940,"Vernacular chimney constructed of timber frame clad externally in flat or corrugated iron, lined with mud-mortar pugging to prevent fire."
+chimney_slab_pug,Split Slab & Mud/Pug Chimney,Chimney Type,1830,1910,Primitive bush chimney built of heavy vertical slabs lined internally with stone and rammed pug/clay.
+chimney_concrete_flue,Mass Concrete / Flue Pipe,Chimney Type,1900,Present,Cast concrete hearth or steel/asbestos flue pipe; 20th century installation.

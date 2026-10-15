@@ -1,0 +1,839 @@
+---
+format:
+  typst:
+    papersize: a4
+    margin:
+      top: 6mm
+      bottom: 6mm
+      left: 7.5mm
+      right: 7.5mm
+---
+
+```{=typst}
+#set document(title: "Historical & Pastoral Structure Recording Form", author: "Balala Heritage Project")
+#set text(font: ("Helvetica", "Arial"), size: 7.3pt, spacing: 100%)
+#set par(leading: 0.30em, justify: false)
+
+// Reusable micro-primitives for volunteer field recording
+#let cb = box(width: 7.2pt, height: 7.2pt, stroke: 0.6pt + rgb("#222222"), radius: 1pt, baseline: 1pt)
+#let dotline(w: 100%) = box(width: w, baseline: -2.2pt)[#line(length: 100%, stroke: (paint: rgb("#777777"), thickness: 0.45pt, dash: "dotted"))]
+#let fillline(w: 100%) = box(width: w, baseline: -2.2pt)[#line(length: 100%, stroke: (paint: rgb("#555555"), thickness: 0.55pt))]
+
+#let sec-bar(num, title) = block(
+  width: 100%,
+  fill: rgb("#1b365d"),
+  inset: (x: 4.5pt, y: 1.8pt),
+  radius: 1.2pt,
+  spacing: 0pt,
+  [
+    #grid(
+      columns: (auto, 1fr),
+      gutter: 6pt,
+      text(fill: white, weight: "bold", size: 8.5pt)[#num],
+      text(fill: white, weight: "bold", size: 8.5pt)[#title]
+    )
+  ]
+)
+
+#let sub-title(txt) = text(weight: "bold", fill: rgb("#1b365d"), size: 7.6pt)[#txt]
+#let field-lbl(txt) = text(weight: "bold", fill: rgb("#222222"), size: 7.6pt)[#txt]
+#let note(txt) = text(fill: rgb("#444444"), size: 6.6pt, style: "italic")[#txt]
+
+// ============================================================================
+// PAGE 1: IDENTIFICATION, WHS, EXTERIOR ENVELOPE & FABRIC
+// ============================================================================
+
+// Top Title Banner
+#block(
+  width: 100%,
+  stroke: 0.8pt + rgb("#1b365d"),
+  fill: rgb("#f4f6f9"),
+  inset: (x: 5pt, y: 2.5pt),
+  radius: 1.5pt,
+  [
+    #grid(
+      columns: (1fr, auto),
+      gutter: 8pt,
+      [
+        #text(weight: "bold", size: 10.5pt, fill: rgb("#1b365d"))[HISTORICAL & PASTORAL STRUCTURE RECORDING FORM] \
+        #text(size: 6.8pt, fill: rgb("#333333"))[
+          Standard Field Proforma for Standing Fabric & Ruins | Adapted from Burke, Smith & Morrison (2020) & Miles Lewis (1992)
+        ]
+      ],
+      [
+        #align(right + top)[
+          #text(weight: "bold", size: 8.5pt, fill: rgb("#1b365d"))[BALALA HERITAGE PROJECT] \
+          #text(size: 6.8pt, fill: rgb("#555555"))[CORE FORM — PAGE 1 OF 2]
+        ]
+      ]
+    )
+  ]
+)
+
+#v(1.4pt)
+
+// 1. Header & Cross-Reference Block
+#sec-bar("1", "HEADER & CROSS-REFERENCE IDENTIFICATION")
+#block(
+  width: 100%,
+  stroke: 0.35pt + rgb("#a0a0a0"),
+  inset: (x: 4.5pt, y: 2pt),
+  radius: 1.2pt,
+  [
+    #grid(
+      columns: (1.3fr, 1.4fr, 0.9fr, 1.2fr),
+      gutter: (8pt, 2pt),
+      [#field-lbl[Property / Site:] #dotline(w: 60%)],
+      [#field-lbl[Structure ID & Name:] #dotline(w: 52%)],
+      [#field-lbl[Date:] #dotline(w: 68%)],
+      [#field-lbl[Recorder(s):] #dotline(w: 58%)],
+      [#field-lbl[GPS Point / Poly ID:] #dotline(w: 48%)],
+      [#field-lbl[Site Plan Sheet No.:] #dotline(w: 46%)],
+      [#field-lbl[Floor Plan Sheet No.:] #dotline(w: 42%)],
+      [#field-lbl[Photo Frame Range:] #dotline(w: 46%)]
+    )
+    #v(1.2pt)
+    #line(length: 100%, stroke: 0.3pt + rgb("#d0d0d0"))
+    #v(1.2pt)
+    #grid(
+      columns: (auto, 1fr),
+      gutter: 8pt,
+      [#field-lbl[Overall Condition:]],
+      [
+        #cb Good #note[(>70% original fabric intact; structurally sound)] #h(6pt)
+        #cb Fair #note[(30–70% modified / weathered; partial fabric loss)] #h(6pt)
+        #cb Poor / Ruinous #note[(\< 30% surviving; collapse/danger)]
+      ]
+    )
+  ]
+)
+
+#v(1.4pt)
+
+// 2. Safety & WHS Check
+#block(
+  width: 100%,
+  stroke: 0.75pt + rgb("#b30000"),
+  fill: rgb("#fff8f8"),
+  inset: (x: 4.5pt, y: 2pt),
+  radius: 1.2pt,
+  [
+    #grid(
+      columns: (auto, 1fr),
+      gutter: 6pt,
+      [#text(weight: "bold", fill: rgb("#b30000"), size: 7.8pt)[VOLUNTEER SAFETY & WHS PRE-ENTRY CHECK:]],
+      [#note[Check physical hazards before entering structure or crawlspaces (Burke et al. 2020: 161)]]
+    )
+    #v(1.2pt)
+    #grid(
+      columns: (1.1fr, 1fr, 1.3fr),
+      gutter: (6pt, 1.8pt),
+      [#cb Suspected Asbestos / Fibro #note[(lagging/sheets; do not break)]],
+      [#cb Flaking Lead Paint #note[(toxic dust; do not scrape)]],
+      [#cb Unstable Roof, Wall Bowing, Rotten Floorboards],
+      [#cb Sub-floor Arsenic, Dip, or Pesticide Hazard],
+      [#cb Fauna Hazard #note[(snakes, redbacks, wasps, guano)]],
+      [
+        #field-lbl[Safe for Entry?] #h(3pt)
+        #cb #strong[YES (Full)] #h(4pt)
+        #cb #strong[PARTIAL] #h(4pt)
+        #cb #text(weight: "bold", fill: rgb("#b30000"))[EXTERIOR ONLY]
+      ]
+    )
+  ]
+)
+
+#v(1.4pt)
+
+// 3. Function, Scale & Layout
+#sec-bar("2", "FUNCTION, SCALE & LAYOUT")
+#block(
+  width: 100%,
+  stroke: 0.35pt + rgb("#a0a0a0"),
+  inset: (x: 4.5pt, y: 2pt),
+  radius: 1.2pt,
+  [
+    #grid(
+      columns: (auto, 1fr),
+      gutter: 5pt,
+      [#sub-title[Category & Purpose:]],
+      [
+        #strong[Domestic:] #cb Homestead #cb Overseers / Cottage #cb Detached Kitchen #cb Shearers Quarters #cb Mess / Cookhouse #cb Laundry #cb Privy \
+        #strong[Pastoral / Ag:] #cb Woolshed #cb Shearing Board #cb Sweat Pens #cb Stable / Tack #cb Coach House #cb Dairy #cb Meat House #cb Machinery Shed #cb Stockyard #cb Sheep Dip #cb Hut \
+        #strong[Industrial / Trades:] #cb Blacksmith / Forge #cb Carpentry Shop #cb Engine / Boiler House #cb Brick Kiln / Clamp \
+        #strong[Water / Services:] #cb Well Shaft #cb Underground Cistern #cb CGI Overhead Tank #cb Rivetted Ship Tank #cb Earth Dam / Tank
+      ]
+    )
+    #v(1.2pt)
+    #grid(
+      columns: (1fr, 1fr),
+      gutter: 10pt,
+      [#field-lbl[Original Purpose:] #dotline(w: 66%)],
+      [#field-lbl[Later / Current Use:] #dotline(w: 66%)]
+    )
+    #v(1.2pt)
+    #line(length: 100%, stroke: 0.3pt + rgb("#d0d0d0"))
+    #v(1.2pt)
+    #grid(
+      columns: (auto, auto, auto, auto, 1fr),
+      gutter: 8pt,
+      [
+        #sub-title[Storeys:] \
+        #cb Single #h(3pt) #cb Double \
+        #cb Single + Loft #h(3pt) #cb Split
+      ],
+      [
+        #sub-title[Plan Shape:] \
+        #cb Rectangular #h(3pt) #cb Square #h(3pt) #cb L-shape \
+        #cb U-shape #h(3pt) #cb Multi-wing #h(3pt) #cb Open shed
+      ],
+      [
+        #sub-title[Façade:] \
+        #cb Symmetrical \
+        #cb Asymmetrical
+      ],
+      [
+        #sub-title[Orientation:] \
+        #cb N #cb NE #cb E #cb SE \
+        #cb S #cb SW #cb W #cb NW
+      ],
+      [
+        #sub-title[Approximate External Dimensions:] \
+        Length: #box(width: 28pt)[#dotline()] m #h(4pt) Width: #box(width: 28pt)[#dotline()] m \
+        Est. Floor Area: #box(width: 32pt)[#dotline()] m²
+      ]
+    )
+  ]
+)
+
+#v(1.4pt)
+
+// 4. Foundations & Sub-Floor Space
+#sec-bar("3", "FOUNDATIONS & SUB-FLOOR SPACE (Inspect crawlspace if accessible)")
+#block(
+  width: 100%,
+  stroke: 0.35pt + rgb("#a0a0a0"),
+  inset: (x: 4.5pt, y: 2pt),
+  radius: 1.2pt,
+  [
+    #grid(
+      columns: (auto, 1fr),
+      gutter: 5pt,
+      [#sub-title[Footings/Stumps:]],
+      [
+        #cb Earthfast timber posts #note[(sunk in ground; prone to rot/termites)] #h(5pt)
+        #cb Timber stumps / blocks #note[(on pads; tin ant-caps post-1880)] #h(5pt)
+        #cb Horizontal bedlogs #note[(logs laid on ground)] \
+        #cb Dry-stone rubble piers #h(5pt)
+        #cb Mortared stone foundation wall #h(5pt)
+        #cb Brick piers #note[(230x230mm)] #h(5pt)
+        #cb Concrete piers / slab #note[(post-1890)] #h(5pt)
+        #cb Steel posts / rail tracks
+      ]
+    )
+    #v(1.2pt)
+    #line(length: 100%, stroke: 0.3pt + rgb("#d0d0d0"))
+    #v(1.2pt)
+    #grid(
+      columns: (1.3fr, 1.1fr),
+      gutter: 8pt,
+      [
+        #sub-title[Sub-Floor Bearer / Joist Conversion Marks:] \
+        #cb Round bush poles #h(5pt) #cb Adzed / hewn squared #note[(scallop axe gouges)] \
+        #cb Pit-sawn #note[(irregular diagonal criss-cross marks; manual two-man saw pre-1860s)] \
+        #cb Circular-sawn #note[(distinct curved concentric arcs; steam sawmills post-1850s)] \
+        #cb Modern milled / planed #note[(fine straight lines or smooth planed)]
+      ],
+      [
+        #sub-title[Sub-Floor Archaeological Deposit Potential:] \
+        #cb High Potential #note[(intact floorboards & deep void; dropped items trapped)] \
+        #cb Moderate #note[(partial floor loss, animal disturbance, sheep dung)] \
+        #cb Low #note[(cleared, eroded, or washed crawlspace)] \
+        #cb None #note[(earth floor or solid ground concrete slab)]
+      ]
+    )
+  ]
+)
+
+#v(1.4pt)
+
+// 5. Walls & Structural Framing
+#sec-bar("4", "WALLS & STRUCTURAL FRAMING")
+#block(
+  width: 100%,
+  stroke: 0.35pt + rgb("#a0a0a0"),
+  inset: (x: 4.5pt, y: 2pt),
+  radius: 1.2pt,
+  [
+    #grid(
+      columns: (auto, 1fr),
+      gutter: 5pt,
+      [#sub-title[Primary Wall System:]],
+      [
+        #cb Stud frame #note[(light dimensional timber, post-1853)] #h(5pt)
+        #cb Heavy box frame #note[(mortised posts/beams, pre-1860s)] #h(5pt)
+        #cb Round bush-pole frame \
+        #cb Vertical split timber slab #note[(slotted in grooved top/bottom plates)] #h(5pt)
+        #cb Horizontal drop-log / slab #note[(slotted into rebated posts)] \
+        #cb Pisé #note[(rammed earth tamped in wooden shuttering, ~400mm lifts)] #h(5pt)
+        #cb Wattle & daub / Pug & pine #note[(saplings plastered with mud/straw)] \
+        #cb Mudbrick / Sun-dried adobe #h(5pt)
+        #cb Solid Brick #h(5pt)
+        #cb Cavity Brick #note[(tied double leaf, post-1880s)] #h(5pt)
+        #cb Stone Masonry #h(5pt)
+        #cb CGI on timber frame
+      ]
+    )
+    #v(1.2pt)
+    #line(length: 100%, stroke: 0.3pt + rgb("#d0d0d0"))
+    #v(1.2pt)
+    #grid(
+      columns: (1.2fr, 1.2fr),
+      gutter: 8pt,
+      [
+        #sub-title[Timber Joints Observed:] \
+        #cb Mortise & tenon #note[(traditional carpentry)] #h(5pt) #cb Pegged / drawbore #note[(trunnels)] \
+        #cb Halving / notched lap #h(5pt) #cb Bird’s mouth rafter notch #h(5pt) #cb Butt & nailed #note[(post-1853)]
+      ],
+      [
+        #sub-title[Fasteners & Nails Observed:] \
+        #cb Hand-wrought nails #note[(square tapered shank, rosehead; pre-1850s)] \
+        #cb Machine-cut / Ewbank #note[(wedge taper on 2 sides; c.1835-1880s)] \
+        #cb Wire nails #note[(circular drawn wire shank, flat head; post-1870s)] #h(5pt) #cb Baling wire
+      ]
+    )
+    #v(1.2pt)
+    #line(length: 100%, stroke: 0.3pt + rgb("#d0d0d0"))
+    #v(1.2pt)
+    #grid(
+      columns: (auto, 1fr),
+      gutter: 5pt,
+      [#sub-title[Brick & Stone Details:]],
+      [
+        #strong[Brick Mfg:] #cb Handmade/sandstock #note[(creases, thumb marks, no/shallow frog; pre-1850s)] #h(3pt) #cb Machine-pressed #note[(crisp edges, deep frog; post-1855)] \
+        #strong[Brick Bond:] #cb Stretcher #cb English #note[(alt rows header/stretcher; strong)] #cb Flemish #note[(alt header/stretcher in row)] #cb Colonial #note[(3-5 stretchers per header)] \
+        #strong[Stone Coursing:] #cb Ashlar #note[(dressed square blocks, fine joints)] #cb Coursed rubble #note[(distinct rows)] #cb Random uncoursed rubble #note[(no rows)] \
+        #strong[Mortar:] #cb Soft lime-sand #note[(buff/white, scratches with fingernail)] #cb Mud / clay #cb Hard grey Portland cement #note[(post-1880s)] \
+        #strong[Quoins:] #cb Dressed stone #cb Contrasting brick #cb Rendered rusticated #cb None
+      ]
+    )
+    #v(1.2pt)
+    #line(length: 100%, stroke: 0.3pt + rgb("#d0d0d0"))
+    #v(1.2pt)
+    #grid(
+      columns: (auto, 1fr),
+      gutter: 5pt,
+      [#sub-title[Cladding & Finishes:]],
+      [
+        #cb Weatherboard beaded #note[(quirked edge bead; pre-1860)] #h(5pt)
+        #cb Weatherboard plain splayed #note[(no bead; post-1860)] #h(5pt)
+        #cb Rough-sawn boarding \
+        #cb CGI 5-inch / 130mm early pitch #note[(heavy gauge, 1850-65)] #h(5pt)
+        #cb CGI 3-inch / 80mm standard pitch #note[(dominant post-1860)] #h(5pt)
+        #cb Ripple iron #note[(25mm flutes; post-1890)] \
+        #cb Flattened tin plate #note[(kerosene tins)] #h(5pt)
+        #cb Fibro / Asbestos cement + battens #note[(post-1903)] #h(5pt)
+        #cb Limewash #h(5pt)
+        #cb Stucco / render #h(5pt)
+        #cb Roughcast
+      ]
+    )
+    #v(1.2pt)
+    #grid(
+      columns: (auto, 1fr),
+      gutter: 5pt,
+      [#field-lbl[Framing Notes / Other Fabric:]],
+      [#dotline()]
+    )
+  ]
+)
+
+#v(1.4pt)
+
+// 6. Roof, Chimneys & Verandahs
+#sec-bar("5", "ROOF, CHIMNEYS & VERANDAHS")
+#block(
+  width: 100%,
+  stroke: 0.35pt + rgb("#a0a0a0"),
+  inset: (x: 4.5pt, y: 2pt),
+  radius: 1.2pt,
+  [
+    #grid(
+      columns: (auto, 1fr),
+      gutter: 5pt,
+      [#sub-title[Roof Form & Cladding:]],
+      [
+        #strong[Form:] #cb Gable #h(3pt) #cb Hipped #h(3pt) #cb Half-hipped / Jerkinhead #h(3pt) #cb Skillion #h(3pt) #cb Curved / Bullnose #h(3pt) #cb Monitor / Sawtooth \
+        #strong[Current Cladding:] #cb Corrugated iron (CGI) #h(3pt) #cb Wood shingles #h(3pt) #cb Split palings #h(3pt) #cb Stringybark #h(3pt) #cb Slate #h(3pt) #cb Marseilles tile \
+        #strong[Roof Space Clues (inspect cavity):] #cb Shingle battens with nail holes #cb Remnant shingles/bark in attic #cb Sawing change
+      ]
+    )
+    #v(1.2pt)
+    #line(length: 100%, stroke: 0.3pt + rgb("#d0d0d0"))
+    #v(1.2pt)
+    #grid(
+      columns: (1.3fr, 1.1fr),
+      gutter: 8pt,
+      [
+        #sub-title[Verandahs & Skillions:] \
+        #strong[Location:] #cb Front #cb Rear #cb Sides #cb All around #cb None \
+        #strong[Roof Profile:] #cb Straight skillion #cb Broken-back pitch #cb Bullnose #cb Concave / Ogee \
+        #strong[Posts:] #cb Bush pole #cb Square plain #cb Chamfered #cb Turned timber #cb Cast iron \
+        #strong[Status:] #cb Original #cb Added later #cb Partially enclosed #cb Fully enclosed as rooms
+      ],
+      [
+        #sub-title[Chimneys & Fireplaces:] \
+        Total Standing Stacks: #box(width: 18pt)[#dotline()] Remnant Hearths: #box(width: 18pt)[#dotline()] \
+        #strong[Material:] #cb Brick #cb Stone/rubble #cb CGI sheet stack \
+        #cb Split slab & mud/pug #cb Concrete / pipe \
+        #strong[Location:] #cb External gable #cb Internal wall #cb Corner \
+        #strong[Detail:] #cb Corbelled cap #cb Chimney pot #cb Plain
+      ]
+    )
+  ]
+)
+
+#pagebreak()
+
+// ============================================================================
+// PAGE 2: OPENINGS, ROOM INVENTORY (ROOMS 1-5), PHASING & SYNTHESIS
+// ============================================================================
+
+// Top Header
+#block(
+  width: 100%,
+  stroke: 0.8pt + rgb("#1b365d"),
+  fill: rgb("#f4f6f9"),
+  inset: (x: 5pt, y: 2.5pt),
+  radius: 1.5pt,
+  [
+    #grid(
+      columns: (1fr, auto),
+      gutter: 8pt,
+      [
+        #text(weight: "bold", size: 9.5pt, fill: rgb("#1b365d"))[HISTORICAL & PASTORAL STRUCTURE RECORDING FORM — PAGE 2] \
+        #text(size: 6.8pt, fill: rgb("#333333"))[Structure ID: #dotline(w: 70pt) | Property: #dotline(w: 90pt) | Date: #dotline(w: 50pt) | Recorder: #dotline(w: 70pt)]
+      ],
+      [
+        #align(right + top)[
+          #text(weight: "bold", size: 8.5pt, fill: rgb("#1b365d"))[BALALA HERITAGE PROJECT] \
+          #text(size: 6.8pt, fill: rgb("#555555"))[CORE FORM — PAGE 2 OF 2]
+        ]
+      ]
+    )
+  ]
+)
+
+#v(1.6pt)
+
+// 6. Exterior Openings
+#sec-bar("6", "EXTERIOR DOORS & WINDOWS (Summary across structure)")
+#block(
+  width: 100%,
+  stroke: 0.35pt + rgb("#a0a0a0"),
+  inset: (x: 4.5pt, y: 2pt),
+  radius: 1.2pt,
+  [
+    #grid(
+      columns: (1.2fr, 1.2fr),
+      gutter: 10pt,
+      [
+        #sub-title[Windows:] \
+        #strong[Type:] #cb Double-hung sash #cb Casement #cb Sliding horizontal #cb Fixed #cb Shutter only #cb Louvre \
+        #strong[Panes:] #cb 12-pane (6/6) #note[(pre-1865)] #cb 6-pane #cb 4-pane (2/2) #note[(1865-1900)] #cb 2-pane (1/1) #cb Single large \
+        #strong[Lintel / Sill:] #cb Timber head / sill #cb Brick flat/segmental arch #cb Stone lintel / sill
+      ],
+      [
+        #sub-title[Doors & Hardware:] \
+        #strong[Type:] #cb Ledged & braced #cb 4-panel Victorian #cb 6-panel Colonial #cb High-waisted \
+        #cb French doors (pair glazed) #cb Half / stable door #cb Large sliding shed door \
+        #strong[Hardware:] #cb Rim lock (surface box) #cb Mortise lock #cb Thumb latch #cb Drop-bar #cb Strap hinges #cb Butt hinges
+      ]
+    )
+  ]
+)
+
+#v(1.6pt)
+
+// 7. Internal Room Matrix
+#sec-bar("7", "INTERNAL ROOM & SPACE INVENTORY MATRIX (Rooms 1 to 5 & Verandah / Hall Infill)")
+#note[Number all spaces sequentially on manual Floor Plan sketch from front to rear (Miles Lewis 1992). Use Page 3 Continuation Sheet for Rooms 6+.]
+
+#v(1.5pt)
+
+#set table(inset: (x: 2.8pt, y: 2pt), stroke: 0.35pt + rgb("#b0b0b0"))
+#table(
+  columns: (1.35fr, 1fr, 1fr, 1fr, 1fr, 1fr, 1fr),
+  fill: (col, row) => if row == 0 { rgb("#e8eef5") } else if calc.even(row) { rgb("#fcfcfc") } else { white },
+  align: (col, row) => if col == 0 { left + top } else { left + top },
+  [#text(weight: "bold", size: 7.2pt)[Attribute / Space]],
+  [#text(weight: "bold", size: 7.2pt)[Room 1]],
+  [#text(weight: "bold", size: 7.2pt)[Room 2]],
+  [#text(weight: "bold", size: 7.2pt)[Room 3]],
+  [#text(weight: "bold", size: 7.2pt)[Room 4]],
+  [#text(weight: "bold", size: 7.2pt)[Room 5]],
+  [#text(weight: "bold", size: 7.2pt)[Hall / Verandah]],
+
+  // Row 1
+  [#field-lbl[Room No. & Use] \ #note[Kit, bed, parl, wool, tack]],
+  [#cb Kit #cb Bed \ #cb Parl #cb Oth: \ #dotline()],
+  [#cb Kit #cb Bed \ #cb Parl #cb Oth: \ #dotline()],
+  [#cb Kit #cb Bed \ #cb Parl #cb Oth: \ #dotline()],
+  [#cb Kit #cb Bed \ #cb Parl #cb Oth: \ #dotline()],
+  [#cb Kit #cb Bed \ #cb Parl #cb Oth: \ #dotline()],
+  [#cb Hall #cb Pass \ #cb Verandah infill \ #cb Sleepout: #dotline()],
+
+  // Row 2
+  [#field-lbl[Floor Material] \ #note[Earth, stone, slats, T&G, conc]],
+  [#cb Butt #cb T&G \ #cb Earth #cb Conc \ #cb Grate #cb Brick \ Width: #box(width:16pt)[#dotline()]mm],
+  [#cb Butt #cb T&G \ #cb Earth #cb Conc \ #cb Grate #cb Brick \ Width: #box(width:16pt)[#dotline()]mm],
+  [#cb Butt #cb T&G \ #cb Earth #cb Conc \ #cb Grate #cb Brick \ Width: #box(width:16pt)[#dotline()]mm],
+  [#cb Butt #cb T&G \ #cb Earth #cb Conc \ #cb Grate #cb Brick \ Width: #box(width:16pt)[#dotline()]mm],
+  [#cb Butt #cb T&G \ #cb Earth #cb Conc \ #cb Grate #cb Brick \ Width: #box(width:16pt)[#dotline()]mm],
+  [#cb Butt #cb T&G \ #cb Earth #cb Conc \ #cb Grate #cb Brick \ Width: #box(width:16pt)[#dotline()]mm],
+
+  // Row 3
+  [#field-lbl[Wall Lining] \ #note[Unlined, board, VJ, plaster]],
+  [#cb Unlined #cb VJ \ #cb Horiz board \ #cb Hessian/paper \ #cb Plaster #cb Fibro],
+  [#cb Unlined #cb VJ \ #cb Horiz board \ #cb Hessian/paper \ #cb Plaster #cb Fibro],
+  [#cb Unlined #cb VJ \ #cb Horiz board \ #cb Hessian/paper \ #cb Plaster #cb Fibro],
+  [#cb Unlined #cb VJ \ #cb Horiz board \ #cb Hessian/paper \ #cb Plaster #cb Fibro],
+  [#cb Unlined #cb VJ \ #cb Horiz board \ #cb Hessian/paper \ #cb Plaster #cb Fibro],
+  [#cb Unlined #cb VJ \ #cb Horiz board \ #cb Hessian/paper \ #cb Plaster #cb Fibro],
+
+  // Row 4
+  [#field-lbl[Ceiling Lining] \ #note[Open, timber, plaster, metal]],
+  [#cb Open rafters \ #cb Timber boards \ #cb Hessian #cb Plaster \ #cb Pressed metal],
+  [#cb Open rafters \ #cb Timber boards \ #cb Hessian #cb Plaster \ #cb Pressed metal],
+  [#cb Open rafters \ #cb Timber boards \ #cb Hessian #cb Plaster \ #cb Pressed metal],
+  [#cb Open rafters \ #cb Timber boards \ #cb Hessian #cb Plaster \ #cb Pressed metal],
+  [#cb Open rafters \ #cb Timber boards \ #cb Hessian #cb Plaster \ #cb Pressed metal],
+  [#cb Sloping pitch \ #cb Timber boards \ #cb Ripple #cb Fibro \ #cb Open rafters],
+
+  // Row 5
+  [#field-lbl[Joinery / Fittings] \ #note[Skirting, mantel, meathooks]],
+  [#dotline() \ #dotline()],
+  [#dotline() \ #dotline()],
+  [#dotline() \ #dotline()],
+  [#dotline() \ #dotline()],
+  [#dotline() \ #dotline()],
+  [#dotline() \ #dotline()],
+
+  // Row 6
+  [#field-lbl[Heating & Services] \ #note[Hearth, stove, pipe, wires]],
+  [#cb Hearth #cb Stove \ #cb Col. oven #cb Pipe \ #cb Kero/gas #cb Wire],
+  [#cb Hearth #cb Stove \ #cb Col. oven #cb Pipe \ #cb Kero/gas #cb Wire],
+  [#cb Hearth #cb Stove \ #cb Col. oven #cb Pipe \ #cb Kero/gas #cb Wire],
+  [#cb Hearth #cb Stove \ #cb Col. oven #cb Pipe \ #cb Kero/gas #cb Wire],
+  [#cb Hearth #cb Stove \ #cb Col. oven #cb Pipe \ #cb Kero/gas #cb Wire],
+  [#cb Hearth #cb Stove \ #cb Col. oven #cb Pipe \ #cb Kero/gas #cb Wire],
+
+  // Row 7
+  [#field-lbl[Alterations / Scars] \ #note[Partition, blocked door, step]],
+  [#cb Part. scar #cb Step \ #cb Blocked open \ #cb Paint/paper layer],
+  [#cb Part. scar #cb Step \ #cb Blocked open \ #cb Paint/paper layer],
+  [#cb Part. scar #cb Step \ #cb Blocked open \ #cb Paint/paper layer],
+  [#cb Part. scar #cb Step \ #cb Blocked open \ #cb Paint/paper layer],
+  [#cb Part. scar #cb Step \ #cb Blocked open \ #cb Paint/paper layer],
+  [#cb Part. scar #cb Step \ #cb Verandah beam \ #cb Enclosure seam],
+
+  // Row 8
+  [#field-lbl[Room Photo Nos] \ #note[Manual photo form link]],
+  [#dotline()], [#dotline()], [#dotline()], [#dotline()], [#dotline()], [#dotline()]
+)
+
+#v(1.6pt)
+
+// 8. Brands & Marks
+#sec-bar("8", "BRANDS, MAKER’S MARKS, INSCRIPTIONS & DATES OBSERVED")
+#table(
+  columns: (1fr, 1.3fr, 2.2fr, 0.7fr),
+  fill: (col, row) => if row == 0 { rgb("#e8eef5") } else { white },
+  [#text(weight: "bold", size: 7.2pt)[Location / Room No.]],
+  [#text(weight: "bold", size: 7.2pt)[Item / Feature Type]],
+  [#text(weight: "bold", size: 7.2pt)[Exact Text / Brand / Symbol Observed (e.g. Lysaght Orb, Metters Dover, Tally)]],
+  [#text(weight: "bold", size: 7.2pt)[Photo No.]],
+  [#dotline()], [#dotline()], [#dotline()], [#dotline()],
+  [#dotline()], [#dotline()], [#dotline()], [#dotline()],
+  [#dotline()], [#dotline()], [#dotline()], [#dotline()]
+)
+
+#v(1.6pt)
+
+// 9. Phasing Log
+#sec-bar("9", "COMPONENT & ADDITION PHASING LOG (Miles Lewis 1992 Building Developments)")
+#table(
+  columns: (1.2fr, 1.3fr, 2.4fr, 1.1fr),
+  fill: (col, row) => if row == 0 { rgb("#e8eef5") } else { white },
+  [#text(weight: "bold", size: 7.2pt)[Construction Stage]],
+  [#text(weight: "bold", size: 7.2pt)[Rooms / Fabric Included]],
+  [#text(weight: "bold", size: 7.2pt)[Physical Clues Observed (Check all indicators present)]],
+  [#text(weight: "bold", size: 7.2pt)[Estimated Date / Era]],
+
+  [#strong[Stage 1: Original Core] \ #note[Primary footprint & frame]],
+  [#dotline() \ #dotline()],
+  [
+    #cb Vertical seam / crack in wall #h(5pt) #cb Continuous plates/bearings \
+    #cb Consistent pit/circular timber marks #h(5pt) #cb Early nails (wrought/cut)
+  ],
+  [#dotline()],
+
+  [#strong[Stage 2: Early Addition] \ #note[Rear skillion, kitchen link, wing]],
+  [#dotline() \ #dotline()],
+  [
+    #cb Unbonded vertical joint / crack #h(5pt) #cb Change in brick/timber type \
+    #cb Roof framing break / batten change #h(5pt) #cb Floor step / board width shift
+  ],
+  [#dotline()],
+
+  [#strong[Stage 3: Modification] \ #note[Verandah infill, re-roofing CGI]],
+  [#dotline() \ #dotline()],
+  [
+    #cb Flashing line / crease on wall #h(5pt) #cb CGI over shingle battens \
+    #cb Blocked door / window aperture #h(5pt) #cb Removed partition joist scar
+  ],
+  [#dotline()],
+
+  [#strong[Stage 4: Modern Repairs] \ #note[Steel posts, concrete, salvage]],
+  [#dotline() \ #dotline()],
+  [
+    #cb Wire nails / Portland cement patch #h(5pt) #cb Steel pipe / angle iron \
+    #cb Fibro / Masonite lining #h(5pt) #cb Machine removal / salvage scars
+  ],
+  [#dotline()]
+)
+
+#v(1.6pt)
+
+// 10. Synthesis & Archaeological Potential
+#sec-bar("10", "GENERAL SYNTHESIS, INTEGRITY & ARCHAEOLOGICAL POTENTIAL")
+#block(
+  width: 100%,
+  stroke: 0.35pt + rgb("#a0a0a0"),
+  inset: (x: 4.5pt, y: 2.2pt),
+  radius: 1.2pt,
+  [
+    #grid(
+      columns: (1.2fr, 1.8fr),
+      gutter: 10pt,
+      [
+        #sub-title[Original Fabric Surviving:] \
+        #cb >70% Intact #h(5pt) #cb 30–70% Modified #h(5pt) #cb \\< 30% Ruinous
+      ],
+      [
+        #sub-title[Associated Subsurface Features Nearby (10–30m curtilage):] \
+        #cb Refuse / bottle dump #h(4pt) #cb Privy / cesspit #h(4pt) #cb Well / cistern \
+        #cb Garden edging / drive #h(4pt) #cb Former post lines / fences
+      ]
+    )
+    #v(2pt)
+    #sub-title[Recorder’s Summary Notes, Oral Traditions, Unlisted Variations & Field Interpretation:] \
+    #dotline() \
+    #dotline() \
+    #dotline() \
+    #dotline()
+  ]
+)
+
+#pagebreak()
+
+// ============================================================================
+// PAGE 3: REPEATABLE INTERIOR CONTINUATION SHEET
+// ============================================================================
+
+// Top Banner for Continuation Sheet
+#block(
+  width: 100%,
+  stroke: 0.8pt + rgb("#1b365d"),
+  fill: rgb("#f4f6f9"),
+  inset: (x: 5pt, y: 2.5pt),
+  radius: 1.5pt,
+  [
+    #grid(
+      columns: (1fr, auto),
+      gutter: 8pt,
+      [
+        #text(weight: "bold", size: 9.5pt, fill: rgb("#1b365d"))[HISTORICAL & PASTORAL STRUCTURE RECORDING FORM] \
+        #text(weight: "bold", size: 7.8pt, fill: rgb("#333333"))[STANDALONE INTERIOR ROOM & SPACE CONTINUATION SHEET] \
+        #text(size: 6.8pt, fill: rgb("#555555"))[
+          Repeatable Sheet for structures with >5 rooms, shearers quarters barracks, large woolshed complexes, or outstations.
+        ]
+      ],
+      [
+        #align(right + top)[
+          #text(weight: "bold", size: 8.5pt, fill: rgb("#1b365d"))[BALALA HERITAGE PROJECT] \
+          #text(size: 6.8pt, fill: rgb("#555555"))[REPEATABLE SHEET — PAGE 3]
+        ]
+      ]
+    )
+  ]
+)
+
+#v(1.6pt)
+
+// Continuation Header
+#block(
+  width: 100%,
+  stroke: 0.35pt + rgb("#a0a0a0"),
+  inset: (x: 4.5pt, y: 2pt),
+  radius: 1.2pt,
+  [
+    #grid(
+      columns: (1.3fr, 1.4fr, 0.9fr, 1.2fr, 1.1fr),
+      gutter: (8pt, 2pt),
+      [#field-lbl[Property / Site:] #dotline(w: 60%)],
+      [#field-lbl[Structure ID & Name:] #dotline(w: 52%)],
+      [#field-lbl[Date:] #dotline(w: 68%)],
+      [#field-lbl[Recorder(s):] #dotline(w: 58%)],
+      [#field-lbl[Continuation Page:] #box(width:20pt)[#dotline()] of #box(width:20pt)[#dotline()]]
+    )
+  ]
+)
+
+#v(1.6pt)
+
+// A. Rooms 6 to 12 Matrix
+#sec-bar("A", "EXPANDED INTERNAL ROOM & SPACE INVENTORY MATRIX (Rooms 6 to 12)")
+#note[Link room numbers directly to measured floor plan sketch. Record measurements using 150mm steel rule.]
+
+#v(1.5pt)
+
+#table(
+  columns: (1.35fr, 1fr, 1fr, 1fr, 1fr, 1fr, 1fr, 1fr),
+  fill: (col, row) => if row == 0 { rgb("#e8eef5") } else if calc.even(row) { rgb("#fcfcfc") } else { white },
+  align: (col, row) => if col == 0 { left + top } else { left + top },
+  [#text(weight: "bold", size: 7.2pt)[Attribute / Space]],
+  [#text(weight: "bold", size: 7.2pt)[Room 6]],
+  [#text(weight: "bold", size: 7.2pt)[Room 7]],
+  [#text(weight: "bold", size: 7.2pt)[Room 8]],
+  [#text(weight: "bold", size: 7.2pt)[Room 9]],
+  [#text(weight: "bold", size: 7.2pt)[Room 10]],
+  [#text(weight: "bold", size: 7.2pt)[Room 11]],
+  [#text(weight: "bold", size: 7.2pt)[Room 12]],
+
+  // Row 1
+  [#field-lbl[Room No. & Use] \ #note[Bed, mess, board, pen, store]],
+  [#cb Bed #cb Mess \ #cb Pen #cb Board \ #cb Store: #dotline()],
+  [#cb Bed #cb Mess \ #cb Pen #cb Board \ #cb Store: #dotline()],
+  [#cb Bed #cb Mess \ #cb Pen #cb Board \ #cb Store: #dotline()],
+  [#cb Bed #cb Mess \ #cb Pen #cb Board \ #cb Store: #dotline()],
+  [#cb Bed #cb Mess \ #cb Pen #cb Board \ #cb Store: #dotline()],
+  [#cb Bed #cb Mess \ #cb Pen #cb Board \ #cb Store: #dotline()],
+  [#cb Bed #cb Mess \ #cb Pen #cb Board \ #cb Store: #dotline()],
+
+  // Row 2
+  [#field-lbl[Floor Material] \ #note[Earth, brick, slats, T&G, conc]],
+  [#cb Butt #cb T&G \ #cb Earth #cb Conc \ #cb Slat #cb Brick \ #box(width:15pt)[#dotline()]mm],
+  [#cb Butt #cb T&G \ #cb Earth #cb Conc \ #cb Slat #cb Brick \ #box(width:15pt)[#dotline()]mm],
+  [#cb Butt #cb T&G \ #cb Earth #cb Conc \ #cb Slat #cb Brick \ #box(width:15pt)[#dotline()]mm],
+  [#cb Butt #cb T&G \ #cb Earth #cb Conc \ #cb Slat #cb Brick \ #box(width:15pt)[#dotline()]mm],
+  [#cb Butt #cb T&G \ #cb Earth #cb Conc \ #cb Slat #cb Brick \ #box(width:15pt)[#dotline()]mm],
+  [#cb Butt #cb T&G \ #cb Earth #cb Conc \ #cb Slat #cb Brick \ #box(width:15pt)[#dotline()]mm],
+  [#cb Butt #cb T&G \ #cb Earth #cb Conc \ #cb Slat #cb Brick \ #box(width:15pt)[#dotline()]mm],
+
+  // Row 3
+  [#field-lbl[Wall Lining] \ #note[Unlined, board, VJ, lath, fibro]],
+  [#cb Unlined #cb VJ \ #cb Horiz board \ #cb Hessian/pap \ #cb Plaster #cb Fib],
+  [#cb Unlined #cb VJ \ #cb Horiz board \ #cb Hessian/pap \ #cb Plaster #cb Fib],
+  [#cb Unlined #cb VJ \ #cb Horiz board \ #cb Hessian/pap \ #cb Plaster #cb Fib],
+  [#cb Unlined #cb VJ \ #cb Horiz board \ #cb Hessian/pap \ #cb Plaster #cb Fib],
+  [#cb Unlined #cb VJ \ #cb Horiz board \ #cb Hessian/pap \ #cb Plaster #cb Fib],
+  [#cb Unlined #cb VJ \ #cb Horiz board \ #cb Hessian/pap \ #cb Plaster #cb Fib],
+  [#cb Unlined #cb VJ \ #cb Horiz board \ #cb Hessian/pap \ #cb Plaster #cb Fib],
+
+  // Row 4
+  [#field-lbl[Ceiling Lining] \ #note[Open rafters, board, metal]],
+  [#cb Open rafter \ #cb Boarding \ #cb Hessian \ #cb Pressed met],
+  [#cb Open rafter \ #cb Boarding \ #cb Hessian \ #cb Pressed met],
+  [#cb Open rafter \ #cb Boarding \ #cb Hessian \ #cb Pressed met],
+  [#cb Open rafter \ #cb Boarding \ #cb Hessian \ #cb Pressed met],
+  [#cb Open rafter \ #cb Boarding \ #cb Hessian \ #cb Pressed met],
+  [#cb Open rafter \ #cb Boarding \ #cb Hessian \ #cb Pressed met],
+  [#cb Open rafter \ #cb Boarding \ #cb Hessian \ #cb Pressed met],
+
+  // Row 5
+  [#field-lbl[Joinery / Fittings] \ #note[Skirting, meathooks, shaft]],
+  [#dotline() \ #dotline()],
+  [#dotline() \ #dotline()],
+  [#dotline() \ #dotline()],
+  [#dotline() \ #dotline()],
+  [#dotline() \ #dotline()],
+  [#dotline() \ #dotline()],
+  [#dotline() \ #dotline()],
+
+  // Row 6
+  [#field-lbl[Heating & Services] \ #note[Hearth, stove, pipe, wiring]],
+  [#cb Hearth #cb Stv \ #cb Pipe #cb Wire \ #cb Kero/gas],
+  [#cb Hearth #cb Stv \ #cb Pipe #cb Wire \ #cb Kero/gas],
+  [#cb Hearth #cb Stv \ #cb Pipe #cb Wire \ #cb Kero/gas],
+  [#cb Hearth #cb Stv \ #cb Pipe #cb Wire \ #cb Kero/gas],
+  [#cb Hearth #cb Stv \ #cb Pipe #cb Wire \ #cb Kero/gas],
+  [#cb Hearth #cb Stv \ #cb Pipe #cb Wire \ #cb Kero/gas],
+  [#cb Hearth #cb Stv \ #cb Pipe #cb Wire \ #cb Kero/gas],
+
+  // Row 7
+  [#field-lbl[Alteration Clues] \ #note[Partition scar, step, door]],
+  [#cb Part. scar \ #cb Step in floor \ #cb Blocked open],
+  [#cb Part. scar \ #cb Step in floor \ #cb Blocked open],
+  [#cb Part. scar \ #cb Step in floor \ #cb Blocked open],
+  [#cb Part. scar \ #cb Step in floor \ #cb Blocked open],
+  [#cb Part. scar \ #cb Step in floor \ #cb Blocked open],
+  [#cb Part. scar \ #cb Step in floor \ #cb Blocked open],
+  [#cb Part. scar \ #cb Step in floor \ #cb Blocked open],
+
+  // Row 8
+  [#field-lbl[Room Photo Nos] \ #note[Frame numbers]],
+  [#dotline()], [#dotline()], [#dotline()], [#dotline()], [#dotline()], [#dotline()], [#dotline()]
+)
+
+#v(1.6pt)
+
+// B. Expanded Markings Log
+#sec-bar("B", "EXPANDED INTERNAL FIXTURES, MACHINERY & GRAFFITI / MARKINGS LOG")
+#table(
+  columns: (0.9fr, 1.3fr, 2.3fr, 1.3fr, 0.6fr),
+  fill: (col, row) => if row == 0 { rgb("#e8eef5") } else { white },
+  [#text(weight: "bold", size: 7.2pt)[Location / Room No.]],
+  [#text(weight: "bold", size: 7.2pt)[Item / Feature Type]],
+  [#text(weight: "bold", size: 7.2pt)[Exact Text, Maker Brand, Patent No., or Shearer Tally Inscription]],
+  [#text(weight: "bold", size: 7.2pt)[Dimensions / Mounting Scars / Surviving Parts]],
+  [#text(weight: "bold", size: 7.2pt)[Photo No.]],
+
+  [#dotline()], [#dotline()], [#dotline()], [#dotline()], [#dotline()],
+  [#dotline()], [#dotline()], [#dotline()], [#dotline()], [#dotline()],
+  [#dotline()], [#dotline()], [#dotline()], [#dotline()], [#dotline()],
+  [#dotline()], [#dotline()], [#dotline()], [#dotline()], [#dotline()]
+)
+
+#v(1.6pt)
+
+// C. Additional Phasing Notes
+#sec-bar("C", "ADDITIONAL PHASING, STRUCTURAL JUNCTIONS & EXPANDED FIELD OBSERVATIONS")
+#block(
+  width: 100%,
+  stroke: 0.35pt + rgb("#a0a0a0"),
+  inset: (x: 4.5pt, y: 2.2pt),
+  radius: 1.2pt,
+  [
+    #sub-title[Structural Junction & Phasing Checklist (Examine points where wings or walls meet):] \
+    #cb Straight unbonded vertical joint / crack between walls #h(8pt)
+    #cb Change from adzed/hewn to circular-sawn timber in roof space \
+    #cb Flashing lead groove on wall from removed skillion / verandah #h(8pt)
+    #cb Abrupt step in floor elevation or change in joist orientation \
+    #cb Ghost paint mark / empty mortise in joist from removed partition #h(8pt)
+    #cb Infilled doorway / former window opening in masonry or slabs
+    #v(2.5pt)
+    #sub-title[Detailed Phasing, Anomalies, Modifications & Unlisted Pastoral Variations:] \
+    #dotline() \
+    #dotline() \
+    #dotline() \
+    #dotline() \
+    #dotline() \
+    #dotline() \
+    #dotline() \
+    #dotline() \
+    #dotline() \
+    #dotline()
+  ]
+)
+```
