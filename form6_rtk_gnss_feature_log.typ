@@ -1,0 +1,264 @@
+#set page(
+  paper: "a4",
+  margin: (top: 6mm, bottom: 6mm, left: 7.5mm, right: 7.5mm)
+)
+#set document(title: "Form 2: RTK GNSS Field Log & Heritage Feature Point Register", author: "Balala Heritage Project")
+#set text(font: ("Helvetica", "Arial"), size: 7.0pt, spacing: 100%)
+#set par(leading: 0.28em, justify: false)
+
+// Master handwriting ergonomic primitives & styling
+#let cb = box(width: 6.8pt, height: 6.8pt, stroke: 0.6pt + rgb("#222222"), radius: 1pt, baseline: 1pt)
+
+#let write-box(w: 100%, h: 6.8mm) = box(
+  width: w,
+  height: h,
+  stroke: (bottom: (paint: rgb("#666666"), thickness: 0.5pt, dash: "dotted"))
+)
+
+#let labeled-line(lbl, w: 100%, h: 6.6mm) = box(width: w, height: h)[
+  #align(bottom)[
+    #grid(
+      columns: (auto, 1fr),
+      gutter: 3pt,
+      align: bottom,
+      [#text(weight: "bold", fill: rgb("#222222"), size: 7.0pt)[#lbl]],
+      [#box(width: 100%, height: h, stroke: (bottom: (paint: rgb("#666666"), thickness: 0.5pt, dash: "dotted")))]
+    )
+  ]
+]
+
+#let sec-bar(num, title) = block(
+  width: 100%,
+  fill: rgb("#1b365d"),
+  inset: (x: 4.5pt, y: 1.5pt),
+  radius: 1.2pt,
+  spacing: 0pt,
+  above: 2.0pt,
+  below: 1.2pt
+)[
+  #grid(
+    columns: (auto, 1fr),
+    gutter: 6pt,
+    text(fill: white, weight: "bold", size: 7.9pt)[#num],
+    text(fill: white, weight: "bold", size: 7.9pt)[#title]
+  )
+]
+
+#let field-lbl(txt) = text(weight: "bold", fill: rgb("#222222"), size: 7.0pt)[#txt]
+#let note(txt) = text(fill: rgb("#444444"), size: 6.3pt, style: "italic")[#txt]
+
+// Form 2 Banner
+#block(
+  width: 100%,
+  stroke: 0.8pt + rgb("#1b365d"),
+  fill: rgb("#f4f6f9"),
+  inset: (x: 5pt, y: 2.2pt),
+  radius: 1.5pt
+)[
+  #grid(
+    columns: (1fr, auto),
+    gutter: 8pt,
+    [
+      #text(weight: "bold", size: 9.6pt, fill: rgb("#1b365d"))[FORM 2: RTK GNSS FIELD LOG & HERITAGE FEATURE POINT REGISTER] \
+      #text(size: 6.6pt, fill: rgb("#333333"))[
+        High-Precision GNSS Spatial Observation Register & Feature Point Log | Suite Form 6 | Target Layer: `rtk_survey_points`
+      ]
+    ],
+    [
+      #align(right + top)[
+        #text(weight: "bold", size: 8.5pt, fill: rgb("#1b365d"))[BALALA HERITAGE PROJECT] \
+        #text(size: 6.7pt, fill: rgb("#555555"))[FORM 2 (RTK) — SINGLE / REPEATABLE]
+      ]
+    ]
+  )
+]
+#v(1.0pt)
+
+// Geodetic Control Badge
+#block(
+  width: 100%,
+  fill: rgb("#e8eef5"),
+  stroke: 0.5pt + rgb("#1b365d"),
+  inset: (x: 4.5pt, y: 1.8pt),
+  radius: 1.2pt
+)[
+  #grid(
+    columns: (1fr, auto),
+    [
+      #text(weight: "bold", fill: rgb("#1b365d"), size: 6.8pt)[COORDINATE REFERENCE SYSTEM (CRS):] #text(size: 6.8pt, fill: rgb("#222222"))[#strong[crs_horiz:] GDA2020 / MGA Zone 56 (EPSG:7856) | #strong[crs_vert:] AHD via AUSGeoid2020 | #strong[Target Layer:] `rtk_survey_points`]
+    ],
+    [
+      #text(weight: "bold", fill: rgb("#1b365d"), size: 6.8pt)[SHEET NO.:] #text(size: 6.8pt)[#box(width: 45pt, height: 6mm, stroke: (bottom: 0.5pt + black))]
+    ]
+  )
+]
+#v(1.0pt)
+
+// SECTION 1: SESSION & BASE/ROVER HARDWARE SETUP BLOCK
+#sec-bar("SECTION 1", "SESSION METADATA, BASE STATION & ROVER HARDWARE SETUP")
+#v(0.8pt)
+
+#grid(
+  columns: (1.3fr, 1.1fr, 1.4fr, 1.6fr),
+  row-gutter: 2.0pt, column-gutter: 5pt,
+  labeled-line("job_id:"),
+  labeled-line("date (DD/MM/YYYY):"),
+  labeled-line("operator(s):"),
+  [
+    #align(bottom)[
+      #text(weight: "bold", fill: rgb("#1b365d"), size: 6.8pt)[Base Mode:] #text(size: 6.4pt)[#cb Known Stn #cb Auto-Base #cb CORS NTRIP]
+    ]
+  ]
+)
+
+#v(1.0pt)
+#grid(
+  columns: (1.2fr, 1.1fr, 1.0fr, 0.9fr, 1.2fr),
+  row-gutter: 2.0pt, column-gutter: 5pt,
+  labeled-line("base_model:"),
+  labeled-line("base_sn:"),
+  labeled-line("base_point_id:"),
+  labeled-line("base_hi_m:"),
+  [
+    #align(bottom)[
+      #text(weight: "bold", fill: rgb("#222222"), size: 6.8pt)[meas_type:] #text(size: 6.4pt)[#cb Vert (Ground) #cb Slant (Notch)]
+    ]
+  ]
+)
+
+#v(1.0pt)
+#grid(
+  columns: (1.2fr, 1.1fr, 1.1fr, 1.3fr, 1.0fr),
+  row-gutter: 2.0pt, column-gutter: 5pt,
+  labeled-line("rover_model:"),
+  labeled-line("rover_sn:"),
+  labeled-line("controller_id (e.g. FC-6000):"),
+  labeled-line("pole_height_m: [X] 2.000m  [ ] Override:"),
+  labeled-line("Radio Ch / NTRIP Mount:")
+)
+
+#v(1.5pt)
+// SECTION 2: QUALITY CONTROL & CALIBRATION VERIFICATION
+#sec-bar("SECTION 2", "DAILY QUALITY CONTROL & BENCHMARK CALIBRATION VERIFICATION")
+#v(0.6pt)
+#note([*Tolerances for Fixed Control:* Horizontal Delta (ΔE, ΔN) ≤ 15 mm | Vertical Delta (ΔZ) ≤ 25 mm. Both Start-of-Day Check and End-of-Day Closure checks are mandatory.])
+#v(1.0pt)
+
+#table(
+  columns: (72pt, 36pt, 45pt, 48pt, 48pt, 42pt, 48pt, 48pt, 42pt, 26pt, 26pt, 26pt, 1fr),
+  stroke: 0.45pt + rgb("#bbbbbb"),
+  fill: (col, row) => if row == 0 { rgb("#e8eef5") } else { none },
+  inset: (x: 2.0pt, y: 1.8pt),
+  align: (col, row) => if row == 0 { center + horizon } else { left + horizon },
+  // Header row
+  [#text(weight: "bold", fill: rgb("#1b365d"), size: 6.1pt)[Validation Period]],
+  [#text(weight: "bold", fill: rgb("#1b365d"), size: 6.1pt)[time \ (hh:mm)]],
+  [#text(weight: "bold", fill: rgb("#1b365d"), size: 6.1pt)[bm_id \ (Benchmark)]],
+  [#text(weight: "bold", fill: rgb("#1b365d"), size: 6.1pt)[known_e \ (Easting m)]],
+  [#text(weight: "bold", fill: rgb("#1b365d"), size: 6.1pt)[known_n \ (Northing m)]],
+  [#text(weight: "bold", fill: rgb("#1b365d"), size: 6.1pt)[known_rl \ (AHD m)]],
+  [#text(weight: "bold", fill: rgb("#1b365d"), size: 6.1pt)[obs_e \ (Easting m)]],
+  [#text(weight: "bold", fill: rgb("#1b365d"), size: 6.1pt)[obs_n \ (Northing m)]],
+  [#text(weight: "bold", fill: rgb("#1b365d"), size: 6.1pt)[obs_rl \ (AHD m)]],
+  [#text(weight: "bold", fill: rgb("#1b365d"), size: 6.0pt)[delta_e \ (mm)]],
+  [#text(weight: "bold", fill: rgb("#1b365d"), size: 6.0pt)[delta_n \ (mm)]],
+  [#text(weight: "bold", fill: rgb("#1b365d"), size: 6.0pt)[delta_z \ (mm)]],
+  [#text(weight: "bold", fill: rgb("#1b365d"), size: 6.1pt)[QC Status \ (Pass / Fail)]],
+  // Start-of-Day Check Row
+  [#text(weight: "bold", size: 6.2pt)[Start-of-Day Check]],
+  [#box(width: 100%, height: 6.6mm, stroke: (bottom: (paint: rgb("#666666"), thickness: 0.5pt, dash: "dotted")))],
+  [#box(width: 100%, height: 6.6mm, stroke: (bottom: (paint: rgb("#666666"), thickness: 0.5pt, dash: "dotted")))],
+  [#box(width: 100%, height: 6.6mm, stroke: (bottom: (paint: rgb("#666666"), thickness: 0.5pt, dash: "dotted")))],
+  [#box(width: 100%, height: 6.6mm, stroke: (bottom: (paint: rgb("#666666"), thickness: 0.5pt, dash: "dotted")))],
+  [#box(width: 100%, height: 6.6mm, stroke: (bottom: (paint: rgb("#666666"), thickness: 0.5pt, dash: "dotted")))],
+  [#box(width: 100%, height: 6.6mm, stroke: (bottom: (paint: rgb("#666666"), thickness: 0.5pt, dash: "dotted")))],
+  [#box(width: 100%, height: 6.6mm, stroke: (bottom: (paint: rgb("#666666"), thickness: 0.5pt, dash: "dotted")))],
+  [#box(width: 100%, height: 6.6mm, stroke: (bottom: (paint: rgb("#666666"), thickness: 0.5pt, dash: "dotted")))],
+  [#box(width: 100%, height: 6.6mm, stroke: (bottom: (paint: rgb("#666666"), thickness: 0.5pt, dash: "dotted")))],
+  [#box(width: 100%, height: 6.6mm, stroke: (bottom: (paint: rgb("#666666"), thickness: 0.5pt, dash: "dotted")))],
+  [#box(width: 100%, height: 6.6mm, stroke: (bottom: (paint: rgb("#666666"), thickness: 0.5pt, dash: "dotted")))],
+  [#align(center + horizon)[#text(size: 6.2pt)[#cb PASS #cb FAIL]]],
+  // End-of-Day Closure Check Row
+  [#text(weight: "bold", size: 6.2pt)[End-of-Day Closure]],
+  [#box(width: 100%, height: 6.6mm, stroke: (bottom: (paint: rgb("#666666"), thickness: 0.5pt, dash: "dotted")))],
+  [#box(width: 100%, height: 6.6mm, stroke: (bottom: (paint: rgb("#666666"), thickness: 0.5pt, dash: "dotted")))],
+  [#box(width: 100%, height: 6.6mm, stroke: (bottom: (paint: rgb("#666666"), thickness: 0.5pt, dash: "dotted")))],
+  [#box(width: 100%, height: 6.6mm, stroke: (bottom: (paint: rgb("#666666"), thickness: 0.5pt, dash: "dotted")))],
+  [#box(width: 100%, height: 6.6mm, stroke: (bottom: (paint: rgb("#666666"), thickness: 0.5pt, dash: "dotted")))],
+  [#box(width: 100%, height: 6.6mm, stroke: (bottom: (paint: rgb("#666666"), thickness: 0.5pt, dash: "dotted")))],
+  [#box(width: 100%, height: 6.6mm, stroke: (bottom: (paint: rgb("#666666"), thickness: 0.5pt, dash: "dotted")))],
+  [#box(width: 100%, height: 6.6mm, stroke: (bottom: (paint: rgb("#666666"), thickness: 0.5pt, dash: "dotted")))],
+  [#box(width: 100%, height: 6.6mm, stroke: (bottom: (paint: rgb("#666666"), thickness: 0.5pt, dash: "dotted")))],
+  [#box(width: 100%, height: 6.6mm, stroke: (bottom: (paint: rgb("#666666"), thickness: 0.5pt, dash: "dotted")))],
+  [#box(width: 100%, height: 6.6mm, stroke: (bottom: (paint: rgb("#666666"), thickness: 0.5pt, dash: "dotted")))],
+  [#align(center + horizon)[#text(size: 6.2pt)[#cb PASS #cb FAIL]]]
+)
+
+#v(1.5pt)
+// SECTION 3: POINT OBSERVATION TABLE
+#sec-bar("SECTION 3", "POINT OBSERVATION TABLE (1:1 GEOPACKAGE rtk_survey_points SCHEMA)")
+#v(0.6pt)
+#note([*Observation Protocol:* All control points & heritage features must achieve FIXED solution. Center bipod bubble prior to logging. Default pole height is 2.000m; record exact height if adjusted for tree canopy or trenches. Cross-reference photo frame number for diagnostic heritage features and archaeological artifacts.])
+#v(1.0pt)
+
+#table(
+  columns: (34pt, 26pt, 46pt, 28pt, 28pt, 20pt, 24pt, 24pt, 40pt, 1fr),
+  stroke: 0.45pt + rgb("#bbbbbb"),
+  fill: (col, row) => if row == 0 { rgb("#e8eef5") } else { none },
+  inset: (x: 1.8pt, y: 1.5pt),
+  align: (col, row) => if row == 0 { center + horizon } else { left + horizon },
+  // Header row
+  [#text(weight: "bold", fill: rgb("#1b365d"), size: 6.2pt)[point_id \ (PK: 1001)]],
+  [#text(weight: "bold", fill: rgb("#1b365d"), size: 6.2pt)[time \ (hh:mm)]],
+  [#text(weight: "bold", fill: rgb("#1b365d"), size: 6.2pt)[feat_code \ (Domain)]],
+  [#text(weight: "bold", fill: rgb("#1b365d"), size: 6.2pt)[pole_ht_m \ (m: 2.00)]],
+  [#text(weight: "bold", fill: rgb("#1b365d"), size: 6.2pt)[status \ Fix / Flt]],
+  [#text(weight: "bold", fill: rgb("#1b365d"), size: 6.2pt)[pdop \ (< 3.0)]],
+  [#text(weight: "bold", fill: rgb("#1b365d"), size: 6.0pt)[h_rms \ (mm)]],
+  [#text(weight: "bold", fill: rgb("#1b365d"), size: 6.0pt)[v_rms \ (mm)]],
+  [#text(weight: "bold", fill: rgb("#1b365d"), size: 6.2pt)[photo_id \ (Camera)]],
+  [#text(weight: "bold", fill: rgb("#1b365d"), size: 6.2pt)[field_notes_attributes / Heritage Description \ (Material, subtype, condition, structure/trench tie)]],
+  // 18 Point Observation Rows at 6.6mm height
+  ..range(18).map(i => (
+    [#box(width: 100%, height: 6.6mm, stroke: (bottom: (paint: rgb("#666666"), thickness: 0.5pt, dash: "dotted")))],
+    [#box(width: 100%, height: 6.6mm, stroke: (bottom: (paint: rgb("#666666"), thickness: 0.5pt, dash: "dotted")))],
+    [#box(width: 100%, height: 6.6mm, stroke: (bottom: (paint: rgb("#666666"), thickness: 0.5pt, dash: "dotted")))],
+    [#box(width: 100%, height: 6.6mm, stroke: (bottom: (paint: rgb("#666666"), thickness: 0.5pt, dash: "dotted")))],
+    [#align(center + horizon)[#text(size: 5.8pt)[#cb F #cb Fl]]],
+    [#box(width: 100%, height: 6.6mm, stroke: (bottom: (paint: rgb("#666666"), thickness: 0.5pt, dash: "dotted")))],
+    [#box(width: 100%, height: 6.6mm, stroke: (bottom: (paint: rgb("#666666"), thickness: 0.5pt, dash: "dotted")))],
+    [#box(width: 100%, height: 6.6mm, stroke: (bottom: (paint: rgb("#666666"), thickness: 0.5pt, dash: "dotted")))],
+    [#box(width: 100%, height: 6.6mm, stroke: (bottom: (paint: rgb("#666666"), thickness: 0.5pt, dash: "dotted")))],
+    [#box(width: 100%, height: 6.6mm, stroke: (bottom: (paint: rgb("#666666"), thickness: 0.5pt, dash: "dotted")))]
+  )).flatten()
+)
+
+#v(1.0pt)
+// CONTROLLED VOCABULARY REFERENCE BAR
+#block(
+  width: 100%,
+  fill: rgb("#f4f6f9"),
+  stroke: 0.4pt + rgb("#cccccc"),
+  inset: (x: 4.5pt, y: 1.8pt),
+  radius: 1.0pt
+)[
+  #field-lbl("Controlled feat_code Domain (GeoPackage Lookup):") #text(size: 6.4pt, fill: rgb("#333333"))[
+    #strong[Control & Targets:] `TLS_SPH` (139mm laser target sphere) | `TLS_CHK` (B&W checkerboard tile) | `BM_PEG` (Survey control peg) | `GCP_CTRL` (UAV aerial ground control point). \
+    #strong[Historical Pastoral Features:] `HIST_BLD` (Building corner/verandah) | `HIST_STR` (Structure/fence/yard/gate) | `HIST_OBJ` (Pastoral machinery/tank/engine) | `HIST_LAND` (Drain/embankment/track) | `HIST_WELL` (Water well/bore/cistern) | `HIST_MIN` (Mining pit/furnace/hearth). \
+    #strong[Indigenous & Landscape Features:] `LAND_MND` (Earth/sediment mound) | `LAND_SWAL` (Gilgai/drainage swale) | `LAND_ALC` (Rock alcove/overhang) | `ART_FLK` (Silcrete/quartz flake) | `ART_KNPGLS` (Historic knapped contact glass).
+  ]
+]
+
+#v(1.5pt)
+// SECTION 4: OFFLOAD RECONCILIATION & CUSTODY SIGN-OFF
+#sec-bar("SECTION 4", "DATA OFFLOAD RECONCILIATION, GEOPACKAGE INGEST & CHAIN OF CUSTODY")
+#v(0.8pt)
+
+#grid(
+  columns: (1.3fr, 1.3fr, 1.1fr, 1.3fr),
+  row-gutter: 2.0pt, column-gutter: 6pt,
+  labeled-line("Raw Controller File Name (e.g. BAL_20261020.job):"),
+  labeled-line("Exported CSV / SHP Name:"),
+  labeled-line("GeoPackage Layer Ingest Date:"),
+  labeled-line("Operator Signature & Date:")
+)

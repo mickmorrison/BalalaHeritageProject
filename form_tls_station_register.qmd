@@ -1,0 +1,389 @@
+---
+format:
+  typst:
+    papersize: a4
+    margin:
+      top: 6mm
+      bottom: 6mm
+      left: 7.5mm
+      right: 7.5mm
+---
+
+```{=typst}
+#set document(title: "Form 1: Z+F IMAGER 5016 Scan Station Register & Integrity Sheet", author: "Balala Heritage Project")
+#set text(font: ("Helvetica", "Arial"), size: 7.0pt, spacing: 100%)
+#set par(leading: 0.28em, justify: false)
+
+// Master handwriting ergonomic primitives & styling
+#let cb = box(width: 6.8pt, height: 6.8pt, stroke: 0.6pt + rgb("#222222"), radius: 1pt, baseline: 1pt)
+
+#let write-box(w: 100%, h: 7.0mm) = box(
+  width: w,
+  height: h,
+  stroke: (bottom: (paint: rgb("#666666"), thickness: 0.5pt, dash: "dotted"))
+)
+
+#let labeled-line(lbl, w: 100%, h: 6.8mm) = box(width: w, height: h)[
+  #align(bottom)[
+    #grid(
+      columns: (auto, 1fr),
+      gutter: 3pt,
+      align: bottom,
+      [#text(weight: "bold", fill: rgb("#222222"), size: 7.0pt)[#lbl]],
+      [#box(width: 100%, height: h, stroke: (bottom: (paint: rgb("#666666"), thickness: 0.5pt, dash: "dotted")))]
+    )
+  ]
+]
+
+#let sec-bar(num, title) = block(
+  width: 100%,
+  fill: rgb("#1b365d"),
+  inset: (x: 4.5pt, y: 1.5pt),
+  radius: 1.2pt,
+  spacing: 0pt,
+  above: 2.0pt,
+  below: 1.2pt
+)[
+  #grid(
+    columns: (auto, 1fr),
+    gutter: 6pt,
+    text(fill: white, weight: "bold", size: 7.9pt)[#num],
+    text(fill: white, weight: "bold", size: 7.9pt)[#title]
+  )
+]
+
+#let field-lbl(txt) = text(weight: "bold", fill: rgb("#222222"), size: 7.0pt)[#txt]
+#let note(txt) = text(fill: rgb("#444444"), size: 6.3pt, style: "italic")[#txt]
+
+// Form 1 Banner (Page 1 & 2)
+#let form-banner(pg, tot) = [
+  #if pg == "1" [
+    #block(
+      width: 100%,
+      stroke: 0.8pt + rgb("#1b365d"),
+      fill: rgb("#f4f6f9"),
+      inset: (x: 5pt, y: 2.2pt),
+      radius: 1.5pt
+    )[
+      #grid(
+        columns: (1fr, auto),
+        gutter: 8pt,
+        [
+          #text(weight: "bold", size: 9.6pt, fill: rgb("#1b365d"))[FORM 1: Z+F IMAGER 5016 SCAN STATION REGISTER & INTEGRITY SHEET] \
+          #text(size: 6.6pt, fill: rgb("#333333"))[
+            Terrestrial Laser Scanning Observation Log & Station Integrity Proforma | Suite Form 5 | Target Layer: `tls_stations`
+          ]
+        ],
+        [
+          #align(right + top)[
+            #text(weight: "bold", size: 8.5pt, fill: rgb("#1b365d"))[BALALA HERITAGE PROJECT] \
+            #text(size: 6.7pt, fill: rgb("#555555"))[FORM 1 (TLS) — PAGE #pg OF #tot]
+          ]
+        ]
+      )
+    ]
+  ] else [
+    #block(
+      width: 100%,
+      stroke: 0.8pt + rgb("#1b365d"),
+      fill: rgb("#f4f6f9"),
+      inset: (x: 5pt, y: 2.2pt),
+      radius: 1.5pt
+    )[
+      #grid(
+        columns: (1fr, auto),
+        gutter: 8pt,
+        [
+          #text(weight: "bold", size: 9.6pt, fill: rgb("#1b365d"))[FORM 1: STATION NETWORK & TARGET GEOMETRY SKETCH SHEET] \
+          #text(size: 6.6pt, fill: rgb("#333333"))[
+            Z+F IMAGER 5016 Target Constellation, Visibility Vectors & Traverse Geometry Diagram | 10×10 mm Grid
+          ]
+        ],
+        [
+          #align(right + top)[
+            #text(weight: "bold", size: 8.5pt, fill: rgb("#1b365d"))[BALALA HERITAGE PROJECT] \
+            #text(size: 6.7pt, fill: rgb("#555555"))[FORM 1 (TLS) — PAGE #pg OF #tot]
+          ]
+        ]
+      )
+    ]
+  ]
+]
+
+// ==========================================
+// PAGE 1: OBSERVATION LOG & INTEGRITY SHEET
+// ==========================================
+#form-banner("1", "2")
+#v(1.0pt)
+
+// System Architecture & Geodetic Alignment Strip
+#block(
+  width: 100%,
+  fill: rgb("#e8eef5"),
+  stroke: 0.5pt + rgb("#1b365d"),
+  inset: (x: 4.5pt, y: 1.8pt),
+  radius: 1.2pt
+)[
+  #grid(
+    columns: (1fr, auto),
+    [
+      #text(weight: "bold", fill: rgb("#1b365d"), size: 6.7pt)[GEODETIC DATUM & PROJECTION:] #text(size: 6.7pt, fill: rgb("#222222"))[GDA2020 / MGA Zone 56 (EPSG:7856) | #strong[Vertical Control:] AHD via AUSGeoid2020 | #strong[GeoPackage:] `balala_master.gpkg`]
+    ],
+    [
+      #text(weight: "bold", fill: rgb("#1b365d"), size: 6.7pt)[STANDARDIZED ID FORMATS:] #text(size: 6.7pt, fill: rgb("#222222"))[Station: `BAL_ST001` | Targets: `TRG_SPH01`, `TRG_CHK01`]
+    ]
+  )
+]
+#v(1.0pt)
+
+// SECTION 1: HEADER & ENVIRONMENTAL INGESTION BLOCK
+#sec-bar("SECTION 1", "HEADER METADATA, CARRIER-WAVE ATMOSPHERIC CORRECTION & INSTRUMENT CONFIG")
+#v(0.8pt)
+
+#grid(
+  columns: (1.3fr, 1.1fr, 1.3fr, 1.3fr),
+  row-gutter: 2.0pt, column-gutter: 5pt,
+  labeled-line("Project ID: Balala Heritage Project"),
+  labeled-line("Survey Date (DD/MM/YYYY):"),
+  labeled-line("Laser Scanner Operator(s):"),
+  labeled-line("Weather & Lighting Conditions:")
+)
+
+#v(1.2pt)
+#block(
+  width: 100%,
+  stroke: 0.45pt + rgb("#335c8d"),
+  fill: rgb("#fcfdfe"),
+  inset: (x: 4pt, y: 2.0pt),
+  radius: 1.0pt
+)[
+  #grid(
+    columns: (1.6fr, 1.3fr, 1.1fr, 1.1fr, 1.1fr),
+    gutter: 5pt,
+    align: horizon,
+    [
+      #text(weight: "bold", fill: rgb("#1b365d"), size: 6.8pt)[ATMOSPHERIC INPUTS (EDM CORRECTION):] \
+      #note[Mandatory for carrier-wave refractive index velocity model]
+    ],
+    labeled-line("temp_celsius (°C):"),
+    labeled-line("pressure_hpa (hPa):"),
+    labeled-line("humidity_pct (%):"),
+    labeled-line("Computed ppm corr:")
+  )
+]
+
+#v(1.2pt)
+#grid(
+  columns: (1.2fr, 1.1fr, 1.1fr, 1.1fr, 1.5fr),
+  row-gutter: 2.0pt, column-gutter: 5pt,
+  labeled-line("Model: Z+F IMAGER 5016"),
+  labeled-line("Scanner Serial No.:"),
+  labeled-line("Firmware Version:"),
+  labeled-line("Raw File Prefix (e.g. BAL26_):"),
+  labeled-line("Structure / Sector Context (e.g. Woolshed East):")
+)
+
+#v(1.5pt)
+// SECTION 2: SCAN STATION OBSERVATION LOG
+#sec-bar("SECTION 2", "SCAN STATION OBSERVATION LOG (1:1 DIRECT GEOPACKAGE tls_stations SCHEMA)")
+#v(0.6pt)
+#note([*Observation Protocol:* Record station immediately upon setting tripod. Measure HI (`hi_m`) to 3 decimal places from ground mark to scanner tilt axis notch. Verify RTK occupied mark ID if centered over peg. Record all visible sphere and checkerboard target IDs. Check HDR Color if internal camera panorama is enabled.])
+#v(1.0pt)
+
+#table(
+  columns: (44pt, 26pt, 26pt, 48pt, 44pt, 32pt, 56pt, 82pt, 58pt, 22pt, 1fr),
+  stroke: 0.45pt + rgb("#bbbbbb"),
+  fill: (col, row) => if row == 0 { rgb("#e8eef5") } else { none },
+  inset: (x: 1.6pt, y: 1.6pt),
+  align: (col, row) => if row == 0 { center + horizon } else { left + horizon },
+  // Header row
+  [#text(weight: "bold", fill: rgb("#1b365d"), size: 6.0pt)[station_id \ (PK: BAL_ST01)]],
+  [#text(weight: "bold", fill: rgb("#1b365d"), size: 6.0pt)[time_start \ (hh:mm)]],
+  [#text(weight: "bold", fill: rgb("#1b365d"), size: 6.0pt)[hi_m \ (m: 3 dec)]],
+  [#text(weight: "bold", fill: rgb("#1b365d"), size: 6.0pt)[res_setting \ (L / N / H / SH)]],
+  [#text(weight: "bold", fill: rgb("#1b365d"), size: 6.0pt)[quality_mode \ (1x / 2x / 4x / 8x)]],
+  [#text(weight: "bold", fill: rgb("#1b365d"), size: 5.9pt)[hdr_color \ (Y / N)]],
+  [#text(weight: "bold", fill: rgb("#1b365d"), size: 5.8pt)[occupied_mark_id \ (FK: rtk_points)]],
+  [#text(weight: "bold", fill: rgb("#1b365d"), size: 6.0pt)[control_target_ids \ (e.g. SPH01, SPH02, CHK01)]],
+  [#text(weight: "bold", fill: rgb("#1b365d"), size: 6.0pt)[raw_filename \ (e.g. BAL_ST001.zfs)]],
+  [#text(weight: "bold", fill: rgb("#1b365d"), size: 6.0pt)[sha256 \ check]],
+  [#text(weight: "bold", fill: rgb("#1b365d"), size: 6.0pt)[target_feature / Sector Description \ (Structural element, room, or landform)]],
+  // 12 Observation rows at 7.0mm height
+  ..range(12).map(i => (
+    [#box(width: 100%, height: 7.0mm, stroke: (bottom: (paint: rgb("#666666"), thickness: 0.5pt, dash: "dotted")))],
+    [#box(width: 100%, height: 7.0mm, stroke: (bottom: (paint: rgb("#666666"), thickness: 0.5pt, dash: "dotted")))],
+    [#box(width: 100%, height: 7.0mm, stroke: (bottom: (paint: rgb("#666666"), thickness: 0.5pt, dash: "dotted")))],
+    [#align(center + horizon)[#text(size: 6.1pt)[#cb L #cb N #cb H #cb SH]]],
+    [#align(center + horizon)[#text(size: 6.1pt)[#cb 1 #cb 2 #cb 4 #cb 8]]],
+    [#align(center + horizon)[#text(size: 6.1pt)[#cb Y #cb N]]],
+    [#box(width: 100%, height: 7.0mm, stroke: (bottom: (paint: rgb("#666666"), thickness: 0.5pt, dash: "dotted")))],
+    [#box(width: 100%, height: 7.0mm, stroke: (bottom: (paint: rgb("#666666"), thickness: 0.5pt, dash: "dotted")))],
+    [#box(width: 100%, height: 7.0mm, stroke: (bottom: (paint: rgb("#666666"), thickness: 0.5pt, dash: "dotted")))],
+    [#align(center + horizon)[#cb]],
+    [#box(width: 100%, height: 7.0mm, stroke: (bottom: (paint: rgb("#666666"), thickness: 0.5pt, dash: "dotted")))]
+  )).flatten()
+)
+
+#v(1.0pt)
+// Controlled Codes & Technical Reference Block
+#block(
+  width: 100%,
+  fill: rgb("#f4f6f9"),
+  stroke: 0.4pt + rgb("#cccccc"),
+  inset: (x: 4.5pt, y: 1.8pt),
+  radius: 1.0pt
+)[
+  #field-lbl("Z+F IMAGER 5016 Scanning Conventions & Controlled Vocabulary:") #text(size: 6.5pt, fill: rgb("#333333"))[
+    #strong[res_setting:] `Low` (3.1mm @ 10m, 13s) | `Normal` (1.6mm @ 10m, 26s) | `High` (0.8mm @ 10m, 52s) | `Super High` (0.4mm @ 10m, 1m45s). \
+    #strong[quality_mode:] `1x` (Standard / Exterior daylight) | `2x` (Clean / Balanced) | `4x` (High noise-reduction / Dark interiors) | `8x` (Ultra / Reflective metal / Long range). \
+    #strong[hdr_color:] Check `Y` if full 360° HDR internal panorama captured (adds ~2.5 min). Check `N` if laser-only scan without RGB photogrammetry.
+  ]
+]
+
+#v(1.5pt)
+// SECTION 3: END-OF-DAY DATA OFFLOAD, FIXITY (SHA-256) & DIGITAL CUSTODY
+#sec-bar("SECTION 3", "DATA OFFLOAD RECONCILIATION, FIXITY (SHA-256) & DIGITAL CHAIN OF CUSTODY")
+#v(0.8pt)
+
+#grid(
+  columns: (1.3fr, 1.1fr, 1.1fr, 1.2fr, 1.3fr),
+  row-gutter: 2.0pt, column-gutter: 5pt,
+  labeled-line("Raw Project Folder / Media ID:"),
+  labeled-line("Total Scan Count on Card:"),
+  labeled-line("Total Raw Volume (GB):"),
+  labeled-line("Fixity: All SHA-256 Hashes Computed? [ ] YES"),
+  labeled-line("Backup Drive 1 (Primary Field NAS):")
+)
+
+#v(1.0pt)
+#grid(
+  columns: (1.4fr, 1.2fr, 1.2fr, 1.2fr),
+  row-gutter: 2.0pt, column-gutter: 5pt,
+  labeled-line("GeoPackage Ingest Layer: tls_stations [ ] Verified"),
+  labeled-line("Ingest Date (DD/MM/YYYY):"),
+  labeled-line("Lead Surveyor Signature:"),
+  labeled-line("Archive Custodian Sign-off:")
+)
+
+// ==========================================
+// PAGE 2: NETWORK SKETCH & TARGET REGISTER
+// ==========================================
+#pagebreak()
+#form-banner("2", "2")
+#v(1.0pt)
+
+// Section 4 Header Strip
+#grid(
+  columns: (1.2fr, 1.0fr, 1.2fr, 1.2fr, 0.9fr),
+  row-gutter: 2.0pt, column-gutter: 5pt,
+  labeled-line("Project: Balala Heritage Project"),
+  labeled-line("Survey Date:"),
+  labeled-line("Structure / Sector Context:"),
+  labeled-line("Instrument: Z+F 5016"),
+  labeled-line("Sheet No.:")
+)
+
+#v(1.5pt)
+// SECTION 4: STATION NETWORK & TARGET GEOMETRY SKETCH AREA
+#sec-bar("SECTION 4", "STATION NETWORK, TARGET CONSTELLATION & SITE GEOMETRY SKETCH AREA (10×10 MM GRID)")
+#v(0.8pt)
+
+#block(
+  width: 100%,
+  stroke: 0.6pt + rgb("#1b365d"),
+  inset: (x: 4pt, y: 2.5pt),
+  radius: 1.2pt,
+  fill: rgb("#ffffff")
+)[
+  // Legend and Orientation Banner
+  #grid(
+    columns: (auto, 1fr, auto),
+    gutter: 10pt,
+    align: horizon,
+    [
+      // North indicator
+      #box(width: 32pt, height: 18pt)[
+        #align(center + horizon)[
+          #grid(
+            columns: (auto, auto),
+            gutter: 3pt,
+            align: horizon,
+            [#polygon(fill: rgb("#1b365d"), (4pt, 0pt), (8pt, 12pt), (4pt, 9pt), (0pt, 12pt))],
+            [#text(weight: "bold", fill: rgb("#1b365d"), size: 8.5pt)[N]]
+          )
+        ]
+      ]
+    ],
+    [
+      #text(weight: "bold", fill: rgb("#1b365d"), size: 6.7pt)[SKETCH LEGEND:] #text(size: 6.4pt, fill: rgb("#222222"))[
+        #strong[▲] Scanner Station (`BAL_ST01`) | #strong[●] 139mm Target Sphere (`TRG_SPH01`) | #strong[■] B&W Tile (`TRG_CHK01`) | #strong[[X]] RTK Control Peg (`BM_PEG01`) | #strong[-->] Sighting Vector | #strong[═] Wall / Footing | #strong[░] Obscured Zone
+      ]
+    ],
+    [
+      #text(weight: "bold", fill: rgb("#1b365d"), size: 6.7pt)[GRID SCALE (10mm sq):] \
+      #text(size: 6.3pt, fill: rgb("#222222"))[#cb 1sq = 1m #cb 1sq = 2m #cb 1sq = 5m]
+    ]
+  )
+
+  #v(1.5pt)
+  // 10x10 mm Precision Engineering Grid: 18 cols x 11 rows (180mm x 110mm)
+  #align(center)[
+    #table(
+      columns: (10mm,) * 18,
+      rows: (10mm,) * 11,
+      stroke: (col, row) => (
+        paint: if calc.rem(col, 5) == 0 or calc.rem(row, 5) == 0 { rgb("#999999") } else { rgb("#cccccc") },
+        thickness: if calc.rem(col, 5) == 0 or calc.rem(row, 5) == 0 { 0.55pt } else { 0.35pt }
+      ),
+      ..range(18 * 11).map(_ => [])
+    )
+  ]
+]
+
+#v(1.5pt)
+// SECTION 5: TARGET REGISTER MINI-TABLE
+#sec-bar("SECTION 5", "CONTROL TARGET REGISTER & RTK GNSS TIE TABLE (1:1 GEOPACKAGE tls_targets SCHEMA)")
+#v(0.6pt)
+#note([*Target Sighting Protocol:* Minimum 3 non-collinear targets visible between adjacent scan stations (ideally 4-5). Disperse targets across range and elevation. Keep incidence angle to targets < 45°. Do not disturb control targets until all connecting station scans are completed.])
+#v(1.0pt)
+
+#table(
+  columns: (64pt, 92pt, 70pt, 65pt, 65pt, 1fr),
+  stroke: 0.45pt + rgb("#bbbbbb"),
+  fill: (col, row) => if row == 0 { rgb("#e8eef5") } else { none },
+  inset: (x: 3.0pt, y: 1.8pt),
+  align: (col, row) => if row == 0 { center + horizon } else { left + horizon },
+  // Header row
+  [#text(weight: "bold", fill: rgb("#1b365d"), size: 6.8pt)[target_id \ (PK: e.g. TRG_SPH01)]],
+  [#text(weight: "bold", fill: rgb("#1b365d"), size: 6.8pt)[target_type \ (Sphere / B&W Tile / Peg)]],
+  [#text(weight: "bold", fill: rgb("#1b365d"), size: 6.8pt)[rtk_tie_id \ (FK: rtk_points.point_id)]],
+  [#text(weight: "bold", fill: rgb("#1b365d"), size: 6.8pt)[est_distance_m \ (Dist to Scanner m)]],
+  [#text(weight: "bold", fill: rgb("#1b365d"), size: 6.8pt)[mounting_ht_m \ (Target Center HI m)]],
+  [#text(weight: "bold", fill: rgb("#1b365d"), size: 6.8pt)[Station Sightings, Visibility & Occlusion Notes \ (e.g. Visible from ST01, ST02, ST03; tripod mounted)]],
+  // 9 Target rows at 7.0mm height
+  ..range(9).map(i => (
+    [#box(width: 100%, height: 7.0mm, stroke: (bottom: (paint: rgb("#666666"), thickness: 0.5pt, dash: "dotted")))],
+    [#align(center + horizon)[#text(size: 6.2pt)[#cb 139mm Sph #cb Tile #cb Peg]]],
+    [#box(width: 100%, height: 7.0mm, stroke: (bottom: (paint: rgb("#666666"), thickness: 0.5pt, dash: "dotted")))],
+    [#box(width: 100%, height: 7.0mm, stroke: (bottom: (paint: rgb("#666666"), thickness: 0.5pt, dash: "dotted")))],
+    [#box(width: 100%, height: 7.0mm, stroke: (bottom: (paint: rgb("#666666"), thickness: 0.5pt, dash: "dotted")))],
+    [#box(width: 100%, height: 7.0mm, stroke: (bottom: (paint: rgb("#666666"), thickness: 0.5pt, dash: "dotted")))]
+  )).flatten()
+)
+
+#v(1.0pt)
+// Technical Best Practice & Geometric Integrity Guidelines
+#block(
+  width: 100%,
+  fill: rgb("#fff9e6"),
+  stroke: 0.55pt + rgb("#c48b00"),
+  inset: (x: 5pt, y: 2.0pt),
+  radius: 1.2pt
+)[
+  #text(weight: "bold", fill: rgb("#8a5a00"), size: 6.7pt)[MANDATORY Z+F 5016 FIELD INTEGRITY RULES:] #text(size: 6.4pt, fill: rgb("#222222"))[
+    1. #strong[Target Geometry:] Never place all targets in a single plane or straight line. Ensure spatial distribution in X, Y, and Z. Maintain target ranges between 2.5 m and 25 m for 139mm spheres.
+    2. #strong[Carrier-Wave Atmospheric Integrity:] Temperature and pressure must be re-recorded if ambient conditions shift > 3°C or > 5 hPa during the day to prevent EDM scale drift.
+    3. #strong[Fixity Sign-Off:] Compute SHA-256 hashes of all `.zfs` raw scans upon memory card offload to ensure uncompromised digital chain of custody for archival deposit.
+  ]
+]
+```

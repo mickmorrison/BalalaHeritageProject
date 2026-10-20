@@ -1,0 +1,48 @@
+table_name,field_name,field_alias,form_tab_or_group,sqlite_data_type,qgis_widget_type,lookup_table_name,volunteer_field_tip,chronological_significance
+tls_stations,station_id,Scanner Station ID,Observation Log,TEXT,TextEdit,,"Unique station ID formatted as BAL_ST001, BAL_ST002. Primary key.",Spatial scan station identifier for registration network.
+tls_stations,project_id,Project Identifier,Header Metadata,TEXT,TextEdit,,"Fixed as 'Balala Heritage Project'.",Project institutional provenance.
+tls_stations,survey_date,Survey Date,Header Metadata,DATE,DateTime,,"Date of scan acquisition (DD/MM/YYYY).",Survey audit trail.
+tls_stations,operator,Scanner Operator,Header Metadata,TEXT,TextEdit,,"Lead laser scanner operator / team.",Accountability.
+tls_stations,weather_desc,Weather Conditions,Header Metadata,TEXT,TextEdit,,"Ambient weather: sunlight, clouds, wind, dust, temperature stability.",Laser return quality context.
+tls_stations,temp_celsius,Ambient Temperature (°C),Atmospheric EDM,REAL,Range,,"Ambient temperature in degrees Celsius for carrier-wave refractive index.",EDM scale factor atmospheric correction.
+tls_stations,pressure_hpa,Barometric Pressure (hPa),Atmospheric EDM,REAL,Range,,"Barometric atmospheric pressure in hPa/mbar.",EDM velocity correction in air.
+tls_stations,humidity_pct,Relative Humidity (%),Atmospheric EDM,REAL,Range,,"Relative humidity percentage.",Atmospheric carrier-wave propagation model.
+tls_stations,instrument_model,Scanner Model,Hardware Config,TEXT,TextEdit,,"Fixed as 'Z+F IMAGER 5016'.",Sensor calibration profile.
+tls_stations,serial_no,Scanner Serial Number,Hardware Config,TEXT,TextEdit,,"Instrument hardware serial number.",Hardware provenance.
+tls_stations,firmware_ver,Firmware Version,Hardware Config,TEXT,TextEdit,,"Internal Z+F firmware build.",Sensor firmware integrity.
+tls_stations,raw_file_prefix,Raw File Prefix,Hardware Config,TEXT,TextEdit,,"Project prefix for scan naming (e.g. BAL26_).",File indexing standard.
+tls_stations,time_start,Scan Start Time,Observation Log,TEXT,TextEdit,,"Time scan started (hh:mm).",Diurnal thermal tracking.
+tls_stations,hi_m,Instrument Height (m),Observation Log,REAL,Range,,"Height of instrument tilt axis above ground mark (3 decimals).",Vertical position control.
+tls_stations,res_setting,Resolution Setting,Observation Log,TEXT,ValueRelation,lut_tls_res_setting,"Resolution mode: Low, Normal, High, Super High.",Point density and resolution index.
+tls_stations,quality_mode,Quality Mode,Observation Log,TEXT,ValueRelation,lut_tls_quality_mode,"Quality noise reduction level: 1x, 2x, 4x, 8x.",Laser signal-to-noise ratio.
+tls_stations,hdr_color,HDR Color Captured,Observation Log,BOOLEAN,CheckBox,,"Boolean Y/N if 360° internal HDR RGB camera panorama was acquired.",Photogrammetric color availability.
+tls_stations,occupied_mark_id,Occupied Mark Point ID,Observation Log,TEXT,ValueRelation,rtk_survey_points,"Foreign key to rtk_survey_points.point_id if setup over surveyed peg.",Direct geodetic georeferencing tie.
+tls_stations,control_target_ids,Control Target IDs,Observation Log,TEXT,TextEdit,,"Comma-separated target foreign keys (e.g. TRG_SPH01, TRG_SPH02, TRG_CHK01).",Registration constraint network.
+tls_stations,raw_filename,Raw Scan Filename,Observation Log,TEXT,TextEdit,,"ZFS raw scan file name (e.g. BAL_ST001.zfs).",Raw sensor data file link.
+tls_stations,sha256_verified,SHA-256 Verified,Integrity Audit,BOOLEAN,CheckBox,,"Fixity check sign-off confirming uncompromised raw hash.",Archival checksum integrity.
+tls_stations,target_feature,Target Feature / Sector,Observation Log,TEXT,TextEdit,,"Structural or landform feature targeted by scan station.",Fabric and spatial context.
+tls_targets,target_id,Target ID,Target Register,TEXT,TextEdit,,"Unique target ID (e.g. TRG_SPH01, TRG_CHK01). Primary key.",Registration target identification.
+tls_targets,station_id,Scanner Station ID,Target Register,TEXT,ValueRelation,tls_stations,"Foreign key to primary observing scanner station.",Scan network topology.
+tls_targets,target_type,Target Hardware Type,Target Register,TEXT,ValueRelation,lut_tls_target_type,"Hardware: 139mm Sphere, B&W Tile, Peg.",Target centroid fitting model.
+tls_targets,rtk_tie_id,RTK GNSS Point ID,Target Register,TEXT,ValueRelation,rtk_survey_points,"Foreign key to rtk_survey_points.point_id.",Absolute geodetic constraint.
+tls_targets,est_distance_m,Estimated Distance (m),Target Register,REAL,Range,,"Estimated slant distance in metres from scanner.",Point density verification.
+tls_targets,mounting_ht_m,Target Center Height (m),Target Register,REAL,Range,,"Height of target center above ground or peg.",Vertical target tie.
+tls_targets,station_sightings_notes,Sightings & Occlusion Notes,Target Register,TEXT,TextEdit,,"List of stations sighting target and visibility notes.",Network redundancy.
+rtk_survey_points,point_id,Point ID,Point Observation,TEXT,TextEdit,,"Unique survey point identifier (e.g. 1001, 1002). Primary key.",Spatial point key.
+rtk_survey_points,time,Observation Time,Point Observation,TEXT,TextEdit,,"Observation timestamp (hh:mm).",Diurnal GNSS constellation geometry.
+rtk_survey_points,feat_code,Feature Code,Point Observation,TEXT,ValueRelation,lut_rtk_feat_code,"Controlled code matching Balala domain vocabulary.",Archaeological and spatial classification.
+rtk_survey_points,pole_ht_m,Pole Height (m),Point Observation,REAL,Range,,"Antenna pole height in metres (default 2.000m).",Antenna Phase Center (APC) height.
+rtk_survey_points,status,Solution Status,Point Observation,TEXT,ValueRelation,,"GNSS fix status: Fixed or Float (Fixed mandatory).",Positional integrity.
+rtk_survey_points,pdop,PDOP,Point Observation,REAL,Range,,"Positional Dilution of Precision (< 3.0 required).",Satellite geometric strength.
+rtk_survey_points,h_rms_mm,Horizontal RMS (mm),Point Observation,REAL,Range,,"Horizontal precision standard error estimate in mm.",Positional accuracy confidence.
+rtk_survey_points,v_rms_mm,Vertical RMS (mm),Point Observation,REAL,Range,,"Vertical precision standard error estimate in mm.",Elevation accuracy confidence.
+rtk_survey_points,photo_id,Photo Frame ID,Point Observation,TEXT,TextEdit,,"Cross-reference to digital camera frame number.",Visual archaeological documentation.
+rtk_survey_points,field_notes_attributes,Field Notes & Attributes,Point Observation,TEXT,TextEdit,,"Text notes on material, wear state, preservation, or heritage feature ID.",Archaeological fabric description.
+rtk_survey_points,heritage_feature_id,Heritage Feature ID,Point Observation,TEXT,ValueRelation,heritage_features,"Foreign key linking surveyed point to master heritage feature.",Heritage landscape entity linkage.
+heritage_features,feature_id,Feature ID,Heritage Master,TEXT,TextEdit,,"Unique feature code (e.g. HIST_BLD_01, LAND_MND_01). Primary key.",Heritage entity identifier.
+heritage_features,feat_code,Feature Code,Heritage Master,TEXT,ValueRelation,lut_rtk_feat_code,"Controlled code from Balala vocabulary.",Typological grouping.
+heritage_features,feature_name,Feature Name,Heritage Master,TEXT,TextEdit,,"Common or descriptive heritage feature name.",Historical reference.
+heritage_features,structure_id,Structure ID,Heritage Master,TEXT,ValueRelation,structures,"Optional foreign key linking to standing structures (Form 1).",Standing fabric relationship.
+heritage_features,description,Detailed Description,Heritage Master,TEXT,TextEdit,,"Archaeological and historical description of feature.",Heritage significance.
+heritage_features,cultural_tradition,Cultural Tradition,Heritage Master,TEXT,ValueRelation,,"Historical Pastoral, Indigenous, or Shared History.",Cultural landscape stratification.
+heritage_features,period_epoch,Period / Epoch,Heritage Master,TEXT,ValueRelation,,"Estimated historical era: 1840-1860, 1860-1890, 1890-1920, Modern.",Chronological horizon.
