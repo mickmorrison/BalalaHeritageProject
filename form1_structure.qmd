@@ -88,7 +88,7 @@ format:
           [
             #text(weight: "bold", size: 10pt, fill: rgb("#1b365d"))[FORM 1: STRUCTURE RECORDING FORM (EXTERIOR & FABRIC)] \
             #text(size: 6.8pt, fill: rgb("#333333"))[
-              Standing Fabric & Ruins Proforma | Adapted from Burke, Smith & Morrison (2020) & Miles Lewis (1992)
+              Standing Fabric & Ruins Proforma | Adapted from Burke, Morrison and Smith 2017 & Miles Lewis (1992)
             ]
           ],
           [
@@ -251,7 +251,7 @@ format:
       columns: (auto, 1fr),
       gutter: 6pt,
       [#text(weight: "bold", fill: rgb("#b30000"), size: 7.8pt)[VOLUNTEER SAFETY & WHS PRE-ENTRY CHECK:]],
-      [#note[Assess physical hazards before crossing building threshold or inspecting crawlspaces (Burke et al. 2020: 161)]]
+      [#note[Assess physical hazards before crossing building threshold or inspecting crawlspaces (Burke, Morrison and Smith 2017: 161)]]
     )
     #v(1.5pt)
     #grid(

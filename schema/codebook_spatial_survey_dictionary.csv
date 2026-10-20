@@ -23,15 +23,15 @@ tls_stations,sha256_verified,SHA-256 Verified,Integrity Audit,BOOLEAN,CheckBox,,
 tls_stations,target_feature,Target Feature / Sector,Observation Log,TEXT,TextEdit,,"Structural or landform feature targeted by scan station.",Fabric and spatial context.
 tls_targets,target_id,Target ID,Target Register,TEXT,TextEdit,,"Unique target ID (e.g. TRG_SPH01, TRG_CHK01). Primary key.",Registration target identification.
 tls_targets,station_id,Scanner Station ID,Target Register,TEXT,ValueRelation,tls_stations,"Foreign key to primary observing scanner station.",Scan network topology.
-tls_targets,target_type,Target Hardware Type,Target Register,TEXT,ValueRelation,lut_tls_target_type,"Hardware: 139mm Sphere, B&W Tile, Peg.",Target centroid fitting model.
+tls_targets,target_type,Target Hardware Type,Target Register,TEXT,ValueRelation,lut_tls_target_type,"Hardware: 150mm Sphere, B&W Tile, Peg.",Target centroid fitting model.
 tls_targets,rtk_tie_id,RTK GNSS Point ID,Target Register,TEXT,ValueRelation,rtk_survey_points,"Foreign key to rtk_survey_points.point_id.",Absolute geodetic constraint.
 tls_targets,est_distance_m,Estimated Distance (m),Target Register,REAL,Range,,"Estimated slant distance in metres from scanner.",Point density verification.
-tls_targets,mounting_ht_m,Target Center Height (m),Target Register,REAL,Range,,"Height of target center above ground or peg.",Vertical target tie.
+tls_targets,mounting_ht_m,Target Centre Height (m),Target Register,REAL,Range,,"Height of target centre above ground or peg.",Vertical target tie.
 tls_targets,station_sightings_notes,Sightings & Occlusion Notes,Target Register,TEXT,TextEdit,,"List of stations sighting target and visibility notes.",Network redundancy.
 rtk_survey_points,point_id,Point ID,Point Observation,TEXT,TextEdit,,"Unique survey point identifier (e.g. 1001, 1002). Primary key.",Spatial point key.
 rtk_survey_points,time,Observation Time,Point Observation,TEXT,TextEdit,,"Observation timestamp (hh:mm).",Diurnal GNSS constellation geometry.
 rtk_survey_points,feat_code,Feature Code,Point Observation,TEXT,ValueRelation,lut_rtk_feat_code,"Controlled code matching Balala domain vocabulary.",Archaeological and spatial classification.
-rtk_survey_points,pole_ht_m,Pole Height (m),Point Observation,REAL,Range,,"Antenna pole height in metres (default 2.000m).",Antenna Phase Center (APC) height.
+rtk_survey_points,pole_ht_m,Pole Height (m),Point Observation,REAL,Range,,"Antenna pole height in metres (default 2.000m).",Antenna Phase Centre (APC) height.
 rtk_survey_points,status,Solution Status,Point Observation,TEXT,ValueRelation,,"GNSS fix status: Fixed or Float (Fixed mandatory).",Positional integrity.
 rtk_survey_points,pdop,PDOP,Point Observation,REAL,Range,,"Positional Dilution of Precision (< 3.0 required).",Satellite geometric strength.
 rtk_survey_points,h_rms_mm,Horizontal RMS (mm),Point Observation,REAL,Range,,"Horizontal precision standard error estimate in mm.",Positional accuracy confidence.

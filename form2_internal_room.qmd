@@ -105,7 +105,7 @@ format:
           [
             #text(weight: "bold", size: 9.8pt, fill: rgb("#1b365d"))[FORM 2: INTERNAL ROOM RECORDING FORM (ONE FORM PER ROOM)] \
             #text(size: 6.7pt, fill: rgb("#333333"))[
-              Interior Envelope, Joinery & Fabric Archaeology | Adapted from Burke, Smith & Morrison (2020) & Miles Lewis (1992)
+              Interior Envelope, Joinery & Fabric Archaeology | Adapted from Burke, Morrison and Smith 2017 & Miles Lewis (1992)
             ]
           ],
           [

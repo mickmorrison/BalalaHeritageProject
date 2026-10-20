@@ -369,9 +369,9 @@ def build_master_gpkg():
 
     # Sample Target Register
     sample_targets = [
-        ("TRG_SPH01", "BAL_ST001", "139mm Sphere", "1002", 8.4, 1.85, "Visible from ST001 and ST002; magnetic mount on steel post"),
+        ("TRG_SPH01", "BAL_ST001", "150mm Sphere", "1002", 8.4, 1.85, "Visible from ST001 and ST002; magnetic mount on steel post"),
         ("TRG_CHK01", "BAL_ST001", "B&W Tile", "1003", 14.2, 1.50, "Visible from ST001, ST002; affixed to eastern timber stud"),
-        ("TRG_SPH02", "BAL_ST002", "139mm Sphere", "", 6.5, 1.60, "Internal shearing board tie between bays 3 and 4"),
+        ("TRG_SPH02", "BAL_ST002", "150mm Sphere", "", 6.5, 1.60, "Internal shearing board tie between bays 3 and 4"),
     ]
     for tid, stid, ttype, rtk, dist, mht, nts in sample_targets:
         trg_feat = ogr.Feature(tbl_targets.GetLayerDefn())

@@ -1,5 +1,5 @@
 code,category,label,qfield_symbology_hint,description
-TLS_SPH,Control & Targets,139mm Target Sphere,Red Circle with Dot,High-precision 139mm laser scanner reference sphere on magnetic mount or tripod
+TLS_SPH,Control & Targets,150mm Target Sphere,Red Circle with Dot,High-precision 150mm laser scanner reference sphere on magnetic mount or tripod
 TLS_CHK,Control & Targets,B&W Target Tile,Black/White Square,High-contrast planar black-and-white checkerboard target tile for TLS/photogrammetry
 BM_PEG,Control & Targets,Survey Control Peg,Blue Crosshair,Permanent or semi-permanent wooden hub or iron pin control benchmark peg
 GCP_CTRL,Control & Targets,UAV Aerial Ground Control,Yellow Cross,High-visibility aerial survey ground control target for drone photogrammetry
@@ -12,5 +12,5 @@ HIST_MIN,Historical Features,Mining Feature / Hearth,Dark Grey Octagon,Prospecti
 LAND_MND,Indigenous & Landscape,Earth / Sediment Mound,Green Triangle,Cultural earth mound hearth mound or distinctive geomorphic sediment rise
 LAND_SWAL,Indigenous & Landscape,Gilgai / Drainage Swale,Green Line,Natural or culturally modified gilgai drainage depression or swale feature
 LAND_ALC,Indigenous & Landscape,Rock Alcove / Shelter,Purple Polygon,Granite or sandstone boulder overhang rock shelter or alcove
-ART_FLK,Indigenous & Landscape,Stone Flake / Tool,Magenta Dot,Silcrete chert quartz or basalt stone flaked artifact or debitage
+ART_FLK,Indigenous & Landscape,Stone Flake / Tool,Magenta Dot,Silcrete chert quartz or basalt stone flaked artefact or debitage
 ART_KNPGLS,Indigenous & Landscape,Knapped Contact Glass,Bright Red Star,Historical contact period knapped glass tool core or retouched scraper

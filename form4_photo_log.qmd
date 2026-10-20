@@ -85,7 +85,7 @@ format:
       [
         #text(weight: "bold", size: 9.8pt, fill: rgb("#1b365d"))[FORM 4: PHOTOGRAPHIC RECORDING LOG] \
         #text(size: 6.7pt, fill: rgb("#333333"))[
-          Archaeological Photo Register | Adapted from Burke, Smith & Morrison (2020) Appendix 3.12 & Miles Lewis (1992)
+          Archaeological Photo Register | Adapted from Burke, Morrison and Smith 2017 & Miles Lewis (1992)
         ]
       ],
       [
@@ -99,7 +99,7 @@ format:
 )
 #v(1.2pt)
 
-// Standardized ID Coding Guide
+// Standardised ID Coding Guide
 #block(
   width: 100%,
   fill: rgb("#e8eef5"),
@@ -122,7 +122,7 @@ format:
   [
     #text(weight: "bold", fill: rgb("#8a5a00"), size: 6.8pt)[MANDATORY PHOTOGRAPHIC INSTRUCTIONS:] #text(size: 6.6pt, fill: rgb("#222222"))[
       1. #strong[ONE CAMERA PER FORM:] Strictly use one camera body and memory card per recording sheet. Never mix frames from multiple cameras on the same form.
-      2. #strong[METRIC SCALES:] Always place an appropriate photographic scale (2m ranging pole for building elevations; 1m/50cm scale for wall sections; 20cm/10cm scale for joinery, mason marks, graffiti, or artifacts) parallel to the camera sensor. Do not obscure key fabric details.
+      2. #strong[METRIC SCALES:] Always place an appropriate photographic scale (2m ranging pole for building elevations; 1m/50cm scale for wall sections; 20cm/10cm scale for joinery, mason marks, graffiti, or artefacts) parallel to the camera sensor. Do not obscure key fabric details.
       3. #strong[NORTH ARROW (OUTDOOR SHOTS):] For all outdoor structural elevations, landscape context shots, and external features, place a north arrow pointing north to verify orientation. Record camera facing direction (N, NE, E, SE, S, SW, W, NW, or Down/Up).
     ]
   ]

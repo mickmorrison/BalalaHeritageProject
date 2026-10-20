@@ -683,7 +683,7 @@ def create_geopackage():
             "item_condition": "Intact/Functional, light surface patina.",
             "in_situ_status": "In-situ original location hanging from stand 4 bracket.",
             "object_photo_path": "media/photos/STR01_A_01_handpiece.jpg",
-            "sec3_inventory_comments": "Key diagnostic artifact illustrating adoption of Wolseley mechanical shearing at Balala.",
+            "sec3_inventory_comments": "Key diagnostic artefact illustrating adoption of Wolseley mechanical shearing at Balala.",
         },
         {
             "object_id": "STR-01-B-01",

@@ -2,7 +2,7 @@
   paper: "a4",
   margin: (top: 6mm, bottom: 6mm, left: 7.5mm, right: 7.5mm)
 )
-#set document(title: "Form 2: RTK GNSS Field Log & Heritage Feature Point Register", author: "Balala Heritage Project")
+#set document(title: "Form 6: RTK GNSS Field Log & Heritage Feature Point Register", author: "Balala Heritage Project")
 #set text(font: ("Helvetica", "Arial"), size: 7.0pt, spacing: 100%)
 #set par(leading: 0.28em, justify: false)
 
@@ -47,7 +47,7 @@
 #let field-lbl(txt) = text(weight: "bold", fill: rgb("#222222"), size: 7.0pt)[#txt]
 #let note(txt) = text(fill: rgb("#444444"), size: 6.3pt, style: "italic")[#txt]
 
-// Form 2 Banner
+// Form 6 Banner
 #block(
   width: 100%,
   stroke: 0.8pt + rgb("#1b365d"),
@@ -59,15 +59,15 @@
     columns: (1fr, auto),
     gutter: 8pt,
     [
-      #text(weight: "bold", size: 9.6pt, fill: rgb("#1b365d"))[FORM 2: RTK GNSS FIELD LOG & HERITAGE FEATURE POINT REGISTER] \
+      #text(weight: "bold", size: 9.6pt, fill: rgb("#1b365d"))[FORM 6: RTK GNSS FIELD LOG & HERITAGE FEATURE POINT REGISTER] \
       #text(size: 6.6pt, fill: rgb("#333333"))[
-        High-Precision GNSS Spatial Observation Register & Feature Point Log | Suite Form 6 | Target Layer: `rtk_survey_points`
+        High-Precision GNSS Spatial Observation Register & Feature Point Log | Balala Heritage Project | Target Layer: `rtk_survey_points`
       ]
     ],
     [
       #align(right + top)[
         #text(weight: "bold", size: 8.5pt, fill: rgb("#1b365d"))[BALALA HERITAGE PROJECT] \
-        #text(size: 6.7pt, fill: rgb("#555555"))[FORM 2 (RTK) — SINGLE / REPEATABLE]
+        #text(size: 6.7pt, fill: rgb("#555555"))[FORM 6 (RTK) — SINGLE / REPEATABLE]
       ]
     ]
   )
@@ -195,40 +195,32 @@
 )
 
 #v(1.5pt)
-// SECTION 3: POINT OBSERVATION TABLE
+// SECTION 3: POINT OBSERVATION TABLE (EXPANDED FIELD NOTES)
 #sec-bar("SECTION 3", "POINT OBSERVATION TABLE (1:1 GEOPACKAGE rtk_survey_points SCHEMA)")
 #v(0.6pt)
-#note([*Observation Protocol:* All control points & heritage features must achieve FIXED solution. Center bipod bubble prior to logging. Default pole height is 2.000m; record exact height if adjusted for tree canopy or trenches. Cross-reference photo frame number for diagnostic heritage features and archaeological artifacts.])
+#note([*Observation Protocol:* All control points & heritage features must achieve FIXED solution. Centre bipod bubble prior to logging. Default pole height is 2.000m; record exact height if adjusted for tree canopy or trenches. Expanded field notes record material composition, fabric condition, structural/trench tie, or diagnostic artefact details.])
 #v(1.0pt)
 
 #table(
-  columns: (34pt, 26pt, 46pt, 28pt, 28pt, 20pt, 24pt, 24pt, 40pt, 1fr),
+  columns: (44pt, 28pt, 54pt, 34pt, 32pt, 1fr),
   stroke: 0.45pt + rgb("#bbbbbb"),
   fill: (col, row) => if row == 0 { rgb("#e8eef5") } else { none },
-  inset: (x: 1.8pt, y: 1.5pt),
+  inset: (x: 2.2pt, y: 1.6pt),
   align: (col, row) => if row == 0 { center + horizon } else { left + horizon },
   // Header row
-  [#text(weight: "bold", fill: rgb("#1b365d"), size: 6.2pt)[point_id \ (PK: 1001)]],
-  [#text(weight: "bold", fill: rgb("#1b365d"), size: 6.2pt)[time \ (hh:mm)]],
-  [#text(weight: "bold", fill: rgb("#1b365d"), size: 6.2pt)[feat_code \ (Domain)]],
-  [#text(weight: "bold", fill: rgb("#1b365d"), size: 6.2pt)[pole_ht_m \ (m: 2.00)]],
-  [#text(weight: "bold", fill: rgb("#1b365d"), size: 6.2pt)[status \ Fix / Flt]],
-  [#text(weight: "bold", fill: rgb("#1b365d"), size: 6.2pt)[pdop \ (< 3.0)]],
-  [#text(weight: "bold", fill: rgb("#1b365d"), size: 6.0pt)[h_rms \ (mm)]],
-  [#text(weight: "bold", fill: rgb("#1b365d"), size: 6.0pt)[v_rms \ (mm)]],
-  [#text(weight: "bold", fill: rgb("#1b365d"), size: 6.2pt)[photo_id \ (Camera)]],
-  [#text(weight: "bold", fill: rgb("#1b365d"), size: 6.2pt)[field_notes_attributes / Heritage Description \ (Material, subtype, condition, structure/trench tie)]],
+  [#text(weight: "bold", fill: rgb("#1b365d"), size: 6.4pt)[point_id \ (PK: e.g. 1001)]],
+  [#text(weight: "bold", fill: rgb("#1b365d"), size: 6.4pt)[time \ (hh:mm)]],
+  [#text(weight: "bold", fill: rgb("#1b365d"), size: 6.4pt)[feat_code \ (Domain Vocabulary)]],
+  [#text(weight: "bold", fill: rgb("#1b365d"), size: 6.4pt)[pole_ht_m \ (Default 2.00)]],
+  [#text(weight: "bold", fill: rgb("#1b365d"), size: 6.4pt)[status \ Fix / Flt]],
+  [#text(weight: "bold", fill: rgb("#1b365d"), size: 6.4pt)[field_notes_attributes / Heritage Description, Material Composition, Condition & Context]],
   // 18 Point Observation Rows at 6.6mm height
   ..range(18).map(i => (
     [#box(width: 100%, height: 6.6mm, stroke: (bottom: (paint: rgb("#666666"), thickness: 0.5pt, dash: "dotted")))],
     [#box(width: 100%, height: 6.6mm, stroke: (bottom: (paint: rgb("#666666"), thickness: 0.5pt, dash: "dotted")))],
     [#box(width: 100%, height: 6.6mm, stroke: (bottom: (paint: rgb("#666666"), thickness: 0.5pt, dash: "dotted")))],
     [#box(width: 100%, height: 6.6mm, stroke: (bottom: (paint: rgb("#666666"), thickness: 0.5pt, dash: "dotted")))],
-    [#align(center + horizon)[#text(size: 5.8pt)[#cb F #cb Fl]]],
-    [#box(width: 100%, height: 6.6mm, stroke: (bottom: (paint: rgb("#666666"), thickness: 0.5pt, dash: "dotted")))],
-    [#box(width: 100%, height: 6.6mm, stroke: (bottom: (paint: rgb("#666666"), thickness: 0.5pt, dash: "dotted")))],
-    [#box(width: 100%, height: 6.6mm, stroke: (bottom: (paint: rgb("#666666"), thickness: 0.5pt, dash: "dotted")))],
-    [#box(width: 100%, height: 6.6mm, stroke: (bottom: (paint: rgb("#666666"), thickness: 0.5pt, dash: "dotted")))],
+    [#align(center + horizon)[#text(size: 6.0pt)[#cb F #cb Fl]]],
     [#box(width: 100%, height: 6.6mm, stroke: (bottom: (paint: rgb("#666666"), thickness: 0.5pt, dash: "dotted")))]
   )).flatten()
 )
@@ -243,9 +235,9 @@
   radius: 1.0pt
 )[
   #field-lbl("Controlled feat_code Domain (GeoPackage Lookup):") #text(size: 6.4pt, fill: rgb("#333333"))[
-    #strong[Control & Targets:] `TLS_SPH` (139mm laser target sphere) | `TLS_CHK` (B&W checkerboard tile) | `BM_PEG` (Survey control peg) | `GCP_CTRL` (UAV aerial ground control point). \
+    #strong[Control & Targets:] `TLS_SPH` (150 mm laser target sphere) | `TLS_CHK` (B&W checkerboard tile) | `BM_PEG` (Survey control peg) | `GCP_CTRL` (UAV aerial ground control point). \
     #strong[Historical Pastoral Features:] `HIST_BLD` (Building corner/verandah) | `HIST_STR` (Structure/fence/yard/gate) | `HIST_OBJ` (Pastoral machinery/tank/engine) | `HIST_LAND` (Drain/embankment/track) | `HIST_WELL` (Water well/bore/cistern) | `HIST_MIN` (Mining pit/furnace/hearth). \
-    #strong[Indigenous & Landscape Features:] `LAND_MND` (Earth/sediment mound) | `LAND_SWAL` (Gilgai/drainage swale) | `LAND_ALC` (Rock alcove/overhang) | `ART_FLK` (Silcrete/quartz flake) | `ART_KNPGLS` (Historic knapped contact glass).
+    #strong[Indigenous & Landscape Features:] `LAND_MND` (Earth/sediment mound) | `LAND_SWAL` (Gilgai/drainage swale) | `LAND_ALC` (Rock alcove/overhang) | `ART_FLK` (Silcrete/quartz flake artefact) | `ART_KNPGLS` (Historic knapped contact glass artefact).
   ]
 ]
 

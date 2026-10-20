@@ -57,7 +57,7 @@ format:
       [
         #text(weight: "bold", size: 10.5pt, fill: rgb("#1b365d"))[HISTORICAL & PASTORAL STRUCTURE RECORDING FORM] \
         #text(size: 6.8pt, fill: rgb("#333333"))[
-          Standard Field Proforma for Standing Fabric & Ruins | Adapted from Burke, Smith & Morrison (2020) & Miles Lewis (1992)
+          Standard Field Proforma for Standing Fabric & Ruins | Adapted from Burke, Morrison and Smith 2017 & Miles Lewis (1992)
         ]
       ],
       [
@@ -122,7 +122,7 @@ format:
       columns: (auto, 1fr),
       gutter: 6pt,
       [#text(weight: "bold", fill: rgb("#b30000"), size: 7.8pt)[VOLUNTEER SAFETY & WHS PRE-ENTRY CHECK:]],
-      [#note[Check physical hazards before entering structure or crawlspaces (Burke et al. 2020: 161)]]
+      [#note[Check physical hazards before entering structure or crawlspaces (Burke, Morrison and Smith 2017: 161)]]
     )
     #v(1.2pt)
     #grid(

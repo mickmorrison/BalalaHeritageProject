@@ -104,7 +104,7 @@ format:
           [
             #text(weight: "bold", size: 10pt, fill: rgb("#1b365d"))[FORM 1: STRUCTURE RECORDING FORM (EXTERIOR & FABRIC)] \
             #text(size: 6.8pt, fill: rgb("#333333"))[
-              Standing Fabric & Ruins Proforma | Adapted from Burke, Smith & Morrison (2020) & Miles Lewis (1992)
+              Standing Fabric & Ruins Proforma | Adapted from Burke, Morrison and Smith 2017 & Miles Lewis (1992)
             ]
           ],
           [
@@ -267,7 +267,7 @@ format:
       columns: (auto, 1fr),
       gutter: 6pt,
       [#text(weight: "bold", fill: rgb("#b30000"), size: 7.8pt)[VOLUNTEER SAFETY & WHS PRE-ENTRY CHECK:]],
-      [#note[Assess physical hazards before crossing building threshold or inspecting crawlspaces (Burke et al. 2020: 161)]]
+      [#note[Assess physical hazards before crossing building threshold or inspecting crawlspaces (Burke, Morrison and Smith 2017: 161)]]
     )
     #v(1.5pt)
     #grid(
@@ -725,7 +725,7 @@ format:
           [
             #text(weight: "bold", size: 9.8pt, fill: rgb("#1b365d"))[FORM 2: INTERNAL ROOM RECORDING FORM (ONE FORM PER ROOM)] \
             #text(size: 6.7pt, fill: rgb("#333333"))[
-              Interior Envelope, Joinery & Fabric Archaeology | Adapted from Burke, Smith & Morrison (2020) & Miles Lewis (1992)
+              Interior Envelope, Joinery & Fabric Archaeology | Adapted from Burke, Morrison and Smith 2017 & Miles Lewis (1992)
             ]
           ],
           [
@@ -1064,9 +1064,9 @@ format:
       columns: (1fr, auto),
       gutter: 8pt,
       [
-        #text(weight: "bold", size: 9.8pt, fill: rgb("#1b365d"))[FORM 3: ROOM OBJECT / MACHINERY / ARTIFACT INVENTORY] \
+        #text(weight: "bold", size: 9.8pt, fill: rgb("#1b365d"))[FORM 3: ROOM OBJECT / MACHINERY / ARTEFACT INVENTORY] \
         #text(size: 6.7pt, fill: rgb("#333333"))[
-          Portable & Fixture Heritage Log | Adapted from Burke, Smith & Morrison (2020) & Miles Lewis (1992)
+          Portable & Fixture Heritage Log | Adapted from Burke, Morrison and Smith 2017 & Miles Lewis (1992)
         ]
       ],
       [
@@ -1175,7 +1175,7 @@ format:
       [
         #text(weight: "bold", size: 9.8pt, fill: rgb("#1b365d"))[FORM 4: PHOTOGRAPHIC RECORDING LOG] \
         #text(size: 6.7pt, fill: rgb("#333333"))[
-          Archaeological Photo Register | Adapted from Burke, Smith & Morrison (2020) Appendix 3.12 & Miles Lewis (1992)
+          Archaeological Photo Register | Adapted from Burke, Morrison and Smith 2017 & Miles Lewis (1992)
         ]
       ],
       [
@@ -1212,7 +1212,7 @@ format:
   [
     #text(weight: "bold", fill: rgb("#8a5a00"), size: 6.8pt)[MANDATORY PHOTOGRAPHIC INSTRUCTIONS:] #text(size: 6.6pt, fill: rgb("#222222"))[
       1. #strong[ONE CAMERA PER FORM:] Strictly use one camera body and memory card per recording sheet. Never mix frames from multiple cameras on the same form.
-      2. #strong[METRIC SCALES:] Always place an appropriate photographic scale (2m ranging pole for building elevations; 1m/50cm scale for wall sections; 20cm/10cm scale for joinery, mason marks, graffiti, or artifacts) parallel to the camera sensor. Do not obscure key fabric details.
+      2. #strong[METRIC SCALES:] Always place an appropriate photographic scale (2m ranging pole for building elevations; 1m/50cm scale for wall sections; 20cm/10cm scale for joinery, mason marks, graffiti, or artefacts) parallel to the camera sensor. Do not obscure key fabric details.
       3. #strong[NORTH ARROW (OUTDOOR SHOTS):] For all outdoor structural elevations, landscape context shots, and external features, place a north arrow pointing north to verify orientation. Record camera facing direction (N, NE, E, SE, S, SW, W, NW, or Down/Up).
     ]
   ]

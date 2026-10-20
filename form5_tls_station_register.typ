@@ -2,7 +2,7 @@
   paper: "a4",
   margin: (top: 6mm, bottom: 6mm, left: 7.5mm, right: 7.5mm)
 )
-#set document(title: "Form 1: Z+F IMAGER 5016 Scan Station Register & Integrity Sheet", author: "Balala Heritage Project")
+#set document(title: "Form 5: Z+F IMAGER 5016 Scan Station Register & Integrity Sheet", author: "Balala Heritage Project")
 #set text(font: ("Helvetica", "Arial"), size: 7.0pt, spacing: 100%)
 #set par(leading: 0.28em, justify: false)
 
@@ -47,7 +47,7 @@
 #let field-lbl(txt) = text(weight: "bold", fill: rgb("#222222"), size: 7.0pt)[#txt]
 #let note(txt) = text(fill: rgb("#444444"), size: 6.3pt, style: "italic")[#txt]
 
-// Form 1 Banner (Page 1 & 2)
+// Form 5 Banner (Page 1 & 2)
 #let form-banner(pg, tot) = [
   #if pg == "1" [
     #block(
@@ -61,15 +61,15 @@
         columns: (1fr, auto),
         gutter: 8pt,
         [
-          #text(weight: "bold", size: 9.6pt, fill: rgb("#1b365d"))[FORM 1: Z+F IMAGER 5016 SCAN STATION REGISTER & INTEGRITY SHEET] \
+          #text(weight: "bold", size: 9.6pt, fill: rgb("#1b365d"))[FORM 5: Z+F IMAGER 5016 SCAN STATION REGISTER & INTEGRITY SHEET] \
           #text(size: 6.6pt, fill: rgb("#333333"))[
-            Terrestrial Laser Scanning Observation Log & Station Integrity Proforma | Suite Form 5 | Target Layer: `tls_stations`
+            Terrestrial Laser Scanning Observation Log & Station Integrity Proforma | Balala Heritage Project | Target Layer: `tls_stations`
           ]
         ],
         [
           #align(right + top)[
             #text(weight: "bold", size: 8.5pt, fill: rgb("#1b365d"))[BALALA HERITAGE PROJECT] \
-            #text(size: 6.7pt, fill: rgb("#555555"))[FORM 1 (TLS) — PAGE #pg OF #tot]
+            #text(size: 6.7pt, fill: rgb("#555555"))[FORM 5 (TLS) — PAGE #pg OF #tot]
           ]
         ]
       )
@@ -86,7 +86,7 @@
         columns: (1fr, auto),
         gutter: 8pt,
         [
-          #text(weight: "bold", size: 9.6pt, fill: rgb("#1b365d"))[FORM 1: STATION NETWORK & TARGET GEOMETRY SKETCH SHEET] \
+          #text(weight: "bold", size: 9.6pt, fill: rgb("#1b365d"))[FORM 5: STATION NETWORK & TARGET GEOMETRY SKETCH SHEET] \
           #text(size: 6.6pt, fill: rgb("#333333"))[
             Z+F IMAGER 5016 Target Constellation, Visibility Vectors & Traverse Geometry Diagram | 10×10 mm Grid
           ]
@@ -94,7 +94,7 @@
         [
           #align(right + top)[
             #text(weight: "bold", size: 8.5pt, fill: rgb("#1b365d"))[BALALA HERITAGE PROJECT] \
-            #text(size: 6.7pt, fill: rgb("#555555"))[FORM 1 (TLS) — PAGE #pg OF #tot]
+            #text(size: 6.7pt, fill: rgb("#555555"))[FORM 5 (TLS) — PAGE #pg OF #tot]
           ]
         ]
       )
@@ -122,7 +122,7 @@
       #text(weight: "bold", fill: rgb("#1b365d"), size: 6.7pt)[GEODETIC DATUM & PROJECTION:] #text(size: 6.7pt, fill: rgb("#222222"))[GDA2020 / MGA Zone 56 (EPSG:7856) | #strong[Vertical Control:] AHD via AUSGeoid2020 | #strong[GeoPackage:] `balala_master.gpkg`]
     ],
     [
-      #text(weight: "bold", fill: rgb("#1b365d"), size: 6.7pt)[STANDARDIZED ID FORMATS:] #text(size: 6.7pt, fill: rgb("#222222"))[Station: `BAL_ST001` | Targets: `TRG_SPH01`, `TRG_CHK01`]
+      #text(weight: "bold", fill: rgb("#1b365d"), size: 6.7pt)[STANDARDISED ID FORMATS:] #text(size: 6.7pt, fill: rgb("#222222"))[Station: `BAL_ST001` | Targets: `TRG_SPH01`, `TRG_CHK01`]
     ]
   )
 ]
@@ -179,7 +179,7 @@
 // SECTION 2: SCAN STATION OBSERVATION LOG
 #sec-bar("SECTION 2", "SCAN STATION OBSERVATION LOG (1:1 DIRECT GEOPACKAGE tls_stations SCHEMA)")
 #v(0.6pt)
-#note([*Observation Protocol:* Record station immediately upon setting tripod. Measure HI (`hi_m`) to 3 decimal places from ground mark to scanner tilt axis notch. Verify RTK occupied mark ID if centered over peg. Record all visible sphere and checkerboard target IDs. Check HDR Color if internal camera panorama is enabled.])
+#note([*Observation Protocol:* Record station immediately upon setting tripod. Measure HI (`hi_m`) to 3 decimal places from ground mark to scanner tilt axis notch. Verify RTK occupied mark ID if centred over peg. Record all visible sphere and checkerboard target IDs. Check HDR Colour if internal camera panorama is enabled.])
 #v(1.0pt)
 
 #table(
@@ -194,7 +194,7 @@
   [#text(weight: "bold", fill: rgb("#1b365d"), size: 6.0pt)[hi_m \ (m: 3 dec)]],
   [#text(weight: "bold", fill: rgb("#1b365d"), size: 6.0pt)[res_setting \ (L / N / H / SH)]],
   [#text(weight: "bold", fill: rgb("#1b365d"), size: 6.0pt)[quality_mode \ (1x / 2x / 4x / 8x)]],
-  [#text(weight: "bold", fill: rgb("#1b365d"), size: 5.9pt)[hdr_color \ (Y / N)]],
+  [#text(weight: "bold", fill: rgb("#1b365d"), size: 5.9pt)[hdr_color \ (Colour Y/N)]],
   [#text(weight: "bold", fill: rgb("#1b365d"), size: 5.8pt)[occupied_mark_id \ (FK: rtk_points)]],
   [#text(weight: "bold", fill: rgb("#1b365d"), size: 6.0pt)[control_target_ids \ (e.g. SPH01, SPH02, CHK01)]],
   [#text(weight: "bold", fill: rgb("#1b365d"), size: 6.0pt)[raw_filename \ (e.g. BAL_ST001.zfs)]],
@@ -308,7 +308,7 @@
     ],
     [
       #text(weight: "bold", fill: rgb("#1b365d"), size: 6.7pt)[SKETCH LEGEND:] #text(size: 6.4pt, fill: rgb("#222222"))[
-        #strong[▲] Scanner Station (`BAL_ST01`) | #strong[●] 139mm Target Sphere (`TRG_SPH01`) | #strong[■] B&W Tile (`TRG_CHK01`) | #strong[[X]] RTK Control Peg (`BM_PEG01`) | #strong[-->] Sighting Vector | #strong[═] Wall / Footing | #strong[░] Obscured Zone
+        #strong[▲] Scanner Station (`BAL_ST01`) | #strong[●] 150 mm Target Sphere (`TRG_SPH01`) | #strong[■] Tile (`TRG_CHK01`) | #strong[[X]] Peg (`BM_PEG01`) | #strong[-->] Sighting Vector | #strong[═] Wall / Footing | #strong[░] Obscured Zone
       ]
     ],
     [
@@ -319,14 +319,12 @@
 
   #v(1.5pt)
   // 10x10 mm Precision Engineering Grid: 18 cols x 11 rows (180mm x 110mm)
+  // Clean, uniform light dotted internal lines
   #align(center)[
     #table(
       columns: (10mm,) * 18,
       rows: (10mm,) * 11,
-      stroke: (col, row) => (
-        paint: if calc.rem(col, 5) == 0 or calc.rem(row, 5) == 0 { rgb("#999999") } else { rgb("#cccccc") },
-        thickness: if calc.rem(col, 5) == 0 or calc.rem(row, 5) == 0 { 0.55pt } else { 0.35pt }
-      ),
+      stroke: (paint: rgb("#888888"), thickness: 0.4pt, dash: "dotted"),
       ..range(18 * 11).map(_ => [])
     )
   ]
@@ -340,22 +338,22 @@
 #v(1.0pt)
 
 #table(
-  columns: (64pt, 92pt, 70pt, 65pt, 65pt, 1fr),
+  columns: (64pt, 98pt, 68pt, 63pt, 63pt, 1fr),
   stroke: 0.45pt + rgb("#bbbbbb"),
   fill: (col, row) => if row == 0 { rgb("#e8eef5") } else { none },
-  inset: (x: 3.0pt, y: 1.8pt),
+  inset: (x: 2.8pt, y: 1.8pt),
   align: (col, row) => if row == 0 { center + horizon } else { left + horizon },
   // Header row
   [#text(weight: "bold", fill: rgb("#1b365d"), size: 6.8pt)[target_id \ (PK: e.g. TRG_SPH01)]],
-  [#text(weight: "bold", fill: rgb("#1b365d"), size: 6.8pt)[target_type \ (Sphere / B&W Tile / Peg)]],
+  [#text(weight: "bold", fill: rgb("#1b365d"), size: 6.8pt)[target_type \ (150 mm sphere, tile, peg)]],
   [#text(weight: "bold", fill: rgb("#1b365d"), size: 6.8pt)[rtk_tie_id \ (FK: rtk_points.point_id)]],
   [#text(weight: "bold", fill: rgb("#1b365d"), size: 6.8pt)[est_distance_m \ (Dist to Scanner m)]],
-  [#text(weight: "bold", fill: rgb("#1b365d"), size: 6.8pt)[mounting_ht_m \ (Target Center HI m)]],
+  [#text(weight: "bold", fill: rgb("#1b365d"), size: 6.8pt)[mounting_ht_m \ (Target Centre HI m)]],
   [#text(weight: "bold", fill: rgb("#1b365d"), size: 6.8pt)[Station Sightings, Visibility & Occlusion Notes \ (e.g. Visible from ST01, ST02, ST03; tripod mounted)]],
   // 9 Target rows at 7.0mm height
   ..range(9).map(i => (
     [#box(width: 100%, height: 7.0mm, stroke: (bottom: (paint: rgb("#666666"), thickness: 0.5pt, dash: "dotted")))],
-    [#align(center + horizon)[#text(size: 6.2pt)[#cb 139mm Sph #cb Tile #cb Peg]]],
+    [#align(center + horizon)[#text(size: 6.1pt)[#cb 150mm Sph #cb Tile #cb Peg]]],
     [#box(width: 100%, height: 7.0mm, stroke: (bottom: (paint: rgb("#666666"), thickness: 0.5pt, dash: "dotted")))],
     [#box(width: 100%, height: 7.0mm, stroke: (bottom: (paint: rgb("#666666"), thickness: 0.5pt, dash: "dotted")))],
     [#box(width: 100%, height: 7.0mm, stroke: (bottom: (paint: rgb("#666666"), thickness: 0.5pt, dash: "dotted")))],
@@ -373,7 +371,7 @@
   radius: 1.2pt
 )[
   #text(weight: "bold", fill: rgb("#8a5a00"), size: 6.7pt)[MANDATORY Z+F 5016 FIELD INTEGRITY RULES:] #text(size: 6.4pt, fill: rgb("#222222"))[
-    1. #strong[Target Geometry:] Never place all targets in a single plane or straight line. Ensure spatial distribution in X, Y, and Z. Maintain target ranges between 2.5 m and 25 m for 139mm spheres.
+    1. #strong[Target Geometry:] Never place all targets in a single plane or straight line. Ensure spatial distribution in X, Y, and Z. Maintain target ranges between 2.5 m and 25 m for 150 mm spheres.
     2. #strong[Carrier-Wave Atmospheric Integrity:] Temperature and pressure must be re-recorded if ambient conditions shift > 3°C or > 5 hPa during the day to prevent EDM scale drift.
     3. #strong[Fixity Sign-Off:] Compute SHA-256 hashes of all `.zfs` raw scans upon memory card offload to ensure uncompromised digital chain of custody for archival deposit.
   ]

@@ -83,9 +83,9 @@ format:
       columns: (1fr, auto),
       gutter: 8pt,
       [
-        #text(weight: "bold", size: 9.8pt, fill: rgb("#1b365d"))[FORM 3: ROOM OBJECT / MACHINERY / ARTIFACT INVENTORY] \
+        #text(weight: "bold", size: 9.8pt, fill: rgb("#1b365d"))[FORM 3: ROOM OBJECT / MACHINERY / ARTEFACT INVENTORY] \
         #text(size: 6.7pt, fill: rgb("#333333"))[
-          Portable & Fixture Heritage Log | Adapted from Burke, Smith & Morrison (2020) & Miles Lewis (1992)
+          Portable & Fixture Heritage Log | Adapted from Burke, Morrison and Smith 2017 & Miles Lewis (1992)
         ]
       ],
       [
